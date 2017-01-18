@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +51,107 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAnsiAsme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAnsiAsme.Designer.cs">
+      <DependentUpon>NewAnsiAsme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewCoating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCoating.Designer.cs">
+      <DependentUpon>NewCoating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGrade.Designer.cs">
+      <DependentUpon>NewGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewManufacturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewManufacturer.Designer.cs">
+      <DependentUpon>NewManufacturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMillLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMillLocation.Designer.cs">
+      <DependentUpon>NewMillLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewProductDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProductDescription.Designer.cs">
+      <DependentUpon>NewProductDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStandard.Designer.cs">
+      <DependentUpon>NewStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWallThickness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWallThickness.Designer.cs">
+      <DependentUpon>NewWallThickness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWeldSeamType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWeldSeamType.Designer.cs">
+      <DependentUpon>NewWeldSeamType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_Job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Job.Designer.cs">
+      <DependentUpon>New_Job.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAnsiAsme.resx">
+      <DependentUpon>NewAnsiAsme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCoating.resx">
+      <DependentUpon>NewCoating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGrade.resx">
+      <DependentUpon>NewGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewManufacturer.resx">
+      <DependentUpon>NewManufacturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMillLocation.resx">
+      <DependentUpon>NewMillLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProductDescription.resx">
+      <DependentUpon>NewProductDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewStandard.resx">
+      <DependentUpon>NewStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWallThickness.resx">
+      <DependentUpon>NewWallThickness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWeldSeamType.resx">
+      <DependentUpon>NewWeldSeamType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_Job.resx">
+      <DependentUpon>New_Job.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +161,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
