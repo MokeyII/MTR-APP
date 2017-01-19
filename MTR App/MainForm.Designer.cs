@@ -32,9 +32,6 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.cmbMillLocation = new System.Windows.Forms.ComboBox();
-            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
-            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
-            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
             this.cmbWallThickness = new System.Windows.Forms.ComboBox();
             this.cmbCoating = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
@@ -102,15 +99,14 @@
             this.lblMasterDataGrid = new System.Windows.Forms.Label();
             this.btnSearchJob = new System.Windows.Forms.Button();
             this.txtSearchJob = new System.Windows.Forms.TextBox();
-            this.cmbProductDescription1 = new System.Windows.Forms.ComboBox();
-            this.cmbWeldSeamType1 = new System.Windows.Forms.ComboBox();
-            this.cmbOuterDimension1 = new System.Windows.Forms.ComboBox();
             this.lblDgJobTitle = new System.Windows.Forms.Label();
             this.btnSearchMaster = new System.Windows.Forms.Button();
             this.btnRefreshInput = new System.Windows.Forms.Button();
-            this.btnUndoLastEntry = new System.Windows.Forms.Button();
             this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.btnAddToCurrentJob = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
+            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
+            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridView)).BeginInit();
@@ -123,7 +119,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(248, 395);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
@@ -137,7 +133,8 @@
             this.cmbManufacturer.Location = new System.Drawing.Point(121, 100);
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
-            this.cmbManufacturer.TabIndex = 2;
+            this.cmbManufacturer.TabIndex = 3;
+            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown);
             // 
             // cmbMillLocation
             // 
@@ -148,34 +145,8 @@
             this.cmbMillLocation.Location = new System.Drawing.Point(121, 127);
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
-            this.cmbMillLocation.TabIndex = 3;
-            // 
-            // cmbProductDescription
-            // 
-            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbProductDescription.FormattingEnabled = true;
-            this.cmbProductDescription.Location = new System.Drawing.Point(121, 154);
-            this.cmbProductDescription.Name = "cmbProductDescription";
-            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
-            this.cmbProductDescription.TabIndex = 4;
-            // 
-            // cmbWeldSeamType
-            // 
-            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbWeldSeamType.FormattingEnabled = true;
-            this.cmbWeldSeamType.Location = new System.Drawing.Point(121, 181);
-            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
-            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
-            this.cmbWeldSeamType.TabIndex = 5;
-            // 
-            // cmbOuterDimension
-            // 
-            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbOuterDimension.FormattingEnabled = true;
-            this.cmbOuterDimension.Location = new System.Drawing.Point(121, 208);
-            this.cmbOuterDimension.Name = "cmbOuterDimension";
-            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
-            this.cmbOuterDimension.TabIndex = 6;
+            this.cmbMillLocation.TabIndex = 4;
+            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown);
             // 
             // cmbWallThickness
             // 
@@ -186,7 +157,8 @@
             this.cmbWallThickness.Location = new System.Drawing.Point(121, 235);
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
-            this.cmbWallThickness.TabIndex = 7;
+            this.cmbWallThickness.TabIndex = 8;
+            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown);
             // 
             // cmbCoating
             // 
@@ -197,7 +169,8 @@
             this.cmbCoating.Location = new System.Drawing.Point(121, 262);
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
-            this.cmbCoating.TabIndex = 8;
+            this.cmbCoating.TabIndex = 9;
+            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown);
             // 
             // cmbGrade
             // 
@@ -208,7 +181,8 @@
             this.cmbGrade.Location = new System.Drawing.Point(121, 289);
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrade.TabIndex = 9;
+            this.cmbGrade.TabIndex = 10;
+            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown);
             // 
             // txtHeat
             // 
@@ -217,7 +191,8 @@
             this.txtHeat.Location = new System.Drawing.Point(119, 316);
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
-            this.txtHeat.TabIndex = 10;
+            this.txtHeat.TabIndex = 11;
+            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown);
             // 
             // cmbANSI
             // 
@@ -228,14 +203,16 @@
             this.cmbANSI.Location = new System.Drawing.Point(121, 342);
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
-            this.cmbANSI.TabIndex = 11;
+            this.cmbANSI.TabIndex = 12;
+            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown);
             // 
             // txtPurchaseOrder
             // 
             this.txtPurchaseOrder.Location = new System.Drawing.Point(121, 369);
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
-            this.txtPurchaseOrder.TabIndex = 12;
+            this.txtPurchaseOrder.TabIndex = 13;
+            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown);
             // 
             // cmbStandard
             // 
@@ -243,10 +220,11 @@
             this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbStandard.FormattingEnabled = true;
-            this.cmbStandard.Location = new System.Drawing.Point(121, 395);
+            this.cmbStandard.Location = new System.Drawing.Point(119, 396);
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
-            this.cmbStandard.TabIndex = 13;
+            this.cmbStandard.TabIndex = 14;
+            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown);
             // 
             // lblManufacturer
             // 
@@ -366,7 +344,7 @@
             this.cmbJobName.Location = new System.Drawing.Point(121, 62);
             this.cmbJobName.Name = "cmbJobName";
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
-            this.cmbJobName.TabIndex = 26;
+            this.cmbJobName.TabIndex = 1;
             this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
             // 
             // lblJobName
@@ -496,10 +474,11 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 438);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 448);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1557, 386);
-            this.dataGridView1.TabIndex = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1557, 376);
+            this.dataGridView1.TabIndex = 102;
             // 
             // label1
             // 
@@ -507,7 +486,7 @@
             this.label1.Location = new System.Drawing.Point(490, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Job Name:";
             // 
             // label2
@@ -627,6 +606,7 @@
             this.txtLastJobInput.ReadOnly = true;
             this.txtLastJobInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastJobInput.TabIndex = 57;
+            this.txtLastJobInput.TabStop = false;
             // 
             // txtLastManufacturerInput
             // 
@@ -637,6 +617,7 @@
             this.txtLastManufacturerInput.ReadOnly = true;
             this.txtLastManufacturerInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastManufacturerInput.TabIndex = 58;
+            this.txtLastManufacturerInput.TabStop = false;
             // 
             // txtLastMillLocationInput
             // 
@@ -647,6 +628,7 @@
             this.txtLastMillLocationInput.ReadOnly = true;
             this.txtLastMillLocationInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastMillLocationInput.TabIndex = 59;
+            this.txtLastMillLocationInput.TabStop = false;
             // 
             // txtLastProductDescriptionInput
             // 
@@ -657,6 +639,7 @@
             this.txtLastProductDescriptionInput.ReadOnly = true;
             this.txtLastProductDescriptionInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastProductDescriptionInput.TabIndex = 60;
+            this.txtLastProductDescriptionInput.TabStop = false;
             // 
             // txtLastWeldSeamTypeInput
             // 
@@ -667,6 +650,7 @@
             this.txtLastWeldSeamTypeInput.ReadOnly = true;
             this.txtLastWeldSeamTypeInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastWeldSeamTypeInput.TabIndex = 61;
+            this.txtLastWeldSeamTypeInput.TabStop = false;
             // 
             // txtLastOuterDimensionInput
             // 
@@ -677,6 +661,7 @@
             this.txtLastOuterDimensionInput.ReadOnly = true;
             this.txtLastOuterDimensionInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastOuterDimensionInput.TabIndex = 62;
+            this.txtLastOuterDimensionInput.TabStop = false;
             // 
             // txtLastWallThicknessInput
             // 
@@ -687,6 +672,7 @@
             this.txtLastWallThicknessInput.ReadOnly = true;
             this.txtLastWallThicknessInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastWallThicknessInput.TabIndex = 63;
+            this.txtLastWallThicknessInput.TabStop = false;
             // 
             // txtLastCoatingIput
             // 
@@ -697,6 +683,7 @@
             this.txtLastCoatingIput.ReadOnly = true;
             this.txtLastCoatingIput.Size = new System.Drawing.Size(100, 13);
             this.txtLastCoatingIput.TabIndex = 64;
+            this.txtLastCoatingIput.TabStop = false;
             // 
             // txtLastGradeInput
             // 
@@ -707,6 +694,7 @@
             this.txtLastGradeInput.ReadOnly = true;
             this.txtLastGradeInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastGradeInput.TabIndex = 65;
+            this.txtLastGradeInput.TabStop = false;
             // 
             // txtLastHeatinput
             // 
@@ -717,6 +705,7 @@
             this.txtLastHeatinput.ReadOnly = true;
             this.txtLastHeatinput.Size = new System.Drawing.Size(100, 13);
             this.txtLastHeatinput.TabIndex = 66;
+            this.txtLastHeatinput.TabStop = false;
             // 
             // txtLastPurchaseOrderInput
             // 
@@ -727,6 +716,7 @@
             this.txtLastPurchaseOrderInput.ReadOnly = true;
             this.txtLastPurchaseOrderInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastPurchaseOrderInput.TabIndex = 67;
+            this.txtLastPurchaseOrderInput.TabStop = false;
             // 
             // txtLastAnsiAsmeInput
             // 
@@ -737,6 +727,7 @@
             this.txtLastAnsiAsmeInput.ReadOnly = true;
             this.txtLastAnsiAsmeInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastAnsiAsmeInput.TabIndex = 68;
+            this.txtLastAnsiAsmeInput.TabStop = false;
             // 
             // txtLastStandardInput
             // 
@@ -747,6 +738,7 @@
             this.txtLastStandardInput.ReadOnly = true;
             this.txtLastStandardInput.Size = new System.Drawing.Size(100, 13);
             this.txtLastStandardInput.TabIndex = 69;
+            this.txtLastStandardInput.TabStop = false;
             // 
             // btnRefreshJobName
             // 
@@ -755,7 +747,7 @@
             this.btnRefreshJobName.Location = new System.Drawing.Point(248, 62);
             this.btnRefreshJobName.Name = "btnRefreshJobName";
             this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
-            this.btnRefreshJobName.TabIndex = 70;
+            this.btnRefreshJobName.TabIndex = 2;
             this.btnRefreshJobName.UseVisualStyleBackColor = true;
             this.btnRefreshJobName.Click += new System.EventHandler(this.btnRefreshJobName_Click);
             // 
@@ -767,8 +759,9 @@
             this.dgMasterGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterGridView.Location = new System.Drawing.Point(961, 60);
             this.dgMasterGridView.Name = "dgMasterGridView";
+            this.dgMasterGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMasterGridView.Size = new System.Drawing.Size(611, 334);
-            this.dgMasterGridView.TabIndex = 71;
+            this.dgMasterGridView.TabIndex = 101;
             // 
             // lblMasterDataGrid
             // 
@@ -787,7 +780,7 @@
             this.btnSearchJob.Location = new System.Drawing.Point(1379, 409);
             this.btnSearchJob.Name = "btnSearchJob";
             this.btnSearchJob.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchJob.TabIndex = 73;
+            this.btnSearchJob.TabIndex = 19;
             this.btnSearchJob.Text = "Search Job";
             this.btnSearchJob.UseVisualStyleBackColor = true;
             this.btnSearchJob.Click += new System.EventHandler(this.btnSearchJob_Click);
@@ -798,40 +791,7 @@
             this.txtSearchJob.Location = new System.Drawing.Point(1130, 412);
             this.txtSearchJob.Name = "txtSearchJob";
             this.txtSearchJob.Size = new System.Drawing.Size(243, 20);
-            this.txtSearchJob.TabIndex = 74;
-            // 
-            // cmbProductDescription1
-            // 
-            this.cmbProductDescription1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbProductDescription1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbProductDescription1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbProductDescription1.FormattingEnabled = true;
-            this.cmbProductDescription1.Location = new System.Drawing.Point(121, 154);
-            this.cmbProductDescription1.Name = "cmbProductDescription1";
-            this.cmbProductDescription1.Size = new System.Drawing.Size(121, 21);
-            this.cmbProductDescription1.TabIndex = 4;
-            // 
-            // cmbWeldSeamType1
-            // 
-            this.cmbWeldSeamType1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbWeldSeamType1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWeldSeamType1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbWeldSeamType1.FormattingEnabled = true;
-            this.cmbWeldSeamType1.Location = new System.Drawing.Point(121, 181);
-            this.cmbWeldSeamType1.Name = "cmbWeldSeamType1";
-            this.cmbWeldSeamType1.Size = new System.Drawing.Size(121, 21);
-            this.cmbWeldSeamType1.TabIndex = 5;
-            // 
-            // cmbOuterDimension1
-            // 
-            this.cmbOuterDimension1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbOuterDimension1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbOuterDimension1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbOuterDimension1.FormattingEnabled = true;
-            this.cmbOuterDimension1.Location = new System.Drawing.Point(121, 208);
-            this.cmbOuterDimension1.Name = "cmbOuterDimension1";
-            this.cmbOuterDimension1.Size = new System.Drawing.Size(121, 21);
-            this.cmbOuterDimension1.TabIndex = 6;
+            this.txtSearchJob.TabIndex = 18;
             // 
             // lblDgJobTitle
             // 
@@ -851,7 +811,7 @@
             this.btnSearchMaster.Location = new System.Drawing.Point(1460, 409);
             this.btnSearchMaster.Name = "btnSearchMaster";
             this.btnSearchMaster.Size = new System.Drawing.Size(112, 23);
-            this.btnSearchMaster.TabIndex = 76;
+            this.btnSearchMaster.TabIndex = 20;
             this.btnSearchMaster.Text = "Search Master";
             this.btnSearchMaster.UseVisualStyleBackColor = true;
             this.btnSearchMaster.Click += new System.EventHandler(this.btnSearchMaster_Click);
@@ -862,39 +822,64 @@
             this.btnRefreshInput.Location = new System.Drawing.Point(119, 422);
             this.btnRefreshInput.Name = "btnRefreshInput";
             this.btnRefreshInput.Size = new System.Drawing.Size(123, 20);
-            this.btnRefreshInput.TabIndex = 77;
+            this.btnRefreshInput.TabIndex = 100;
             this.btnRefreshInput.Text = "Refresh Input Data";
             this.btnRefreshInput.UseVisualStyleBackColor = true;
             // 
-            // btnUndoLastEntry
-            // 
-            this.btnUndoLastEntry.Location = new System.Drawing.Point(554, 394);
-            this.btnUndoLastEntry.Name = "btnUndoLastEntry";
-            this.btnUndoLastEntry.Size = new System.Drawing.Size(124, 23);
-            this.btnUndoLastEntry.TabIndex = 78;
-            this.btnUndoLastEntry.Text = "Undo Last Entry";
-            this.btnUndoLastEntry.UseVisualStyleBackColor = true;
-            // 
             // btnExportToExcel
             // 
+            this.btnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportToExcel.Location = new System.Drawing.Point(1445, 830);
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(103, 23);
-            this.btnExportToExcel.TabIndex = 79;
+            this.btnExportToExcel.TabIndex = 500;
             this.btnExportToExcel.Text = "Export To Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
-            // btnAddToCurrentJob
+            // button1
             // 
-            this.btnAddToCurrentJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddToCurrentJob.Location = new System.Drawing.Point(961, 400);
-            this.btnAddToCurrentJob.Name = "btnAddToCurrentJob";
-            this.btnAddToCurrentJob.Size = new System.Drawing.Size(179, 23);
-            this.btnAddToCurrentJob.TabIndex = 80;
-            this.btnAddToCurrentJob.Text = "Add Selection To Current Job";
-            this.btnAddToCurrentJob.UseVisualStyleBackColor = true;
-            this.btnAddToCurrentJob.Click += new System.EventHandler(this.btnAddToCurrentJob_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(792, 372);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Add Selection To Current Job";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // cmbProductDescription
+            // 
+            this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbProductDescription.FormattingEnabled = true;
+            this.cmbProductDescription.Location = new System.Drawing.Point(121, 154);
+            this.cmbProductDescription.Name = "cmbProductDescription";
+            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
+            this.cmbProductDescription.TabIndex = 5;
+            // 
+            // cmbWeldSeamType
+            // 
+            this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbWeldSeamType.FormattingEnabled = true;
+            this.cmbWeldSeamType.Location = new System.Drawing.Point(121, 181);
+            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
+            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
+            this.cmbWeldSeamType.TabIndex = 6;
+            // 
+            // cmbOuterDimension
+            // 
+            this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOuterDimension.FormattingEnabled = true;
+            this.cmbOuterDimension.Location = new System.Drawing.Point(119, 208);
+            this.cmbOuterDimension.Name = "cmbOuterDimension";
+            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
+            this.cmbOuterDimension.TabIndex = 7;
             // 
             // MainForm
             // 
@@ -902,9 +887,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1584, 862);
-            this.Controls.Add(this.btnAddToCurrentJob);
+            this.Controls.Add(this.cmbOuterDimension);
+            this.Controls.Add(this.cmbWeldSeamType);
+            this.Controls.Add(this.cmbProductDescription);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExportToExcel);
-            this.Controls.Add(this.btnUndoLastEntry);
             this.Controls.Add(this.btnRefreshInput);
             this.Controls.Add(this.btnSearchMaster);
             this.Controls.Add(this.lblDgJobTitle);
@@ -961,12 +948,6 @@
             this.Controls.Add(this.cmbGrade);
             this.Controls.Add(this.cmbCoating);
             this.Controls.Add(this.cmbWallThickness);
-            this.Controls.Add(this.cmbOuterDimension1);
-            this.Controls.Add(this.cmbOuterDimension);
-            this.Controls.Add(this.cmbWeldSeamType1);
-            this.Controls.Add(this.cmbWeldSeamType);
-            this.Controls.Add(this.cmbProductDescription1);
-            this.Controls.Add(this.cmbProductDescription);
             this.Controls.Add(this.cmbMillLocation);
             this.Controls.Add(this.cmbManufacturer);
             this.Controls.Add(this.btnSubmit);
@@ -990,9 +971,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbManufacturer;
         private System.Windows.Forms.ComboBox cmbMillLocation;
-        private System.Windows.Forms.ComboBox cmbProductDescription;
-        private System.Windows.Forms.ComboBox cmbWeldSeamType;
-        private System.Windows.Forms.ComboBox cmbOuterDimension;
         private System.Windows.Forms.ComboBox cmbWallThickness;
         private System.Windows.Forms.ComboBox cmbCoating;
         private System.Windows.Forms.ComboBox cmbGrade;
@@ -1060,15 +1038,14 @@
         private System.Windows.Forms.Label lblMasterDataGrid;
         private System.Windows.Forms.Button btnSearchJob;
         private System.Windows.Forms.TextBox txtSearchJob;
-        private System.Windows.Forms.ComboBox cmbProductDescription1;
-        private System.Windows.Forms.ComboBox cmbWeldSeamType1;
-        private System.Windows.Forms.ComboBox cmbOuterDimension1;
         private System.Windows.Forms.Label lblDgJobTitle;
         private System.Windows.Forms.Button btnSearchMaster;
         private System.Windows.Forms.Button btnRefreshInput;
-        private System.Windows.Forms.Button btnUndoLastEntry;
         private System.Windows.Forms.Button btnExportToExcel;
-        private System.Windows.Forms.Button btnAddToCurrentJob;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbProductDescription;
+        private System.Windows.Forms.ComboBox cmbWeldSeamType;
+        private System.Windows.Forms.ComboBox cmbOuterDimension;
     }
 }
 

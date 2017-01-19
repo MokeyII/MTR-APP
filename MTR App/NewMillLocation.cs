@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MTR_App
 {
@@ -20,7 +13,6 @@ namespace MTR_App
 
         private void btnSubmitJobName_Click(object sender, EventArgs e)
         {
-           
             SqlConnection con = new SqlConnection();
             con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
 
