@@ -107,6 +107,10 @@
             this.cmbProductDescription = new System.Windows.Forms.ComboBox();
             this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
             this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
+            this.txtLastNotesInput = new System.Windows.Forms.TextBox();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtNotes = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridView)).BeginInit();
@@ -116,7 +120,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.Control;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubmit.Location = new System.Drawing.Point(248, 395);
+            this.btnSubmit.Location = new System.Drawing.Point(387, 497);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 15;
@@ -134,7 +138,6 @@
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
             this.cmbManufacturer.TabIndex = 3;
-            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown);
             // 
             // cmbMillLocation
             // 
@@ -146,7 +149,6 @@
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
             this.cmbMillLocation.TabIndex = 4;
-            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown);
             // 
             // cmbWallThickness
             // 
@@ -158,7 +160,6 @@
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
             this.cmbWallThickness.TabIndex = 8;
-            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown);
             // 
             // cmbCoating
             // 
@@ -170,7 +171,6 @@
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
             this.cmbCoating.TabIndex = 9;
-            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown);
             // 
             // cmbGrade
             // 
@@ -182,7 +182,6 @@
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
             this.cmbGrade.TabIndex = 10;
-            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown);
             // 
             // txtHeat
             // 
@@ -192,7 +191,6 @@
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
             this.txtHeat.TabIndex = 11;
-            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown);
             // 
             // cmbANSI
             // 
@@ -204,7 +202,6 @@
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
             this.cmbANSI.TabIndex = 12;
-            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown);
             // 
             // txtPurchaseOrder
             // 
@@ -212,7 +209,6 @@
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
             this.txtPurchaseOrder.TabIndex = 13;
-            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown);
             // 
             // cmbStandard
             // 
@@ -224,7 +220,6 @@
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
             this.cmbStandard.TabIndex = 14;
-            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown);
             // 
             // lblManufacturer
             // 
@@ -345,7 +340,7 @@
             this.cmbJobName.Name = "cmbJobName";
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
             this.cmbJobName.TabIndex = 1;
-            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
+            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged_1);
             // 
             // lblJobName
             // 
@@ -473,8 +468,10 @@
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 448);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 640);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1557, 376);
@@ -756,11 +753,13 @@
             this.dgMasterGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgMasterGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgMasterGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgMasterGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterGridView.Location = new System.Drawing.Point(961, 60);
             this.dgMasterGridView.Name = "dgMasterGridView";
             this.dgMasterGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMasterGridView.Size = new System.Drawing.Size(611, 334);
+            this.dgMasterGridView.Size = new System.Drawing.Size(611, 526);
             this.dgMasterGridView.TabIndex = 101;
             // 
             // lblMasterDataGrid
@@ -777,7 +776,7 @@
             // btnSearchJob
             // 
             this.btnSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchJob.Location = new System.Drawing.Point(1379, 409);
+            this.btnSearchJob.Location = new System.Drawing.Point(1379, 601);
             this.btnSearchJob.Name = "btnSearchJob";
             this.btnSearchJob.Size = new System.Drawing.Size(75, 23);
             this.btnSearchJob.TabIndex = 19;
@@ -788,7 +787,7 @@
             // txtSearchJob
             // 
             this.txtSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchJob.Location = new System.Drawing.Point(1130, 412);
+            this.txtSearchJob.Location = new System.Drawing.Point(1130, 604);
             this.txtSearchJob.Name = "txtSearchJob";
             this.txtSearchJob.Size = new System.Drawing.Size(243, 20);
             this.txtSearchJob.TabIndex = 18;
@@ -799,7 +798,7 @@
             this.lblDgJobTitle.AutoSize = true;
             this.lblDgJobTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDgJobTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgJobTitle.Location = new System.Drawing.Point(12, 411);
+            this.lblDgJobTitle.Location = new System.Drawing.Point(12, 603);
             this.lblDgJobTitle.Name = "lblDgJobTitle";
             this.lblDgJobTitle.Size = new System.Drawing.Size(111, 24);
             this.lblDgJobTitle.TabIndex = 75;
@@ -808,7 +807,7 @@
             // btnSearchMaster
             // 
             this.btnSearchMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchMaster.Location = new System.Drawing.Point(1460, 409);
+            this.btnSearchMaster.Location = new System.Drawing.Point(1460, 601);
             this.btnSearchMaster.Name = "btnSearchMaster";
             this.btnSearchMaster.Size = new System.Drawing.Size(112, 23);
             this.btnSearchMaster.TabIndex = 20;
@@ -819,17 +818,18 @@
             // btnRefreshInput
             // 
             this.btnRefreshInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefreshInput.Location = new System.Drawing.Point(119, 422);
+            this.btnRefreshInput.Location = new System.Drawing.Point(246, 398);
             this.btnRefreshInput.Name = "btnRefreshInput";
             this.btnRefreshInput.Size = new System.Drawing.Size(123, 20);
             this.btnRefreshInput.TabIndex = 100;
-            this.btnRefreshInput.Text = "Refresh Input Data";
+            this.btnRefreshInput.Text = "Refresh Selections";
             this.btnRefreshInput.UseVisualStyleBackColor = true;
+            this.btnRefreshInput.Click += new System.EventHandler(this.btnRefreshInput_Click);
             // 
             // btnExportToExcel
             // 
             this.btnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportToExcel.Location = new System.Drawing.Point(1445, 830);
+            this.btnExportToExcel.Location = new System.Drawing.Point(1445, 1022);
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(103, 23);
             this.btnExportToExcel.TabIndex = 500;
@@ -840,7 +840,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(792, 372);
+            this.button1.Location = new System.Drawing.Point(792, 564);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 23);
             this.button1.TabIndex = 17;
@@ -881,12 +881,51 @@
             this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
             this.cmbOuterDimension.TabIndex = 7;
             // 
+            // txtLastNotesInput
+            // 
+            this.txtLastNotesInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastNotesInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastNotesInput.Location = new System.Drawing.Point(551, 410);
+            this.txtLastNotesInput.Multiline = true;
+            this.txtLastNotesInput.Name = "txtLastNotesInput";
+            this.txtLastNotesInput.Size = new System.Drawing.Size(262, 96);
+            this.txtLastNotesInput.TabIndex = 502;
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(512, 410);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(33, 13);
+            this.lblNotes.TabIndex = 503;
+            this.lblNotes.Text = "Note:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(80, 424);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(33, 13);
+            this.label15.TabIndex = 505;
+            this.label15.Text = "Note:";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(119, 424);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(301, 20);
+            this.txtNotes.TabIndex = 506;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1584, 862);
+            this.ClientSize = new System.Drawing.Size(1584, 1054);
+            this.Controls.Add(this.txtNotes);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.txtLastNotesInput);
             this.Controls.Add(this.cmbOuterDimension);
             this.Controls.Add(this.cmbWeldSeamType);
             this.Controls.Add(this.cmbProductDescription);
@@ -1046,6 +1085,10 @@
         private System.Windows.Forms.ComboBox cmbProductDescription;
         private System.Windows.Forms.ComboBox cmbWeldSeamType;
         private System.Windows.Forms.ComboBox cmbOuterDimension;
+        private System.Windows.Forms.TextBox txtLastNotesInput;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtNotes;
     }
 }
 

@@ -473,7 +473,7 @@ namespace MTR_APP
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
 
-                string selectQuery = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%')";
+                string selectQuery = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
                 //DataAdapter
                 myDA = new SqlDataAdapter(selectQuery, con);
 
@@ -521,7 +521,7 @@ namespace MTR_APP
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
 
-                string selectQuery = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%')";
+                string selectQuery = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
                 //DataAdapter
                 myDA = new SqlDataAdapter(selectQuery, con);
 
@@ -570,7 +570,7 @@ namespace MTR_APP
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
                 //Insert Query
-                string insertquery = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard)";
+                string insertquery = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
 
                 SqlCommand cmd = new SqlCommand(insertquery, con);
 
@@ -590,6 +590,7 @@ namespace MTR_APP
                 cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
                 cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
                 cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
+                cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
 
                 //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
                 txtLastJobInput.Text = cmbJobName.Text.ToString();
@@ -605,6 +606,7 @@ namespace MTR_APP
                 txtLastAnsiAsmeInput.Text = cmbANSI.Text.ToString();
                 txtLastPurchaseOrderInput.Text = txtPurchaseOrder.Text.ToString();
                 txtLastStandardInput.Text = cmbStandard.Text.ToString();
+                txtLastNotesInput.Text = txtNotes.Text.ToString();
 
                 //execute
                 cmd.ExecuteNonQuery();
@@ -613,20 +615,6 @@ namespace MTR_APP
 
                 //close connection
                 con.Close();
-
-                cmbManufacturer.Text = String.Empty;
-                cmbMillLocation.Text = String.Empty;
-                cmbProductDescription.Text = String.Empty;
-                cmbWeldSeamType.Text = String.Empty;
-                cmbOuterDimension.Text = String.Empty;
-                cmbWallThickness.Text = String.Empty;
-                cmbCoating.Text = String.Empty;
-                cmbGrade.Text = String.Empty;
-                txtHeat.Clear();
-                cmbANSI.Text = String.Empty;
-                txtHeat.Clear();
-                txtPurchaseOrder.Clear();
-                cmbStandard.Text = String.Empty;
             }
             catch (Exception ex)
             {
@@ -684,7 +672,7 @@ namespace MTR_APP
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
                 //Insert Query
-                string insertquery = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard)";
+                string insertquery = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
 
                 SqlCommand cmd = new SqlCommand(insertquery, con);
 
@@ -705,6 +693,7 @@ namespace MTR_APP
                 cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
                 cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
                 cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
+                cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
 
                 //execute
                 cmd.ExecuteNonQuery();
@@ -765,23 +754,39 @@ namespace MTR_APP
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            cmbManufacturer.Text = String.Empty;
+            cmbMillLocation.Text = String.Empty;
+            cmbProductDescription.Text = String.Empty;
+            cmbWeldSeamType.Text = String.Empty;
+            cmbOuterDimension.Text = String.Empty;
+            cmbWallThickness.Text = String.Empty;
+            cmbCoating.Text = String.Empty;
+            cmbGrade.Text = String.Empty;
+            txtHeat.Clear();
+            cmbANSI.Text = String.Empty;
+            txtHeat.Clear();
+            txtPurchaseOrder.Clear();
+            cmbStandard.Text = String.Empty;
+            txtNotes.Clear();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             string JN = dgMasterGridView.SelectedRows[0].Cells[0].Value + string.Empty;
-            string Mnuf = dgMasterGridView.SelectedRows[0].Cells[1].Value + string.Empty;
-            string ML = dgMasterGridView.SelectedRows[0].Cells[2].Value + string.Empty;
-            string PD = dgMasterGridView.SelectedRows[0].Cells[3].Value + string.Empty;
-            string WST = dgMasterGridView.SelectedRows[0].Cells[4].Value + string.Empty;
-            string OD = dgMasterGridView.SelectedRows[0].Cells[5].Value + string.Empty;
-            string WT = dgMasterGridView.SelectedRows[0].Cells[6].Value + string.Empty;
-            string Coat = dgMasterGridView.SelectedRows[0].Cells[7].Value + string.Empty;
-            string Grad = dgMasterGridView.SelectedRows[0].Cells[8].Value + string.Empty;
-            string Heat = dgMasterGridView.SelectedRows[0].Cells[9].Value + string.Empty;
-            string Ansi = dgMasterGridView.SelectedRows[0].Cells[10].Value + string.Empty;
-            string PO = dgMasterGridView.SelectedRows[0].Cells[11].Value + string.Empty;
-            string STD = dgMasterGridView.SelectedRows[0].Cells[12].Value + string.Empty;
+            string Mnuf = dgMasterGridView.SelectedRows[0].Cells[2].Value + string.Empty;
+            string ML = dgMasterGridView.SelectedRows[0].Cells[3].Value + string.Empty;
+            string PD = dgMasterGridView.SelectedRows[0].Cells[4].Value + string.Empty;
+            string WST = dgMasterGridView.SelectedRows[0].Cells[5].Value + string.Empty;
+            string OD = dgMasterGridView.SelectedRows[0].Cells[6].Value + string.Empty;
+            string WT = dgMasterGridView.SelectedRows[0].Cells[7].Value + string.Empty;
+            string Coat = dgMasterGridView.SelectedRows[0].Cells[8].Value + string.Empty;
+            string Grad = dgMasterGridView.SelectedRows[0].Cells[9].Value + string.Empty;
+            string Heat = dgMasterGridView.SelectedRows[0].Cells[11].Value + string.Empty;
+            string Ansi = dgMasterGridView.SelectedRows[0].Cells[12].Value + string.Empty;
+            string PO = dgMasterGridView.SelectedRows[0].Cells[13].Value + string.Empty;
+            string STD = dgMasterGridView.SelectedRows[0].Cells[14].Value + string.Empty;
+            string Note = dgMasterGridView.SelectedRows[0].Cells[15].Value + string.Empty;
 
             var vJN = JN;
             var vMnuf = Mnuf;
@@ -796,6 +801,7 @@ namespace MTR_APP
             var vAnsi = Ansi;
             var vPO = PO;
             var vSTD = STD;
+            var vNote = Note;
 
             SqlConnection con = new SqlConnection();
 
@@ -805,7 +811,7 @@ namespace MTR_APP
 
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
                 //Insert Query
-                string insertquery = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard)";
+                string insertquery = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard, @Notes)";
 
                 SqlCommand cmd = new SqlCommand(insertquery, con);
 
@@ -825,6 +831,7 @@ namespace MTR_APP
                 cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
                 cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
                 cmd.Parameters.AddWithValue("@Standard", vSTD);
+                cmd.Parameters.AddWithValue("@Notes", vNote);
 
                 //execute
                 cmd.ExecuteNonQuery();
@@ -833,8 +840,49 @@ namespace MTR_APP
 
                 //close connection
                 con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-                //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
+            /// insert into Master Table
+            try
+            {
+                // Connection to DB
+                //SqlConnection con = new SqlConnection();
+                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
+                //Insert Query
+                string insertquery = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+
+                SqlCommand cmd = new SqlCommand(insertquery, con);
+
+                //open connection
+                con.Open();
+
+                //Parameters
+                cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
+                cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
+                cmd.Parameters.AddWithValue("@MillLocation", vML);
+                cmd.Parameters.AddWithValue("@ProductDescription", vPD);
+                cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
+                cmd.Parameters.AddWithValue("@OuterDimension", vOD);
+                cmd.Parameters.AddWithValue("@WallThickness", vWT);
+                cmd.Parameters.AddWithValue("@Coating", vCoat);
+                cmd.Parameters.AddWithValue("@Grade", vGrad);
+                cmd.Parameters.AddWithValue("@Heat", vHeat);
+                cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
+                cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
+                cmd.Parameters.AddWithValue("@Standard", vSTD);
+                cmd.Parameters.AddWithValue("@Notes", vNote);
+
+                //execute
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                con.Close();
+
+                //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW. //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
                 txtLastJobInput.Text = cmbJobName.Text;
                 txtLastManufacturerInput.Text = vML;
                 txtLastMillLocationInput.Text = vPD;
@@ -848,9 +896,25 @@ namespace MTR_APP
                 txtLastAnsiAsmeInput.Text = vAnsi;
                 txtLastPurchaseOrderInput.Text = vPO;
                 txtLastStandardInput.Text = vSTD;
+                txtLastNotesInput.Text = vNote;
+                txtLastJobInput.Text = cmbJobName.Text;
+                txtLastManufacturerInput.Text = vML;
+                txtLastMillLocationInput.Text = vPD;
+                txtLastProductDescriptionInput.Text = vPD;
+                txtLastWeldSeamTypeInput.Text = vWST;
+                txtLastOuterDimensionInput.Text = vOD;
+                txtLastWallThicknessInput.Text = vWT;
+                txtLastCoatingIput.Text = vCoat;
+                txtLastGradeInput.Text = vGrad;
+                txtLastHeatinput.Text = vHeat;
+                txtLastAnsiAsmeInput.Text = vAnsi;
+                txtLastPurchaseOrderInput.Text = vPO;
+                txtLastStandardInput.Text = vSTD;
+                txtLastNotesInput.Text = vNote;
             }
             catch (Exception ex)
             {
+                //catch error
                 MessageBox.Show(ex.Message);
             }
 
@@ -896,6 +960,69 @@ namespace MTR_APP
             {
                 MessageBox.Show(ex.Message);
             }
+
+            try
+            {
+                //SqlConnection con = new SqlConnection();
+                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
+
+                string selectQuery = "SELECT * FROM dbo.[MasterTable]";
+
+                // string selectQuery = "SELECT [Job Name], [Manufacturer], [Product Description], [Outer Dimension], [Wall Thickness], [Coating], [Heat] FROM [MasterTable]";
+
+                //DataAdapter
+                myDA = new SqlDataAdapter(selectQuery, con);
+
+                //MySqlCommand
+                SqlCommand myCMD = new SqlCommand(selectQuery, con);
+
+                //DataAdapter to Command
+                myDA.SelectCommand = myCMD;
+
+                //Define Datatable
+                myDT = new DataTable();
+
+                //Command Builder (IS GOD!)
+                SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                //Teach Command builder to be a boss!
+                myDA.UpdateCommand = cb.GetUpdateCommand();
+                myDA.InsertCommand = cb.GetInsertCommand();
+                myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                //Fill the DataTable with DataAdapter information
+                myDA.Fill(myDT);
+
+                //Fill DataTable with Database Schema
+                myDA.FillSchema(myDT, SchemaType.Source);
+
+                //Bind The Data Table to the DataGrid
+                dgMasterGridView.DataSource = myDT;
+
+                //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            cmbManufacturer.Text = String.Empty;
+            cmbMillLocation.Text = String.Empty;
+            cmbProductDescription.Text = String.Empty;
+            cmbWeldSeamType.Text = String.Empty;
+            cmbOuterDimension.Text = String.Empty;
+            cmbWallThickness.Text = String.Empty;
+            cmbCoating.Text = String.Empty;
+            cmbGrade.Text = String.Empty;
+            txtHeat.Clear();
+            cmbANSI.Text = String.Empty;
+            txtHeat.Clear();
+            txtPurchaseOrder.Clear();
+            cmbStandard.Text = String.Empty;
+            txtNotes.Clear();
         }
 
         private void cmbJobName_SelectedIndexChanged(object sender, EventArgs e)
@@ -971,8 +1098,6 @@ namespace MTR_APP
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
 
                 string selectQuery = "SELECT * FROM dbo.[MasterTable]";
-
-                // string selectQuery = "SELECT [Job Name], [Manufacturer], [Product Description], [Outer Dimension], [Wall Thickness], [Coating], [Heat] FROM [MasterTable]";
 
                 //DataAdapter
                 myDA = new SqlDataAdapter(selectQuery, con);
@@ -1076,7 +1201,7 @@ namespace MTR_APP
 
         private void cmbManufacturer_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1084,7 +1209,7 @@ namespace MTR_APP
 
         private void cmbMillLocation_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1092,7 +1217,7 @@ namespace MTR_APP
 
         private void cmbOuterDimension1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1100,7 +1225,7 @@ namespace MTR_APP
 
         private void cmbProductDescription1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1108,7 +1233,7 @@ namespace MTR_APP
 
         private void cmbStandard_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1116,7 +1241,7 @@ namespace MTR_APP
 
         private void cmbWallThickness_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1124,7 +1249,7 @@ namespace MTR_APP
 
         private void cmbWeldSeamType1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1132,7 +1257,7 @@ namespace MTR_APP
 
         private void txtHeat_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1140,7 +1265,7 @@ namespace MTR_APP
 
         private void txtPurchaseOrder_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Return)
             {
                 btnSubmit.PerformClick();
             }
@@ -1205,5 +1330,80 @@ namespace MTR_APP
         }
 
         #endregion Show New Forms Btn
+
+        private void btnRefreshInput_Click(object sender, EventArgs e)
+        {
+            cmbManufacturer.Items.Clear();
+            cmbMillLocation.Items.Clear();
+            cmbProductDescription.Items.Clear();
+            cmbWeldSeamType.Items.Clear();
+            cmbOuterDimension.Items.Clear();
+            cmbWallThickness.Items.Clear();
+            cmbCoating.Items.Clear();
+            cmbGrade.Items.Clear();
+            cmbANSI.Items.Clear();
+            cmbStandard.Items.Clear();
+
+            zManufacturerCombo();
+            zMillLocationCombo();
+            zProductDescriptionCombo();
+            zWeldSeamTypeCombo();
+            zOuterDimensionCombo();
+            zWallThicknessCombo();
+            zCoatingCombo();
+            zGradeCombo();
+            zAnsiAsmeCombo();
+            zStandardCombo();
+        }
+
+        private void cmbJobName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
+
+                string selectQuery = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                //DataAdapter
+                myDA = new SqlDataAdapter(selectQuery, con);
+
+                //MySqlCommand
+                SqlCommand myCMD = new SqlCommand(selectQuery, con);
+
+                //DataAdapter to Command
+                myDA.SelectCommand = myCMD;
+
+                //Define Datatable
+                myDT = new DataTable();
+
+                //Command Builder (IS GOD!)
+                SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                //Teach Command builder to be a boss!
+                myDA.UpdateCommand = cb.GetUpdateCommand();
+                myDA.InsertCommand = cb.GetInsertCommand();
+                myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                //Fill the DataTable with DataAdapter information
+                myDA.Fill(myDT);
+
+                //Fill DataTable with Database Schema
+                myDA.FillSchema(myDT, SchemaType.Source);
+
+                //Bind The Data Table to the DataGrid
+                dataGridView1.DataSource = myDT;
+
+                //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                lblDgJobTitle.Text = cmbJobName.Text.ToString();
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
