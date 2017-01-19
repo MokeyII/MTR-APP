@@ -103,7 +103,7 @@
             this.btnSearchMaster = new System.Windows.Forms.Button();
             this.btnRefreshInput = new System.Windows.Forms.Button();
             this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddToCurrentJob = new System.Windows.Forms.Button();
             this.cmbProductDescription = new System.Windows.Forms.ComboBox();
             this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
             this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
@@ -126,7 +126,7 @@
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbManufacturer
             // 
@@ -837,16 +837,16 @@
             this.btnExportToExcel.UseVisualStyleBackColor = true;
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
-            // button1
+            // btnAddToCurrentJob
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(792, 564);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Add Selection To Current Job";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAddToCurrentJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddToCurrentJob.Location = new System.Drawing.Point(792, 564);
+            this.btnAddToCurrentJob.Name = "btnAddToCurrentJob";
+            this.btnAddToCurrentJob.Size = new System.Drawing.Size(163, 23);
+            this.btnAddToCurrentJob.TabIndex = 17;
+            this.btnAddToCurrentJob.Text = "Add Selection To Current Job";
+            this.btnAddToCurrentJob.UseVisualStyleBackColor = true;
+            this.btnAddToCurrentJob.Click += new System.EventHandler(btnAddToCurrentJob_Click);
             // 
             // cmbProductDescription
             // 
@@ -929,7 +929,7 @@
             this.Controls.Add(this.cmbOuterDimension);
             this.Controls.Add(this.cmbWeldSeamType);
             this.Controls.Add(this.cmbProductDescription);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddToCurrentJob);
             this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.btnRefreshInput);
             this.Controls.Add(this.btnSearchMaster);
@@ -1081,7 +1081,7 @@
         private System.Windows.Forms.Button btnSearchMaster;
         private System.Windows.Forms.Button btnRefreshInput;
         private System.Windows.Forms.Button btnExportToExcel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddToCurrentJob;
         private System.Windows.Forms.ComboBox cmbProductDescription;
         private System.Windows.Forms.ComboBox cmbWeldSeamType;
         private System.Windows.Forms.ComboBox cmbOuterDimension;

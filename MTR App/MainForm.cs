@@ -17,6 +17,7 @@ namespace MTR_APP
             InitializeComponent();
         }
 
+        // Populate All Combo Boxes
         #region ComboBoxPopulate
 
         private void zAnsiAsmeCombo()
@@ -381,6 +382,7 @@ namespace MTR_APP
 
         #endregion ComboBoxPopulate
 
+        //Export Job Table to Excel
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
             // Creating a Excel object.
@@ -440,6 +442,7 @@ namespace MTR_APP
             }
         }
 
+        // RefreshJob Name ComboBox
         private void btnRefreshJobName_Click(object sender, EventArgs e)
         {
             try
@@ -466,6 +469,7 @@ namespace MTR_APP
             }
         }
 
+        //Search Job Table
         private void btnSearchJob_Click(object sender, EventArgs e)
         {
             try
@@ -514,6 +518,7 @@ namespace MTR_APP
             }
         }
 
+        // Search Master Table
         private void btnSearchMaster_Click(object sender, EventArgs e)
         {
             try
@@ -562,7 +567,8 @@ namespace MTR_APP
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Insert New Item in Job && Master
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -771,9 +777,11 @@ namespace MTR_APP
             txtNotes.Clear();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        //Insert To Job From Master Table
+        private void btnAddToCurrentJob_Click(object sender, EventArgs e)
         {
-            string JN = dgMasterGridView.SelectedRows[0].Cells[0].Value + string.Empty;
+            string ID = dgMasterGridView.SelectedRows[0].Cells[0].Value + string.Empty;
+            string JN = dgMasterGridView.SelectedRows[0].Cells[1].Value + string.Empty;
             string Mnuf = dgMasterGridView.SelectedRows[0].Cells[2].Value + string.Empty;
             string ML = dgMasterGridView.SelectedRows[0].Cells[3].Value + string.Empty;
             string PD = dgMasterGridView.SelectedRows[0].Cells[4].Value + string.Empty;
@@ -782,12 +790,13 @@ namespace MTR_APP
             string WT = dgMasterGridView.SelectedRows[0].Cells[7].Value + string.Empty;
             string Coat = dgMasterGridView.SelectedRows[0].Cells[8].Value + string.Empty;
             string Grad = dgMasterGridView.SelectedRows[0].Cells[9].Value + string.Empty;
-            string Heat = dgMasterGridView.SelectedRows[0].Cells[11].Value + string.Empty;
+            string Heat = dgMasterGridView.SelectedRows[0].Cells[10].Value + string.Empty;
             string Ansi = dgMasterGridView.SelectedRows[0].Cells[12].Value + string.Empty;
             string PO = dgMasterGridView.SelectedRows[0].Cells[13].Value + string.Empty;
             string STD = dgMasterGridView.SelectedRows[0].Cells[14].Value + string.Empty;
             string Note = dgMasterGridView.SelectedRows[0].Cells[15].Value + string.Empty;
 
+            var vID = ID;
             var vJN = JN;
             var vMnuf = Mnuf;
             var vML = ML;
