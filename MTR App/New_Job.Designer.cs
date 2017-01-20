@@ -40,6 +40,7 @@
             this.txtCreateJobName.Name = "txtCreateJobName";
             this.txtCreateJobName.Size = new System.Drawing.Size(484, 20);
             this.txtCreateJobName.TabIndex = 0;
+            this.txtCreateJobName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateJobName_KeyDown);
             // 
             // btnSubmitJobName
             // 

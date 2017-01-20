@@ -69,6 +69,7 @@
             this.Controls.Add(this.txtCreateManufacturer);
             this.Name = "NewManufacturer";
             this.Text = "Add New Manufacturer";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewManufacturer_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

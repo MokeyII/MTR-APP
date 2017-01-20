@@ -58,6 +58,7 @@
             this.txtCreateMillLocation.Name = "txtCreateMillLocation";
             this.txtCreateMillLocation.Size = new System.Drawing.Size(484, 20);
             this.txtCreateMillLocation.TabIndex = 6;
+            this.txtCreateMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateMillLocation_KeyDown);
             // 
             // NewMillLocation
             // 

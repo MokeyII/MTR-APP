@@ -18,6 +18,7 @@ namespace MTR_APP
         }
 
         // Populate All Combo Boxes
+
         #region ComboBoxPopulate
 
         private void zAnsiAsmeCombo()
@@ -405,7 +406,7 @@ namespace MTR_APP
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
                         // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
-                        if (cellRowIndex == 1)
+                        if (cellRowIndex == 0)
                         {
                             worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Columns[j].HeaderText;
                         }
@@ -577,7 +578,7 @@ namespace MTR_APP
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
                 //Insert Query
                 string insertquery = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
-
+                insertquery.Replace("\\s+", " ");
                 SqlCommand cmd = new SqlCommand(insertquery, con);
 
                 //open connection
@@ -597,6 +598,7 @@ namespace MTR_APP
                 cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
                 cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
                 cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                insertquery.Replace("\\s+", " ");
 
                 //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
                 txtLastJobInput.Text = cmbJobName.Text.ToString();
@@ -616,8 +618,6 @@ namespace MTR_APP
 
                 //execute
                 cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Line Submitted, Datagrid Will now re-populate!");
 
                 //close connection
                 con.Close();
@@ -775,6 +775,7 @@ namespace MTR_APP
             txtPurchaseOrder.Clear();
             cmbStandard.Text = String.Empty;
             txtNotes.Clear();
+            cmbManufacturer.Focus();
         }
 
         //Insert To Job From Master Table
@@ -845,10 +846,12 @@ namespace MTR_APP
                 //execute
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Line Submitted, Datagrid Will now re-populate!");
+                MessageBox.Show("" + vPD + " \nfrom " + vJN + " \nwith Heat Number: " + vHeat + " \nhas been transferred from the master table to \n" + cmbJobName.Text + "!");
 
                 //close connection
                 con.Close();
+
+                cmbManufacturer.Focus();
             }
             catch (Exception ex)
             {
@@ -976,8 +979,6 @@ namespace MTR_APP
                 con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
 
                 string selectQuery = "SELECT * FROM dbo.[MasterTable]";
-
-                // string selectQuery = "SELECT [Job Name], [Manufacturer], [Product Description], [Outer Dimension], [Wall Thickness], [Coating], [Heat] FROM [MasterTable]";
 
                 //DataAdapter
                 myDA = new SqlDataAdapter(selectQuery, con);
@@ -1414,5 +1415,88 @@ namespace MTR_APP
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #region Perfrom clicks
+
+        //Perform Clicks
+        private void cmbManufacturer_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbMillLocation_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbProductDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbWeldSeamType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbOuterDimension_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbWallThickness_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbCoating_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbGrade_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void txtHeat_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbANSI_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void txtPurchaseOrder_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void cmbStandard_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        private void txtNotes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnSubmit.PerformClick();
+        }
+
+        #endregion Perfrom clicks
     }
 }

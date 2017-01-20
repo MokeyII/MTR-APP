@@ -58,6 +58,7 @@
             this.txtCreateWeldSeamType.Name = "txtCreateWeldSeamType";
             this.txtCreateWeldSeamType.Size = new System.Drawing.Size(484, 20);
             this.txtCreateWeldSeamType.TabIndex = 9;
+            this.txtCreateWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateWeldSeamType_KeyDown);
             // 
             // NewWeldSeamType
             // 

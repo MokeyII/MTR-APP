@@ -58,6 +58,7 @@
             this.txtCreateProductDescription.Name = "txtCreateProductDescription";
             this.txtCreateProductDescription.Size = new System.Drawing.Size(484, 20);
             this.txtCreateProductDescription.TabIndex = 9;
+            this.txtCreateProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateProductDescription_KeyDown);
             // 
             // NewProductDescription
             // 

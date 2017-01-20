@@ -58,6 +58,7 @@
             this.txtCreateGradeName.Name = "txtCreateGradeName";
             this.txtCreateGradeName.Size = new System.Drawing.Size(484, 20);
             this.txtCreateGradeName.TabIndex = 3;
+            this.txtCreateGradeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateGradeName_KeyDown);
             // 
             // NewGrade
             // 

@@ -120,7 +120,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.Control;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubmit.Location = new System.Drawing.Point(387, 497);
+            this.btnSubmit.Location = new System.Drawing.Point(426, 424);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 15;
@@ -138,6 +138,7 @@
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
             this.cmbManufacturer.TabIndex = 3;
+            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
             // 
             // cmbMillLocation
             // 
@@ -149,6 +150,7 @@
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
             this.cmbMillLocation.TabIndex = 4;
+            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
             // 
             // cmbWallThickness
             // 
@@ -160,6 +162,7 @@
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
             this.cmbWallThickness.TabIndex = 8;
+            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
             // 
             // cmbCoating
             // 
@@ -171,6 +174,7 @@
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
             this.cmbCoating.TabIndex = 9;
+            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
             // 
             // cmbGrade
             // 
@@ -182,6 +186,7 @@
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
             this.cmbGrade.TabIndex = 10;
+            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
             // 
             // txtHeat
             // 
@@ -191,6 +196,7 @@
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
             this.txtHeat.TabIndex = 11;
+            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
             // 
             // cmbANSI
             // 
@@ -202,6 +208,7 @@
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
             this.cmbANSI.TabIndex = 12;
+            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
             // 
             // txtPurchaseOrder
             // 
@@ -209,6 +216,7 @@
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
             this.txtPurchaseOrder.TabIndex = 13;
+            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
             // 
             // cmbStandard
             // 
@@ -220,6 +228,7 @@
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
             this.cmbStandard.TabIndex = 14;
+            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
             // 
             // lblManufacturer
             // 
@@ -846,7 +855,7 @@
             this.btnAddToCurrentJob.TabIndex = 17;
             this.btnAddToCurrentJob.Text = "Add Selection To Current Job";
             this.btnAddToCurrentJob.UseVisualStyleBackColor = true;
-            this.btnAddToCurrentJob.Click += new System.EventHandler(btnAddToCurrentJob_Click);
+            this.btnAddToCurrentJob.Click += new System.EventHandler(this.btnAddToCurrentJob_Click);
             // 
             // cmbProductDescription
             // 
@@ -858,6 +867,7 @@
             this.cmbProductDescription.Name = "cmbProductDescription";
             this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
             this.cmbProductDescription.TabIndex = 5;
+            this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
             // 
             // cmbWeldSeamType
             // 
@@ -869,6 +879,7 @@
             this.cmbWeldSeamType.Name = "cmbWeldSeamType";
             this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
             this.cmbWeldSeamType.TabIndex = 6;
+            this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
             // 
             // cmbOuterDimension
             // 
@@ -880,6 +891,7 @@
             this.cmbOuterDimension.Name = "cmbOuterDimension";
             this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
             this.cmbOuterDimension.TabIndex = 7;
+            this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
             // 
             // txtLastNotesInput
             // 
@@ -914,7 +926,8 @@
             this.txtNotes.Location = new System.Drawing.Point(119, 424);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(301, 20);
-            this.txtNotes.TabIndex = 506;
+            this.txtNotes.TabIndex = 15;
+            this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
             // 
             // MainForm
             // 

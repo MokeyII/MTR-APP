@@ -58,6 +58,7 @@
             this.txtCreateAnsiAsme.Name = "txtCreateAnsiAsme";
             this.txtCreateAnsiAsme.Size = new System.Drawing.Size(484, 20);
             this.txtCreateAnsiAsme.TabIndex = 18;
+            this.txtCreateAnsiAsme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateAnsiAsme_KeyDown);
             // 
             // NewAnsiAsme
             // 

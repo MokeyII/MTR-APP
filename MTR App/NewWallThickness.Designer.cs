@@ -69,6 +69,7 @@
             this.Controls.Add(this.txtCreateWallThickness);
             this.Name = "NewWallThickness";
             this.Text = "NewWallThickness";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewWallThickness_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

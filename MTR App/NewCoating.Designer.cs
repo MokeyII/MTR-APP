@@ -69,6 +69,7 @@
             this.Controls.Add(this.txtCreateCoating);
             this.Name = "NewCoating";
             this.Text = "Add New Coating";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewCoating_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

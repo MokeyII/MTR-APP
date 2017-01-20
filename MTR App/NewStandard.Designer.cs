@@ -69,6 +69,7 @@
             this.Controls.Add(this.txtCreateStandard);
             this.Name = "NewStandard";
             this.Text = "Add New Standard";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewStandard_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,5 +31,11 @@ namespace MTR_App
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtCreateGradeName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnCreateGrade.PerformClick();
+        }
     }
 }
