@@ -1339,6 +1339,12 @@ namespace MTR_APP
             fWeldSeamType.Show();
         }
 
+        //private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    ImportExcel fImportExcel = new ImportExcel();
+        //    fImportExcel.Show();
+        //}
+
         #endregion Show New Forms Btn
 
         private void btnRefreshInput_Click(object sender, EventArgs e)

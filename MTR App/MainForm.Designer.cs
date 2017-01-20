@@ -67,6 +67,7 @@
             this.gradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aNSIASMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -374,7 +375,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.addFieldToolStripMenuItem});
+            this.addFieldToolStripMenuItem,
+            this.importFromExcelToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -384,7 +386,7 @@
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jobToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.newToolStripMenuItem.Text = "&New...";
             // 
             // jobToolStripMenuItem
@@ -407,7 +409,7 @@
             this.aNSIASMEToolStripMenuItem,
             this.standardToolStripMenuItem});
             this.addFieldToolStripMenuItem.Name = "addFieldToolStripMenuItem";
-            this.addFieldToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.addFieldToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.addFieldToolStripMenuItem.Text = "&Add Field";
             // 
             // manufacturerToolStripMenuItem
@@ -473,6 +475,12 @@
             this.standardToolStripMenuItem.Text = "Standard";
             this.standardToolStripMenuItem.Click += new System.EventHandler(this.standardToolStripMenuItem_Click);
             // 
+            // importFromExcelToolStripMenuItem
+            // 
+            this.importFromExcelToolStripMenuItem.Name = "importFromExcelToolStripMenuItem";
+            this.importFromExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.importFromExcelToolStripMenuItem.Text = "&Import From Excel";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -480,7 +488,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 640);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 640);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1557, 376);
@@ -1102,6 +1110,7 @@
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNotes;
+        private System.Windows.Forms.ToolStripMenuItem importFromExcelToolStripMenuItem;
     }
 }
 
