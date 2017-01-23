@@ -363,7 +363,7 @@
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
             this.cmbJobName.TabIndex = 1;
             this.toolTips.SetToolTip(this.cmbJobName, "Select the dropdown to select a job.");
-            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged_1);
+            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
             // 
             // lblJobName
             // 

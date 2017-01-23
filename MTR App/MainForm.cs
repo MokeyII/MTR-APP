@@ -1352,56 +1352,7 @@ namespace MTR_APP
             zStandardCombo();
         }
 
-        private void cmbJobName_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Security=True");
-
-                string selectQuery = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                //DataAdapter
-                myDA = new SqlDataAdapter(selectQuery, con);
-
-                //MySqlCommand
-                SqlCommand myCMD = new SqlCommand(selectQuery, con);
-
-                //DataAdapter to Command
-                myDA.SelectCommand = myCMD;
-
-                //Define Datatable
-                myDT = new DataTable();
-
-                //Command Builder (IS GOD!)
-                SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                //Teach Command builder to be a boss!
-                myDA.UpdateCommand = cb.GetUpdateCommand();
-                myDA.InsertCommand = cb.GetInsertCommand();
-                myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                //Fill the DataTable with DataAdapter information
-                myDA.Fill(myDT);
-
-                //Fill DataTable with Database Schema
-                myDA.FillSchema(myDT, SchemaType.Source);
-
-                //Bind The Data Table to the DataGrid
-                dataGridView1.DataSource = myDT;
-
-                //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-                lblDgJobTitle.Text = cmbJobName.Text.ToString();
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+      
         #region Perfrom clicks
 
         //Perform Clicks
