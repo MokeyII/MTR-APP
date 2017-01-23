@@ -13,18 +13,24 @@ namespace MTR_App
 
         private void btnSubmitWallThickness_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.[WallThickness] ([Wall Thickness]) VALUES (@WallThickness) ", con);
-                cmd.Parameters.AddWithValue("@WallThickness", txtCreateWallThickness.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("New Wall Thickness Added!");
-                con.Close();
-                this.Close();
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[WallThickness] ([Wall Thickness]) VALUES (@WallThickness)";
+                    cmd.Connection = con;
+
+                    cmd.Parameters.AddWithValue("@WallThickness", txtCreateWallThickness.Text);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("New Wall Thickness Added!");
+
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

@@ -1352,7 +1352,6 @@ namespace MTR_APP
             zStandardCombo();
         }
 
-      
         #region Perfrom clicks
 
         //Perform Clicks

@@ -13,18 +13,24 @@ namespace MTR_App
 
         private void btnSubmitWeldSeamType_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType) ", con);
-                cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("New Weld Seam Type Added!");
-                con.Close();
-                this.Close();
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType)";
+                    cmd.Connection = con;
+                    
+                    cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("New Weld Seam Type Added!");
+
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

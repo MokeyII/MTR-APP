@@ -13,18 +13,24 @@ namespace MTR_App
 
         private void btnSubmitAnsiAsme_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.[AnsiAsme] ([ANSI/ASME]) VALUES (@AnsiAsme) ", con);
-                cmd.Parameters.AddWithValue("@AnsiAsme", txtCreateAnsiAsme.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("New ANSI / ASME Added!");
-                con.Close();
-                this.Close();
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[AnsiAsme]([ANSI / ASME]) VALUES(@AnsiAsme)";
+                    cmd.Connection = con;
+
+                    cmd.Parameters.AddWithValue("@AnsiAsme", txtCreateAnsiAsme.Text);
+                    cmd.ExecuteNonQuery();
+                    
+                    con.Close();
+
+                    MessageBox.Show("New ANSI / ASME Added!");
+
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

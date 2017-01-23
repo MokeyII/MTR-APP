@@ -13,18 +13,24 @@ namespace MTR_App
 
         private void btnSubmitJobName_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.[MillLocation] ([Mill Location]) VALUES (@MillLocation) ", con);
-                cmd.Parameters.AddWithValue("@MillLocation", txtCreateMillLocation.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("New Mill Location Added!");
-                con.Close();
-                this.Close();
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[MillLocation] ([Mill Location]) VALUES (@MillLocation)";
+                    cmd.Connection = con;
+
+                    cmd.Parameters.AddWithValue("@MillLocation", txtCreateMillLocation.Text);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("New Mill Location Added!");
+
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
