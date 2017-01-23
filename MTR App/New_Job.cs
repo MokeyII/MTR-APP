@@ -13,7 +13,6 @@ namespace MTR_App
 
         private void btnSubmitJobName_Click(object sender, EventArgs e)
         {
-
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
@@ -30,7 +29,6 @@ namespace MTR_App
                     MessageBox.Show("New Job Created");
 
                     this.Close();
-                    
                 }
             }
             catch (Exception ex)

@@ -24,7 +24,7 @@ namespace MTR_App
 
                     cmd.Parameters.AddWithValue("@AnsiAsme", txtCreateAnsiAsme.Text);
                     cmd.ExecuteNonQuery();
-                    
+
                     con.Close();
 
                     MessageBox.Show("New ANSI / ASME Added!");

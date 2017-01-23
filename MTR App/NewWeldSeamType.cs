@@ -21,7 +21,7 @@ namespace MTR_App
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType)";
                     cmd.Connection = con;
-                    
+
                     cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
                     cmd.ExecuteNonQuery();
 
