@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
@@ -112,6 +113,7 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
+            this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridView)).BeginInit();
@@ -126,6 +128,7 @@
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
+            this.toolTips.SetToolTip(this.btnSubmit, "Submit the information to the database.");
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -139,6 +142,7 @@
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
             this.cmbManufacturer.TabIndex = 3;
+            this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
             this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
             // 
             // cmbMillLocation
@@ -151,6 +155,7 @@
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
             this.cmbMillLocation.TabIndex = 4;
+            this.toolTips.SetToolTip(this.cmbMillLocation, resources.GetString("cmbMillLocation.ToolTip"));
             this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
             // 
             // cmbWallThickness
@@ -163,6 +168,7 @@
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
             this.cmbWallThickness.TabIndex = 8;
+            this.toolTips.SetToolTip(this.cmbWallThickness, resources.GetString("cmbWallThickness.ToolTip"));
             this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
             // 
             // cmbCoating
@@ -175,6 +181,7 @@
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
             this.cmbCoating.TabIndex = 9;
+            this.toolTips.SetToolTip(this.cmbCoating, resources.GetString("cmbCoating.ToolTip"));
             this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
             // 
             // cmbGrade
@@ -187,6 +194,7 @@
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
             this.cmbGrade.TabIndex = 10;
+            this.toolTips.SetToolTip(this.cmbGrade, resources.GetString("cmbGrade.ToolTip"));
             this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
             // 
             // txtHeat
@@ -197,6 +205,7 @@
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
             this.txtHeat.TabIndex = 11;
+            this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
             this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
             // 
             // cmbANSI
@@ -209,6 +218,7 @@
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
             this.cmbANSI.TabIndex = 12;
+            this.toolTips.SetToolTip(this.cmbANSI, resources.GetString("cmbANSI.ToolTip"));
             this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
             // 
             // txtPurchaseOrder
@@ -217,6 +227,7 @@
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
             this.txtPurchaseOrder.TabIndex = 13;
+            this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
             this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
             // 
             // cmbStandard
@@ -229,6 +240,7 @@
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
             this.cmbStandard.TabIndex = 14;
+            this.toolTips.SetToolTip(this.cmbStandard, resources.GetString("cmbStandard.ToolTip"));
             this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
             // 
             // lblManufacturer
@@ -350,6 +362,7 @@
             this.cmbJobName.Name = "cmbJobName";
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
             this.cmbJobName.TabIndex = 1;
+            this.toolTips.SetToolTip(this.cmbJobName, "Select the dropdown to select a job.");
             this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged_1);
             // 
             // lblJobName
@@ -762,6 +775,7 @@
             this.btnRefreshJobName.Name = "btnRefreshJobName";
             this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
             this.btnRefreshJobName.TabIndex = 2;
+            this.toolTips.SetToolTip(this.btnRefreshJobName, "Click here to refresh your jobs list after adding a new job.");
             this.btnRefreshJobName.UseVisualStyleBackColor = true;
             this.btnRefreshJobName.Click += new System.EventHandler(this.btnRefreshJobName_Click);
             // 
@@ -798,6 +812,9 @@
             this.btnSearchJob.Size = new System.Drawing.Size(75, 23);
             this.btnSearchJob.TabIndex = 19;
             this.btnSearchJob.Text = "Search Job";
+            this.toolTips.SetToolTip(this.btnSearchJob, "Fill out the text box to the left and click here to search any item in the curren" +
+        "t job.\r\n\r\nEmpty the text box and click here again to return the table to it\'s or" +
+        "iginal state.");
             this.btnSearchJob.UseVisualStyleBackColor = true;
             this.btnSearchJob.Click += new System.EventHandler(this.btnSearchJob_Click);
             // 
@@ -829,6 +846,9 @@
             this.btnSearchMaster.Size = new System.Drawing.Size(112, 23);
             this.btnSearchMaster.TabIndex = 20;
             this.btnSearchMaster.Text = "Search Master";
+            this.toolTips.SetToolTip(this.btnSearchMaster, "Fill out the text box to the left and click here to search any item in the master" +
+        " lst.\r\n\r\nEmpty the text box and click here again to return the table to it\'s ori" +
+        "ginal state.");
             this.btnSearchMaster.UseVisualStyleBackColor = true;
             this.btnSearchMaster.Click += new System.EventHandler(this.btnSearchMaster_Click);
             // 
@@ -840,6 +860,7 @@
             this.btnRefreshInput.Size = new System.Drawing.Size(123, 20);
             this.btnRefreshInput.TabIndex = 100;
             this.btnRefreshInput.Text = "Refresh Selections";
+            this.toolTips.SetToolTip(this.btnRefreshInput, "Refreshes all selections. Use after a new selection has been created.");
             this.btnRefreshInput.UseVisualStyleBackColor = true;
             this.btnRefreshInput.Click += new System.EventHandler(this.btnRefreshInput_Click);
             // 
@@ -851,6 +872,7 @@
             this.btnExportToExcel.Size = new System.Drawing.Size(103, 23);
             this.btnExportToExcel.TabIndex = 500;
             this.btnExportToExcel.Text = "Export To Excel";
+            this.toolTips.SetToolTip(this.btnExportToExcel, "Click here to export the CURRENT JOB to an Excel file.");
             this.btnExportToExcel.UseVisualStyleBackColor = true;
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
@@ -862,6 +884,8 @@
             this.btnAddToCurrentJob.Size = new System.Drawing.Size(163, 23);
             this.btnAddToCurrentJob.TabIndex = 17;
             this.btnAddToCurrentJob.Text = "Add Selection To Current Job";
+            this.toolTips.SetToolTip(this.btnAddToCurrentJob, "Highlight a job from the MASTER list and click here to import that item into the " +
+        "CURRENT JOB below.");
             this.btnAddToCurrentJob.UseVisualStyleBackColor = true;
             this.btnAddToCurrentJob.Click += new System.EventHandler(this.btnAddToCurrentJob_Click);
             // 
@@ -875,6 +899,7 @@
             this.cmbProductDescription.Name = "cmbProductDescription";
             this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
             this.cmbProductDescription.TabIndex = 5;
+            this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
             this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
             // 
             // cmbWeldSeamType
@@ -887,6 +912,7 @@
             this.cmbWeldSeamType.Name = "cmbWeldSeamType";
             this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
             this.cmbWeldSeamType.TabIndex = 6;
+            this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
             this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
             // 
             // cmbOuterDimension
@@ -899,6 +925,7 @@
             this.cmbOuterDimension.Name = "cmbOuterDimension";
             this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
             this.cmbOuterDimension.TabIndex = 7;
+            this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
             this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
             // 
             // txtLastNotesInput
@@ -935,7 +962,17 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(301, 20);
             this.txtNotes.TabIndex = 15;
+            this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
             this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
+            // 
+            // toolTips
+            // 
+            this.toolTips.AutoPopDelay = 50000;
+            this.toolTips.ForeColor = System.Drawing.Color.Black;
+            this.toolTips.InitialDelay = 500;
+            this.toolTips.ReshowDelay = 100;
+            this.toolTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTips.ToolTipTitle = "Refresh Job List";
             // 
             // MainForm
             // 
@@ -1111,6 +1148,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.ToolStripMenuItem importFromExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTips;
     }
 }
 
