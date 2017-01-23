@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MTR_APP
 {
@@ -17,12 +18,7 @@ namespace MTR_APP
             InitializeComponent();
         }
 
-        private void zConnectToInfoTable()
-        {
-            //Use Connection Class to Open Connection to Database
-            Connection connInfoTable = new Connection();
-            connInfoTable.InfoConnection();
-        }
+        
 
         // Populate All Combo Boxes
 
@@ -33,23 +29,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
 
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[AnsiAsme] ORDER by [ANSI/ASME] ASC";
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbANSI.Items.Add(reader["ANSI/ASME"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[AnsiAsme] ORDER by [ANSI/ASME] ASC";
+                    cmd.Connection = con;
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                //Close Connection
-                Connection.InfoTableConnection.Close();
-                Connection.InfoTableConnection.Dispose();
+                    while (reader.Read())
+                    {
+                        //Add ANSI / ASME ComboItems to combo box.
+                        cmbANSI.Items.Add(reader["ANSI/ASME"].ToString());
+                    }
+
+                    //Close Connection
+                    con.Close();
+                    //Connection.InfoTableConnection.Close();
+                }
             }
 
             //Catch Exception
@@ -63,23 +61,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[Coating] ORDER by [Coating] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbCoating.Items.Add(reader["Coating"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[Coating] ORDER by [Coating] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbCoating.Items.Add(reader["Coating"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -93,23 +93,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[Grade] ORDER by [Grade] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbGrade.Items.Add(reader["Grade"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[Grade] ORDER by [Grade] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbGrade.Items.Add(reader["Grade"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -123,23 +125,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[Manufacturer] ORDER by [Manufacturer] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbManufacturer.Items.Add(reader["Manufacturer"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[Manufacturer] ORDER by [Manufacturer] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbManufacturer.Items.Add(reader["Manufacturer"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -153,23 +157,26 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[MillLocation] ORDER by [Mill Location] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbMillLocation.Items.Add(reader["Mill Location"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[MillLocation] ORDER by [Mill Location] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbMillLocation.Items.Add(reader["Mill Location"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -183,23 +190,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[OuterDimension] ORDER by [SortOrder] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbOuterDimension.Items.Add(reader["Outer Dimension"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[OuterDimension] ORDER by [SortOrder] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbOuterDimension.Items.Add(reader["Outer Dimension"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -213,23 +222,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                cmd.CommandText = "SELECT * FROM [dbo].[ProductDescription] ORDER by [Product Description] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbProductDescription.Items.Add(reader["Product Description"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[ProductDescription] ORDER by [Product Description] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbProductDescription.Items.Add(reader["Product Description"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -243,24 +254,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                //Insert Query
-                cmd.CommandText = "SELECT * FROM [dbo].[Standard] ORDER by [Standard] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbStandard.Items.Add(reader["Standard"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[Standard] ORDER by [Standard] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbStandard.Items.Add(reader["Standard"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -274,24 +286,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                //Insert Query
-                cmd.CommandText = "SELECT * FROM [dbo].[WallThickness] ORDER by [Wall Thickness] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbWallThickness.Items.Add(reader["Wall Thickness"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[WallThickness] ORDER by [Wall Thickness] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbWallThickness.Items.Add(reader["Wall Thickness"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception
@@ -305,24 +318,25 @@ namespace MTR_APP
         {
             try
             {
-                zConnectToInfoTable();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.InfoTableConnection;
-                //Insert Query
-                cmd.CommandText = "SELECT * FROM [dbo].[WeldSeamType] ORDER by [Weld Seam type] ASC";
-
-                //Datareader Execute with connection and slection
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
                 {
-                    //Read from Department Dropdown box
-                    cmbWeldSeamType.Items.Add(reader["Weld Seam Type"].ToString());
-                }
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM [dbo].[WeldSeamType] ORDER by [Weld Seam type] ASC";
+                    cmd.Connection = con;
 
-                //Close COnnection
-                Connection.InfoTableConnection.Close();
+                    //Datareader Execute with connection and slection
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Read from Department Dropdown box
+                        cmbWeldSeamType.Items.Add(reader["Weld Seam Type"].ToString());
+                    }
+
+                    //Close COnnection
+                    con.Close();
+                }
             }
 
             //Catch Exception

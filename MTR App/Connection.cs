@@ -1,23 +1,11 @@
 ﻿using System.Data.SqlClient;
-
+using System.Configuration;
 namespace MTR_App
 {
     internal class Connection
     {
-        public static SqlConnection InfoTableConnection = null;
+        public static string MTRInfoTablesConn = ConfigurationManager.ConnectionStrings["MTR_App.Properties.Settings.MTRInfoTablesConn"].ConnectionString;
 
-        public void InfoConnection()
-        {
-            InfoTableConnection = new SqlConnection("Data Source=(localdb)/MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
-            InfoTableConnection.Open();
-        }
-
-        public void MasterTableConnection()
-        {
-            InfoTableConnection = new SqlConnection("Data Source=(localdb)/MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-
-            InfoTableConnection.Open();
-        }
+        public static string MTRDataBaseConn = ConfigurationManager.ConnectionStrings["MTR_App.Properties.Settings.MTR_DatabaseConn"].ConnectionString;
     }
 }
