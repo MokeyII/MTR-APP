@@ -17,27 +17,28 @@ namespace MTR_APP
             InitializeComponent();
         }
 
+        private void zConnectToInfoTable()
+        {
+            //Use Connection Class to Open Connection to Database
+            Connection connInfoTable = new Connection();
+            connInfoTable.InfoConnection();
+        }
+
         // Populate All Combo Boxes
 
         #region ComboBoxPopulate
 
+        //Populate Ansi / ASME Combo Box
         private void zAnsiAsmeCombo()
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[AnsiAsme] ORDER by [ANSI/ASME] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[AnsiAsme] ORDER by [ANSI/ASME] ASC";
 
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
-
-                //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -46,8 +47,9 @@ namespace MTR_APP
                     cmbANSI.Items.Add(reader["ANSI/ASME"].ToString());
                 }
 
-                //Close COnnection
-                con.Close();
+                //Close Connection
+                Connection.InfoTableConnection.Close();
+                Connection.InfoTableConnection.Dispose();
             }
 
             //Catch Exception
@@ -61,17 +63,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[Coating] ORDER by [Coating] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[Coating] ORDER by [Coating] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -83,7 +79,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -97,17 +93,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[Grade] ORDER by [Grade] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[Grade] ORDER by [Grade] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -119,7 +109,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -133,17 +123,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[Manufacturer] ORDER by [Manufacturer] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[Manufacturer] ORDER by [Manufacturer] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -155,7 +139,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -169,17 +153,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[MillLocation] ORDER by [Mill Location] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[MillLocation] ORDER by [Mill Location] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -191,7 +169,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -205,17 +183,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[OuterDimension] ORDER by [SortOrder] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[OuterDimension] ORDER by [SortOrder] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -227,7 +199,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -241,17 +213,11 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
-                //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[ProductDescription] ORDER by [Product Description] ASC";
+                zConnectToInfoTable();
 
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
+                cmd.CommandText = "SELECT * FROM [dbo].[ProductDescription] ORDER by [Product Description] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -263,7 +229,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -277,17 +243,12 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
+                zConnectToInfoTable();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
                 //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[Standard] ORDER by [Standard] ASC";
-
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                cmd.CommandText = "SELECT * FROM [dbo].[Standard] ORDER by [Standard] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -299,7 +260,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -313,17 +274,12 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
+                zConnectToInfoTable();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
                 //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[WallThickness] ORDER by [Wall Thickness] ASC";
-
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                cmd.CommandText = "SELECT * FROM [dbo].[WallThickness] ORDER by [Wall Thickness] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -335,7 +291,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -349,17 +305,12 @@ namespace MTR_APP
         {
             try
             {
-                // Connection to DB
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Security=True");
+                zConnectToInfoTable();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Connection.InfoTableConnection;
                 //Insert Query
-                string selectQuery = "SELECT * FROM [dbo].[WeldSeamType] ORDER by [Weld Seam type] ASC";
-
-                //Open Connection
-                con.Open();
-
-                //Command
-                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                cmd.CommandText = "SELECT * FROM [dbo].[WeldSeamType] ORDER by [Weld Seam type] ASC";
 
                 //Datareader Execute with connection and slection
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -371,7 +322,7 @@ namespace MTR_APP
                 }
 
                 //Close COnnection
-                con.Close();
+                Connection.InfoTableConnection.Close();
             }
 
             //Catch Exception
@@ -1338,12 +1289,6 @@ namespace MTR_APP
             NewWeldSeamType fWeldSeamType = new NewWeldSeamType();
             fWeldSeamType.Show();
         }
-
-        //private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ImportExcel fImportExcel = new ImportExcel();
-        //    fImportExcel.Show();
-        //}
 
         #endregion Show New Forms Btn
 
