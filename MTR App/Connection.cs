@@ -1,5 +1,5 @@
-﻿using System.Data.SqlClient;
-using System.Configuration;
+﻿using System.Configuration;
+
 namespace MTR_App
 {
     internal class Connection
