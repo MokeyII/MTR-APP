@@ -972,7 +972,7 @@
             this.toolTips.InitialDelay = 500;
             this.toolTips.ReshowDelay = 100;
             this.toolTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTips.ToolTipTitle = "Refresh Job List";
+            this.toolTips.ToolTipTitle = "Tool Tip";
             // 
             // MainForm
             // 
