@@ -940,7 +940,6 @@ namespace MTR_APP
                     dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
                     lblDgJobTitle.Text = cmbJobName.Text.ToString();
-                    con.Close();
                 }
             }
             catch (Exception ex)
@@ -989,7 +988,6 @@ namespace MTR_APP
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                    con.Close();
                 }
             }
             //Catch Exception
