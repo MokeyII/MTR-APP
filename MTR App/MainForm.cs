@@ -1165,12 +1165,6 @@ namespace MTR_APP
             }
         }
 
-        private void jobToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            New_Job fNew_Job = new New_Job();
-            fNew_Job.Show();
-        }
-
         #region EnterKeyDownSubmit
 
         private void cmbANSI_KeyDown(object sender, KeyEventArgs e)
@@ -1272,6 +1266,12 @@ namespace MTR_APP
         #endregion EnterKeyDownSubmit
 
         #region Show New Forms Btn
+
+        private void jobToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            New_Job fNew_Job = new New_Job();
+            fNew_Job.Show();
+        }
 
         private void aNSIASMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
