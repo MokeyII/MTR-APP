@@ -493,6 +493,7 @@
             this.importFromExcelToolStripMenuItem.Name = "importFromExcelToolStripMenuItem";
             this.importFromExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.importFromExcelToolStripMenuItem.Text = "&Import From Excel";
+            this.importFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importFromExcelToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 

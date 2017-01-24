@@ -42,7 +42,6 @@ namespace MTR_APP
 
                     //Close Connection
                     con.Close();
-                    //Connection.InfoTableConnection.Close();
                 }
             }
 
@@ -437,7 +436,7 @@ namespace MTR_APP
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -490,7 +489,7 @@ namespace MTR_APP
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -599,7 +598,7 @@ namespace MTR_APP
             }
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -687,7 +686,7 @@ namespace MTR_APP
 
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -814,10 +813,10 @@ namespace MTR_APP
                     //execute
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("" + vPD + " \nfrom " + vJN + " \nwith Heat Number: " + vHeat + " \nhas been transferred from the master table to \n" + cmbJobName.Text + "!");
-
                     //close connection
                     con.Close();
+
+                    MessageBox.Show("" + vPD + " \nfrom " + vJN + " \nwith Heat Number: " + vHeat + " \nhas been transferred from the master table to \n" + cmbJobName.Text + "!");
 
                     cmbManufacturer.Focus();
                 }
@@ -899,7 +898,7 @@ namespace MTR_APP
 
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -949,7 +948,7 @@ namespace MTR_APP
 
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -1016,7 +1015,7 @@ namespace MTR_APP
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -1079,13 +1078,9 @@ namespace MTR_APP
             zAnsiAsmeCombo();
             zStandardCombo();
 
-            //////////////////////////////////////////////////////////////////////////
-            /////////////////////      Populate MasterGrid       /////////////////////
-            //////////////////////////////////////////////////////////////////////////
-
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -1124,6 +1119,8 @@ namespace MTR_APP
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                   
                 }
             }
             //Catch Exception
@@ -1434,5 +1431,11 @@ namespace MTR_APP
         }
 
         #endregion Perfrom clicks
+
+        private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImportExcelSheet fImportExcelSheet = new ImportExcelSheet();
+            fImportExcelSheet.Show();
+        }
     }
 }
