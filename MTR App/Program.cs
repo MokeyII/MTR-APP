@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MTR_APP;
+using System;
 using System.Windows.Forms;
 
 namespace MTR_App
@@ -11,9 +12,14 @@ namespace MTR_App
         [STAThread]
         private static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MTR_APP.MainForm());
+            SplashForm.ShowSplashScreen();
+            MainForm mainForm = new MainForm(); //this takes ages
+            SplashForm.CloseForm();
+            Application.Run(mainForm);
+            //Application.Run(new MTR_APP.MainForm());
         }
     }
 }
