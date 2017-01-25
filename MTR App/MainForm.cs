@@ -1060,8 +1060,13 @@ namespace MTR_APP
                     dgJobGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    // Resize the master DataGridView columns to fit the newly loaded data.
+                    dgMasterGridBun.AutoResizeColumns();
+
+                    // Configure the details DataGridView so that its columns automatically
+                    // adjust their widths when the data changes.
+                    dgMasterGridBun.AutoSizeColumnsMode =
+                        DataGridViewAutoSizeColumnsMode.AllCells;
 
                     lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
@@ -1923,7 +1928,12 @@ namespace MTR_APP
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgMasterGridBun.AutoResizeColumns();
+
+                    // Configure the details DataGridView so that its columns automatically
+                    // adjust their widths when the data changes.
+                    dgMasterGridBun.AutoSizeColumnsMode =
+                        DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }
             //Catch Exception
