@@ -12,7 +12,6 @@ namespace MTR_App
         [STAThread]
         private static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SplashForm.ShowSplashScreen();

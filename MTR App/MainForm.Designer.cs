@@ -897,6 +897,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgJobGridBun.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgJobGridBun.DoubleBuffered = true;
             this.dgJobGridBun.EnableHeadersVisualStyles = false;
             this.dgJobGridBun.HeaderBgColor = System.Drawing.Color.RoyalBlue;
