@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.btnSubmit = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.cmbMillLocation = new System.Windows.Forms.ComboBox();
             this.cmbWallThickness = new System.Windows.Forms.ComboBox();
@@ -69,20 +72,6 @@
             this.aNSIASMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtLastJobInput = new System.Windows.Forms.TextBox();
             this.txtLastManufacturerInput = new System.Windows.Forms.TextBox();
             this.txtLastMillLocationInput = new System.Windows.Forms.TextBox();
@@ -97,48 +86,66 @@
             this.txtLastAnsiAsmeInput = new System.Windows.Forms.TextBox();
             this.txtLastStandardInput = new System.Windows.Forms.TextBox();
             this.btnRefreshJobName = new System.Windows.Forms.Button();
-            this.dgMasterGridView = new System.Windows.Forms.DataGridView();
             this.lblMasterDataGrid = new System.Windows.Forms.Label();
-            this.btnSearchJob = new System.Windows.Forms.Button();
             this.txtSearchJob = new System.Windows.Forms.TextBox();
             this.lblDgJobTitle = new System.Windows.Forms.Label();
-            this.btnSearchMaster = new System.Windows.Forms.Button();
-            this.btnRefreshInput = new System.Windows.Forms.Button();
-            this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.btnAddToCurrentJob = new System.Windows.Forms.Button();
             this.cmbProductDescription = new System.Windows.Forms.ComboBox();
             this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
             this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
             this.txtLastNotesInput = new System.Windows.Forms.TextBox();
-            this.lblNotes = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.dgMasterGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.mTR_DatabaseDataSet = new MTR_App.MTR_DatabaseDataSet();
+            this.masterTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.masterTableTableAdapter = new MTR_App.MTR_DatabaseDataSetTableAdapters.MasterTableTableAdapter();
+            this.dgJobGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.btnSubmitBun = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnAddSelectionBun = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mTR_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubmit.Location = new System.Drawing.Point(426, 424);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.toolTips.SetToolTip(this.btnSubmit, "Submit the information to the database.");
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbManufacturer
             // 
             this.cmbManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbManufacturer.FormattingEnabled = true;
-            this.cmbManufacturer.Location = new System.Drawing.Point(121, 100);
+            this.cmbManufacturer.Location = new System.Drawing.Point(151, 173);
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
             this.cmbManufacturer.TabIndex = 3;
@@ -149,9 +156,9 @@
             // 
             this.cmbMillLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbMillLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbMillLocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbMillLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbMillLocation.FormattingEnabled = true;
-            this.cmbMillLocation.Location = new System.Drawing.Point(121, 127);
+            this.cmbMillLocation.Location = new System.Drawing.Point(151, 200);
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
             this.cmbMillLocation.TabIndex = 4;
@@ -162,9 +169,9 @@
             // 
             this.cmbWallThickness.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbWallThickness.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbWallThickness.FormattingEnabled = true;
-            this.cmbWallThickness.Location = new System.Drawing.Point(121, 235);
+            this.cmbWallThickness.Location = new System.Drawing.Point(151, 308);
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
             this.cmbWallThickness.TabIndex = 8;
@@ -175,9 +182,9 @@
             // 
             this.cmbCoating.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCoating.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbCoating.FormattingEnabled = true;
-            this.cmbCoating.Location = new System.Drawing.Point(121, 262);
+            this.cmbCoating.Location = new System.Drawing.Point(151, 335);
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
             this.cmbCoating.TabIndex = 9;
@@ -188,9 +195,9 @@
             // 
             this.cmbGrade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbGrade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbGrade.FormattingEnabled = true;
-            this.cmbGrade.Location = new System.Drawing.Point(121, 289);
+            this.cmbGrade.Location = new System.Drawing.Point(151, 362);
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
             this.cmbGrade.TabIndex = 10;
@@ -201,7 +208,7 @@
             // 
             this.txtHeat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtHeat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txtHeat.Location = new System.Drawing.Point(119, 316);
+            this.txtHeat.Location = new System.Drawing.Point(149, 389);
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
             this.txtHeat.TabIndex = 11;
@@ -212,9 +219,9 @@
             // 
             this.cmbANSI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbANSI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbANSI.FormattingEnabled = true;
-            this.cmbANSI.Location = new System.Drawing.Point(121, 342);
+            this.cmbANSI.Location = new System.Drawing.Point(151, 415);
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
             this.cmbANSI.TabIndex = 12;
@@ -223,7 +230,7 @@
             // 
             // txtPurchaseOrder
             // 
-            this.txtPurchaseOrder.Location = new System.Drawing.Point(121, 369);
+            this.txtPurchaseOrder.Location = new System.Drawing.Point(151, 442);
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
             this.txtPurchaseOrder.TabIndex = 13;
@@ -234,9 +241,9 @@
             // 
             this.cmbStandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbStandard.FormattingEnabled = true;
-            this.cmbStandard.Location = new System.Drawing.Point(119, 396);
+            this.cmbStandard.Location = new System.Drawing.Point(149, 469);
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
             this.cmbStandard.TabIndex = 14;
@@ -246,108 +253,120 @@
             // lblManufacturer
             // 
             this.lblManufacturer.AutoSize = true;
-            this.lblManufacturer.Location = new System.Drawing.Point(42, 108);
+            this.lblManufacturer.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManufacturer.Location = new System.Drawing.Point(49, 176);
             this.lblManufacturer.Name = "lblManufacturer";
-            this.lblManufacturer.Size = new System.Drawing.Size(73, 13);
+            this.lblManufacturer.Size = new System.Drawing.Size(98, 14);
             this.lblManufacturer.TabIndex = 14;
             this.lblManufacturer.Text = "Manufacturer:";
             // 
             // lblMillLocation
             // 
             this.lblMillLocation.AutoSize = true;
-            this.lblMillLocation.Location = new System.Drawing.Point(47, 135);
+            this.lblMillLocation.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMillLocation.Location = new System.Drawing.Point(42, 203);
             this.lblMillLocation.Name = "lblMillLocation";
-            this.lblMillLocation.Size = new System.Drawing.Size(69, 13);
+            this.lblMillLocation.Size = new System.Drawing.Size(105, 14);
             this.lblMillLocation.TabIndex = 15;
             this.lblMillLocation.Text = "Mill Location:";
             // 
             // lblProductDescription
             // 
             this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Location = new System.Drawing.Point(12, 157);
+            this.lblProductDescription.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDescription.Location = new System.Drawing.Point(0, 230);
             this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(103, 13);
+            this.lblProductDescription.Size = new System.Drawing.Size(147, 14);
             this.lblProductDescription.TabIndex = 16;
             this.lblProductDescription.Text = "Product Description:";
             // 
             // lblWeldSeamType
             // 
             this.lblWeldSeamType.AutoSize = true;
-            this.lblWeldSeamType.Location = new System.Drawing.Point(23, 184);
+            this.lblWeldSeamType.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeldSeamType.Location = new System.Drawing.Point(35, 257);
             this.lblWeldSeamType.Name = "lblWeldSeamType";
-            this.lblWeldSeamType.Size = new System.Drawing.Size(92, 13);
+            this.lblWeldSeamType.Size = new System.Drawing.Size(112, 14);
             this.lblWeldSeamType.TabIndex = 17;
             this.lblWeldSeamType.Text = "Weld Seam Type:";
             // 
             // lblWallThickness
             // 
             this.lblWallThickness.AutoSize = true;
-            this.lblWallThickness.Location = new System.Drawing.Point(32, 238);
+            this.lblWallThickness.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWallThickness.Location = new System.Drawing.Point(32, 311);
             this.lblWallThickness.Name = "lblWallThickness";
-            this.lblWallThickness.Size = new System.Drawing.Size(83, 13);
+            this.lblWallThickness.Size = new System.Drawing.Size(112, 14);
             this.lblWallThickness.TabIndex = 18;
             this.lblWallThickness.Text = "Wall Thickness:";
             // 
             // lblCoating
             // 
             this.lblCoating.AutoSize = true;
-            this.lblCoating.Location = new System.Drawing.Point(69, 265);
+            this.lblCoating.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCoating.Location = new System.Drawing.Point(82, 338);
             this.lblCoating.Name = "lblCoating";
-            this.lblCoating.Size = new System.Drawing.Size(46, 13);
+            this.lblCoating.Size = new System.Drawing.Size(63, 14);
             this.lblCoating.TabIndex = 19;
             this.lblCoating.Text = "Coating:";
             // 
             // lblGrade
             // 
             this.lblGrade.AutoSize = true;
-            this.lblGrade.Location = new System.Drawing.Point(76, 292);
+            this.lblGrade.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrade.Location = new System.Drawing.Point(96, 365);
             this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(39, 13);
+            this.lblGrade.Size = new System.Drawing.Size(49, 14);
             this.lblGrade.TabIndex = 20;
             this.lblGrade.Text = "Grade:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 211);
+            this.label3.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 284);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.Size = new System.Drawing.Size(119, 14);
             this.label3.TabIndex = 21;
             this.label3.Text = "Outer Dimension:";
             // 
             // lblHeat
             // 
             this.lblHeat.AutoSize = true;
-            this.lblHeat.Location = new System.Drawing.Point(80, 319);
+            this.lblHeat.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeat.Location = new System.Drawing.Point(101, 391);
             this.lblHeat.Name = "lblHeat";
-            this.lblHeat.Size = new System.Drawing.Size(33, 13);
+            this.lblHeat.Size = new System.Drawing.Size(42, 14);
             this.lblHeat.TabIndex = 22;
             this.lblHeat.Text = "Heat:";
             // 
             // lblANSI
             // 
             this.lblANSI.AutoSize = true;
-            this.lblANSI.Location = new System.Drawing.Point(45, 345);
+            this.lblANSI.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblANSI.Location = new System.Drawing.Point(66, 418);
             this.lblANSI.Name = "lblANSI";
-            this.lblANSI.Size = new System.Drawing.Size(70, 13);
+            this.lblANSI.Size = new System.Drawing.Size(77, 14);
             this.lblANSI.TabIndex = 23;
             this.lblANSI.Text = "ANSI/ASME:";
             // 
             // lblPurchasePrder
             // 
             this.lblPurchasePrder.AutoSize = true;
-            this.lblPurchasePrder.Location = new System.Drawing.Point(31, 372);
+            this.lblPurchasePrder.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchasePrder.Location = new System.Drawing.Point(32, 445);
             this.lblPurchasePrder.Name = "lblPurchasePrder";
-            this.lblPurchasePrder.Size = new System.Drawing.Size(84, 13);
+            this.lblPurchasePrder.Size = new System.Drawing.Size(112, 14);
             this.lblPurchasePrder.TabIndex = 24;
             this.lblPurchasePrder.Text = "Purchase Order:";
             // 
             // lblStandard
             // 
             this.lblStandard.AutoSize = true;
-            this.lblStandard.Location = new System.Drawing.Point(62, 398);
+            this.lblStandard.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard.Location = new System.Drawing.Point(73, 472);
             this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(53, 13);
+            this.lblStandard.Size = new System.Drawing.Size(70, 14);
             this.lblStandard.TabIndex = 25;
             this.lblStandard.Text = "Standard:";
             // 
@@ -356,9 +375,9 @@
             this.cmbJobName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbJobName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbJobName.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbJobName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbJobName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbJobName.FormattingEnabled = true;
-            this.cmbJobName.Location = new System.Drawing.Point(121, 62);
+            this.cmbJobName.Location = new System.Drawing.Point(151, 135);
             this.cmbJobName.Name = "cmbJobName";
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
             this.cmbJobName.TabIndex = 1;
@@ -368,14 +387,16 @@
             // lblJobName
             // 
             this.lblJobName.AutoSize = true;
-            this.lblJobName.Location = new System.Drawing.Point(63, 65);
+            this.lblJobName.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobName.Location = new System.Drawing.Point(74, 139);
             this.lblJobName.Name = "lblJobName";
-            this.lblJobName.Size = new System.Drawing.Size(58, 13);
+            this.lblJobName.Size = new System.Drawing.Size(70, 14);
             this.lblJobName.TabIndex = 27;
             this.lblJobName.Text = "Job Name:";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.RoyalBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -390,6 +411,7 @@
             this.newToolStripMenuItem,
             this.addFieldToolStripMenuItem,
             this.importFromExcelToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -495,276 +517,159 @@
             this.importFromExcelToolStripMenuItem.Text = "&Import From Excel";
             this.importFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importFromExcelToolStripMenuItem_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 640);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1557, 376);
-            this.dataGridView1.TabIndex = 102;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(490, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Job Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(495, 380);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Standard:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(464, 354);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Purchase Order:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(479, 328);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "ANSI/ASME:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(515, 302);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Heat:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(460, 198);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 13);
-            this.label7.TabIndex = 50;
-            this.label7.Text = "Outer Dimension:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(509, 276);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 13);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Grade:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(502, 250);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 13);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "Coating:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(465, 224);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 13);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Wall Thickness:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(456, 177);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 13);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Weld Seam Type:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(445, 150);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 13);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Product Description:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(479, 121);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 13);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Mill Location:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(475, 96);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 13);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "Manufacturer:";
-            // 
             // txtLastJobInput
             // 
-            this.txtLastJobInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastJobInput.BackColor = System.Drawing.Color.White;
             this.txtLastJobInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastJobInput.Location = new System.Drawing.Point(554, 70);
+            this.txtLastJobInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastJobInput.Location = new System.Drawing.Point(585, 139);
             this.txtLastJobInput.Name = "txtLastJobInput";
             this.txtLastJobInput.ReadOnly = true;
-            this.txtLastJobInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastJobInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastJobInput.TabIndex = 57;
             this.txtLastJobInput.TabStop = false;
             // 
             // txtLastManufacturerInput
             // 
-            this.txtLastManufacturerInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastManufacturerInput.BackColor = System.Drawing.Color.White;
             this.txtLastManufacturerInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastManufacturerInput.Location = new System.Drawing.Point(554, 96);
+            this.txtLastManufacturerInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastManufacturerInput.Location = new System.Drawing.Point(585, 176);
             this.txtLastManufacturerInput.Name = "txtLastManufacturerInput";
             this.txtLastManufacturerInput.ReadOnly = true;
-            this.txtLastManufacturerInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastManufacturerInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastManufacturerInput.TabIndex = 58;
             this.txtLastManufacturerInput.TabStop = false;
             // 
             // txtLastMillLocationInput
             // 
-            this.txtLastMillLocationInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastMillLocationInput.BackColor = System.Drawing.Color.White;
             this.txtLastMillLocationInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastMillLocationInput.Location = new System.Drawing.Point(554, 122);
+            this.txtLastMillLocationInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastMillLocationInput.Location = new System.Drawing.Point(585, 204);
             this.txtLastMillLocationInput.Name = "txtLastMillLocationInput";
             this.txtLastMillLocationInput.ReadOnly = true;
-            this.txtLastMillLocationInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastMillLocationInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastMillLocationInput.TabIndex = 59;
             this.txtLastMillLocationInput.TabStop = false;
             // 
             // txtLastProductDescriptionInput
             // 
-            this.txtLastProductDescriptionInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastProductDescriptionInput.BackColor = System.Drawing.Color.White;
             this.txtLastProductDescriptionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastProductDescriptionInput.Location = new System.Drawing.Point(554, 147);
+            this.txtLastProductDescriptionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastProductDescriptionInput.Location = new System.Drawing.Point(585, 231);
             this.txtLastProductDescriptionInput.Name = "txtLastProductDescriptionInput";
             this.txtLastProductDescriptionInput.ReadOnly = true;
-            this.txtLastProductDescriptionInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastProductDescriptionInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastProductDescriptionInput.TabIndex = 60;
             this.txtLastProductDescriptionInput.TabStop = false;
             // 
             // txtLastWeldSeamTypeInput
             // 
-            this.txtLastWeldSeamTypeInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastWeldSeamTypeInput.BackColor = System.Drawing.Color.White;
             this.txtLastWeldSeamTypeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastWeldSeamTypeInput.Location = new System.Drawing.Point(554, 173);
+            this.txtLastWeldSeamTypeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastWeldSeamTypeInput.Location = new System.Drawing.Point(585, 258);
             this.txtLastWeldSeamTypeInput.Name = "txtLastWeldSeamTypeInput";
             this.txtLastWeldSeamTypeInput.ReadOnly = true;
-            this.txtLastWeldSeamTypeInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastWeldSeamTypeInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastWeldSeamTypeInput.TabIndex = 61;
             this.txtLastWeldSeamTypeInput.TabStop = false;
             // 
             // txtLastOuterDimensionInput
             // 
-            this.txtLastOuterDimensionInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastOuterDimensionInput.BackColor = System.Drawing.Color.White;
             this.txtLastOuterDimensionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastOuterDimensionInput.Location = new System.Drawing.Point(554, 199);
+            this.txtLastOuterDimensionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastOuterDimensionInput.Location = new System.Drawing.Point(585, 284);
             this.txtLastOuterDimensionInput.Name = "txtLastOuterDimensionInput";
             this.txtLastOuterDimensionInput.ReadOnly = true;
-            this.txtLastOuterDimensionInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastOuterDimensionInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastOuterDimensionInput.TabIndex = 62;
             this.txtLastOuterDimensionInput.TabStop = false;
             // 
             // txtLastWallThicknessInput
             // 
-            this.txtLastWallThicknessInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastWallThicknessInput.BackColor = System.Drawing.Color.White;
             this.txtLastWallThicknessInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastWallThicknessInput.Location = new System.Drawing.Point(554, 224);
+            this.txtLastWallThicknessInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastWallThicknessInput.Location = new System.Drawing.Point(585, 312);
             this.txtLastWallThicknessInput.Name = "txtLastWallThicknessInput";
             this.txtLastWallThicknessInput.ReadOnly = true;
-            this.txtLastWallThicknessInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastWallThicknessInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastWallThicknessInput.TabIndex = 63;
             this.txtLastWallThicknessInput.TabStop = false;
             // 
             // txtLastCoatingIput
             // 
-            this.txtLastCoatingIput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastCoatingIput.BackColor = System.Drawing.Color.White;
             this.txtLastCoatingIput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastCoatingIput.Location = new System.Drawing.Point(554, 251);
+            this.txtLastCoatingIput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastCoatingIput.Location = new System.Drawing.Point(585, 339);
             this.txtLastCoatingIput.Name = "txtLastCoatingIput";
             this.txtLastCoatingIput.ReadOnly = true;
-            this.txtLastCoatingIput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastCoatingIput.Size = new System.Drawing.Size(100, 14);
             this.txtLastCoatingIput.TabIndex = 64;
             this.txtLastCoatingIput.TabStop = false;
             // 
             // txtLastGradeInput
             // 
-            this.txtLastGradeInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastGradeInput.BackColor = System.Drawing.Color.White;
             this.txtLastGradeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastGradeInput.Location = new System.Drawing.Point(554, 277);
+            this.txtLastGradeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastGradeInput.Location = new System.Drawing.Point(584, 366);
             this.txtLastGradeInput.Name = "txtLastGradeInput";
             this.txtLastGradeInput.ReadOnly = true;
-            this.txtLastGradeInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastGradeInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastGradeInput.TabIndex = 65;
             this.txtLastGradeInput.TabStop = false;
             // 
             // txtLastHeatinput
             // 
-            this.txtLastHeatinput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastHeatinput.BackColor = System.Drawing.Color.White;
             this.txtLastHeatinput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastHeatinput.Location = new System.Drawing.Point(554, 303);
+            this.txtLastHeatinput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastHeatinput.Location = new System.Drawing.Point(584, 392);
             this.txtLastHeatinput.Name = "txtLastHeatinput";
             this.txtLastHeatinput.ReadOnly = true;
-            this.txtLastHeatinput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastHeatinput.Size = new System.Drawing.Size(100, 14);
             this.txtLastHeatinput.TabIndex = 66;
             this.txtLastHeatinput.TabStop = false;
             // 
             // txtLastPurchaseOrderInput
             // 
-            this.txtLastPurchaseOrderInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastPurchaseOrderInput.BackColor = System.Drawing.Color.White;
             this.txtLastPurchaseOrderInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastPurchaseOrderInput.Location = new System.Drawing.Point(554, 355);
+            this.txtLastPurchaseOrderInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastPurchaseOrderInput.Location = new System.Drawing.Point(584, 445);
             this.txtLastPurchaseOrderInput.Name = "txtLastPurchaseOrderInput";
             this.txtLastPurchaseOrderInput.ReadOnly = true;
-            this.txtLastPurchaseOrderInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastPurchaseOrderInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastPurchaseOrderInput.TabIndex = 67;
             this.txtLastPurchaseOrderInput.TabStop = false;
             // 
             // txtLastAnsiAsmeInput
             // 
-            this.txtLastAnsiAsmeInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastAnsiAsmeInput.BackColor = System.Drawing.Color.White;
             this.txtLastAnsiAsmeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastAnsiAsmeInput.Location = new System.Drawing.Point(554, 329);
+            this.txtLastAnsiAsmeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastAnsiAsmeInput.Location = new System.Drawing.Point(584, 419);
             this.txtLastAnsiAsmeInput.Name = "txtLastAnsiAsmeInput";
             this.txtLastAnsiAsmeInput.ReadOnly = true;
-            this.txtLastAnsiAsmeInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastAnsiAsmeInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastAnsiAsmeInput.TabIndex = 68;
             this.txtLastAnsiAsmeInput.TabStop = false;
             // 
             // txtLastStandardInput
             // 
-            this.txtLastStandardInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastStandardInput.BackColor = System.Drawing.Color.White;
             this.txtLastStandardInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastStandardInput.Location = new System.Drawing.Point(554, 381);
+            this.txtLastStandardInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastStandardInput.Location = new System.Drawing.Point(584, 473);
             this.txtLastStandardInput.Name = "txtLastStandardInput";
             this.txtLastStandardInput.ReadOnly = true;
-            this.txtLastStandardInput.Size = new System.Drawing.Size(100, 13);
+            this.txtLastStandardInput.Size = new System.Drawing.Size(100, 14);
             this.txtLastStandardInput.TabIndex = 69;
             this.txtLastStandardInput.TabStop = false;
             // 
@@ -772,7 +677,7 @@
             // 
             this.btnRefreshJobName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshJobName.BackgroundImage")));
             this.btnRefreshJobName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshJobName.Location = new System.Drawing.Point(248, 62);
+            this.btnRefreshJobName.Location = new System.Drawing.Point(278, 135);
             this.btnRefreshJobName.Name = "btnRefreshJobName";
             this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
             this.btnRefreshJobName.TabIndex = 2;
@@ -780,48 +685,24 @@
             this.btnRefreshJobName.UseVisualStyleBackColor = true;
             this.btnRefreshJobName.Click += new System.EventHandler(this.btnRefreshJobName_Click);
             // 
-            // dgMasterGridView
-            // 
-            this.dgMasterGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgMasterGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgMasterGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgMasterGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMasterGridView.Location = new System.Drawing.Point(961, 60);
-            this.dgMasterGridView.Name = "dgMasterGridView";
-            this.dgMasterGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMasterGridView.Size = new System.Drawing.Size(611, 526);
-            this.dgMasterGridView.TabIndex = 101;
-            // 
             // lblMasterDataGrid
             // 
             this.lblMasterDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMasterDataGrid.AutoSize = true;
-            this.lblMasterDataGrid.Location = new System.Drawing.Point(1245, 44);
+            this.lblMasterDataGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblMasterDataGrid.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMasterDataGrid.Location = new System.Drawing.Point(1125, 37);
             this.lblMasterDataGrid.Name = "lblMasterDataGrid";
-            this.lblMasterDataGrid.Size = new System.Drawing.Size(69, 13);
+            this.lblMasterDataGrid.Size = new System.Drawing.Size(142, 22);
             this.lblMasterDataGrid.TabIndex = 72;
             this.lblMasterDataGrid.Text = "Master Table";
-            // 
-            // btnSearchJob
-            // 
-            this.btnSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchJob.Location = new System.Drawing.Point(1379, 601);
-            this.btnSearchJob.Name = "btnSearchJob";
-            this.btnSearchJob.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchJob.TabIndex = 19;
-            this.btnSearchJob.Text = "Search Job";
-            this.toolTips.SetToolTip(this.btnSearchJob, "Fill out the text box to the left and click here to search any item in the curren" +
-        "t job.\r\n\r\nEmpty the text box and click here again to return the table to it\'s or" +
-        "iginal state.");
-            this.btnSearchJob.UseVisualStyleBackColor = true;
-            this.btnSearchJob.Click += new System.EventHandler(this.btnSearchJob_Click);
+            this.lblMasterDataGrid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSearchJob
             // 
             this.txtSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchJob.Location = new System.Drawing.Point(1130, 604);
             this.txtSearchJob.Name = "txtSearchJob";
             this.txtSearchJob.Size = new System.Drawing.Size(243, 20);
@@ -832,71 +713,20 @@
             this.lblDgJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDgJobTitle.AutoSize = true;
             this.lblDgJobTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDgJobTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDgJobTitle.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDgJobTitle.Location = new System.Drawing.Point(12, 603);
             this.lblDgJobTitle.Name = "lblDgJobTitle";
-            this.lblDgJobTitle.Size = new System.Drawing.Size(111, 24);
+            this.lblDgJobTitle.Size = new System.Drawing.Size(109, 22);
             this.lblDgJobTitle.TabIndex = 75;
             this.lblDgJobTitle.Text = "Job Name:";
-            // 
-            // btnSearchMaster
-            // 
-            this.btnSearchMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchMaster.Location = new System.Drawing.Point(1460, 601);
-            this.btnSearchMaster.Name = "btnSearchMaster";
-            this.btnSearchMaster.Size = new System.Drawing.Size(112, 23);
-            this.btnSearchMaster.TabIndex = 20;
-            this.btnSearchMaster.Text = "Search Master";
-            this.toolTips.SetToolTip(this.btnSearchMaster, "Fill out the text box to the left and click here to search any item in the master" +
-        " lst.\r\n\r\nEmpty the text box and click here again to return the table to it\'s ori" +
-        "ginal state.");
-            this.btnSearchMaster.UseVisualStyleBackColor = true;
-            this.btnSearchMaster.Click += new System.EventHandler(this.btnSearchMaster_Click);
-            // 
-            // btnRefreshInput
-            // 
-            this.btnRefreshInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefreshInput.Location = new System.Drawing.Point(246, 398);
-            this.btnRefreshInput.Name = "btnRefreshInput";
-            this.btnRefreshInput.Size = new System.Drawing.Size(123, 20);
-            this.btnRefreshInput.TabIndex = 100;
-            this.btnRefreshInput.Text = "Refresh Selections";
-            this.toolTips.SetToolTip(this.btnRefreshInput, "Refreshes all selections. Use after a new selection has been created.");
-            this.btnRefreshInput.UseVisualStyleBackColor = true;
-            this.btnRefreshInput.Click += new System.EventHandler(this.btnRefreshInput_Click);
-            // 
-            // btnExportToExcel
-            // 
-            this.btnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportToExcel.Location = new System.Drawing.Point(1445, 1022);
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(103, 23);
-            this.btnExportToExcel.TabIndex = 500;
-            this.btnExportToExcel.Text = "Export To Excel";
-            this.toolTips.SetToolTip(this.btnExportToExcel, "Click here to export the CURRENT JOB to an Excel file.");
-            this.btnExportToExcel.UseVisualStyleBackColor = true;
-            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
-            // 
-            // btnAddToCurrentJob
-            // 
-            this.btnAddToCurrentJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddToCurrentJob.Location = new System.Drawing.Point(792, 564);
-            this.btnAddToCurrentJob.Name = "btnAddToCurrentJob";
-            this.btnAddToCurrentJob.Size = new System.Drawing.Size(163, 23);
-            this.btnAddToCurrentJob.TabIndex = 17;
-            this.btnAddToCurrentJob.Text = "Add Selection To Current Job";
-            this.toolTips.SetToolTip(this.btnAddToCurrentJob, "Highlight a job from the MASTER list and click here to import that item into the " +
-        "CURRENT JOB below.");
-            this.btnAddToCurrentJob.UseVisualStyleBackColor = true;
-            this.btnAddToCurrentJob.Click += new System.EventHandler(this.btnAddToCurrentJob_Click);
             // 
             // cmbProductDescription
             // 
             this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbProductDescription.FormattingEnabled = true;
-            this.cmbProductDescription.Location = new System.Drawing.Point(121, 154);
+            this.cmbProductDescription.Location = new System.Drawing.Point(151, 227);
             this.cmbProductDescription.Name = "cmbProductDescription";
             this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
             this.cmbProductDescription.TabIndex = 5;
@@ -907,9 +737,9 @@
             // 
             this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbWeldSeamType.FormattingEnabled = true;
-            this.cmbWeldSeamType.Location = new System.Drawing.Point(121, 181);
+            this.cmbWeldSeamType.Location = new System.Drawing.Point(151, 254);
             this.cmbWeldSeamType.Name = "cmbWeldSeamType";
             this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
             this.cmbWeldSeamType.TabIndex = 6;
@@ -920,9 +750,9 @@
             // 
             this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbOuterDimension.FormattingEnabled = true;
-            this.cmbOuterDimension.Location = new System.Drawing.Point(119, 208);
+            this.cmbOuterDimension.Location = new System.Drawing.Point(149, 281);
             this.cmbOuterDimension.Name = "cmbOuterDimension";
             this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
             this.cmbOuterDimension.TabIndex = 7;
@@ -931,35 +761,28 @@
             // 
             // txtLastNotesInput
             // 
-            this.txtLastNotesInput.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtLastNotesInput.BackColor = System.Drawing.Color.White;
             this.txtLastNotesInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastNotesInput.Location = new System.Drawing.Point(551, 410);
+            this.txtLastNotesInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastNotesInput.Location = new System.Drawing.Point(582, 500);
             this.txtLastNotesInput.Multiline = true;
             this.txtLastNotesInput.Name = "txtLastNotesInput";
-            this.txtLastNotesInput.Size = new System.Drawing.Size(262, 96);
+            this.txtLastNotesInput.Size = new System.Drawing.Size(190, 96);
             this.txtLastNotesInput.TabIndex = 502;
-            // 
-            // lblNotes
-            // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(512, 410);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(33, 13);
-            this.lblNotes.TabIndex = 503;
-            this.lblNotes.Text = "Note:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(80, 424);
+            this.label15.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(101, 500);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 13);
+            this.label15.Size = new System.Drawing.Size(42, 14);
             this.label15.TabIndex = 505;
             this.label15.Text = "Note:";
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(119, 424);
+            this.txtNotes.Location = new System.Drawing.Point(149, 497);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(301, 20);
             this.txtNotes.TabIndex = 15;
@@ -975,28 +798,567 @@
             this.toolTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTips.ToolTipTitle = "Tool Tip";
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSubmit.Location = new System.Drawing.Point(0, 472);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(0, 0);
+            this.btnSubmit.TabIndex = 15;
+            this.toolTips.SetToolTip(this.btnSubmit, "Submit the information to the database.");
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // dgMasterGridBun
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgMasterGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgMasterGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgMasterGridBun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgMasterGridBun.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgMasterGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgMasterGridBun.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgMasterGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMasterGridBun.DoubleBuffered = true;
+            this.dgMasterGridBun.EnableHeadersVisualStyles = false;
+            this.dgMasterGridBun.HeaderBgColor = System.Drawing.Color.RoyalBlue;
+            this.dgMasterGridBun.HeaderForeColor = System.Drawing.Color.White;
+            this.dgMasterGridBun.Location = new System.Drawing.Point(778, 65);
+            this.dgMasterGridBun.Name = "dgMasterGridBun";
+            this.dgMasterGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgMasterGridBun.RowHeadersVisible = false;
+            this.dgMasterGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMasterGridBun.Size = new System.Drawing.Size(794, 519);
+            this.dgMasterGridBun.TabIndex = 506;
+            // 
+            // mTR_DatabaseDataSet
+            // 
+            this.mTR_DatabaseDataSet.DataSetName = "MTR_DatabaseDataSet";
+            this.mTR_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // masterTableBindingSource
+            // 
+            this.masterTableBindingSource.DataMember = "MasterTable";
+            this.masterTableBindingSource.DataSource = this.mTR_DatabaseDataSet;
+            // 
+            // masterTableTableAdapter
+            // 
+            this.masterTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgJobGridBun
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgJobGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgJobGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgJobGridBun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgJobGridBun.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgJobGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgJobGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgJobGridBun.DoubleBuffered = true;
+            this.dgJobGridBun.EnableHeadersVisualStyles = false;
+            this.dgJobGridBun.HeaderBgColor = System.Drawing.Color.RoyalBlue;
+            this.dgJobGridBun.HeaderForeColor = System.Drawing.Color.White;
+            this.dgJobGridBun.Location = new System.Drawing.Point(12, 630);
+            this.dgJobGridBun.Name = "dgJobGridBun";
+            this.dgJobGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgJobGridBun.RowHeadersVisible = false;
+            this.dgJobGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgJobGridBun.Size = new System.Drawing.Size(1560, 381);
+            this.dgJobGridBun.TabIndex = 507;
+            // 
+            // btnSubmitBun
+            // 
+            this.btnSubmitBun.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSubmitBun.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSubmitBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSubmitBun.BorderRadius = 0;
+            this.btnSubmitBun.ButtonText = "Submit";
+            this.btnSubmitBun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmitBun.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSubmitBun.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSubmitBun.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSubmitBun.Iconimage")));
+            this.btnSubmitBun.Iconimage_right = null;
+            this.btnSubmitBun.Iconimage_right_Selected = null;
+            this.btnSubmitBun.Iconimage_Selected = null;
+            this.btnSubmitBun.IconMarginLeft = 0;
+            this.btnSubmitBun.IconMarginRight = 0;
+            this.btnSubmitBun.IconRightVisible = true;
+            this.btnSubmitBun.IconRightZoom = 0D;
+            this.btnSubmitBun.IconVisible = true;
+            this.btnSubmitBun.IconZoom = 90D;
+            this.btnSubmitBun.IsTab = false;
+            this.btnSubmitBun.Location = new System.Drawing.Point(354, 523);
+            this.btnSubmitBun.Name = "btnSubmitBun";
+            this.btnSubmitBun.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.btnSubmitBun.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnSubmitBun.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSubmitBun.selected = false;
+            this.btnSubmitBun.Size = new System.Drawing.Size(96, 33);
+            this.btnSubmitBun.TabIndex = 508;
+            this.btnSubmitBun.Text = "Submit";
+            this.btnSubmitBun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubmitBun.Textcolor = System.Drawing.Color.White;
+            this.btnSubmitBun.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitBun.Click += new System.EventHandler(this.btnSubmitBun_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(1562, 1);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 509;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Refresh Selections";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 100D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(287, 465);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(127, 25);
+            this.bunifuFlatButton1.TabIndex = 510;
+            this.bunifuFlatButton1.Text = "Refresh Selections";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(1539, 1);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(19, 19);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 511;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(536, 500);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 14);
+            this.label1.TabIndex = 525;
+            this.label1.Text = "Note:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(509, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 14);
+            this.label2.TabIndex = 524;
+            this.label2.Text = "Job Name:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(508, 472);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 14);
+            this.label4.TabIndex = 523;
+            this.label4.Text = "Standard:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(467, 445);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 14);
+            this.label5.TabIndex = 522;
+            this.label5.Text = "Purchase Order:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(501, 418);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 14);
+            this.label6.TabIndex = 521;
+            this.label6.Text = "ANSI/ASME:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(536, 392);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 14);
+            this.label7.TabIndex = 520;
+            this.label7.Text = "Heat:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(463, 284);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 14);
+            this.label8.TabIndex = 519;
+            this.label8.Text = "Outer Dimension:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(531, 365);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 14);
+            this.label9.TabIndex = 518;
+            this.label9.Text = "Grade:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(517, 338);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 14);
+            this.label10.TabIndex = 517;
+            this.label10.Text = "Coating:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(467, 311);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(112, 14);
+            this.label11.TabIndex = 516;
+            this.label11.Text = "Wall Thickness:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(470, 257);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 14);
+            this.label12.TabIndex = 515;
+            this.label12.Text = "Weld Seam Type:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(435, 230);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(147, 14);
+            this.label13.TabIndex = 514;
+            this.label13.Text = "Product Description:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(477, 203);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(105, 14);
+            this.label14.TabIndex = 513;
+            this.label14.Text = "Mill Location:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(484, 176);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 14);
+            this.label16.TabIndex = 512;
+            this.label16.Text = "Manufacturer:";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label17.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(100, 92);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(131, 22);
+            this.label17.TabIndex = 526;
+            this.label17.Text = "Current Job";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label18.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(478, 92);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(120, 22);
+            this.label18.TabIndex = 527;
+            this.label18.Text = "Last Input";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(3, 27);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(131, 56);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 528;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            // 
+            // btnAddSelectionBun
+            // 
+            this.btnAddSelectionBun.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.btnAddSelectionBun.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddSelectionBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddSelectionBun.BorderRadius = 0;
+            this.btnAddSelectionBun.ButtonText = "Add Selection From Master to Current";
+            this.btnAddSelectionBun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSelectionBun.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAddSelectionBun.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAddSelectionBun.Iconimage = null;
+            this.btnAddSelectionBun.Iconimage_right = null;
+            this.btnAddSelectionBun.Iconimage_right_Selected = null;
+            this.btnAddSelectionBun.Iconimage_Selected = null;
+            this.btnAddSelectionBun.IconMarginLeft = 0;
+            this.btnAddSelectionBun.IconMarginRight = 0;
+            this.btnAddSelectionBun.IconRightVisible = true;
+            this.btnAddSelectionBun.IconRightZoom = 0D;
+            this.btnAddSelectionBun.IconVisible = true;
+            this.btnAddSelectionBun.IconZoom = 100D;
+            this.btnAddSelectionBun.IsTab = false;
+            this.btnAddSelectionBun.Location = new System.Drawing.Point(778, 590);
+            this.btnAddSelectionBun.Name = "btnAddSelectionBun";
+            this.btnAddSelectionBun.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.btnAddSelectionBun.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnAddSelectionBun.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAddSelectionBun.selected = false;
+            this.btnAddSelectionBun.Size = new System.Drawing.Size(238, 25);
+            this.btnAddSelectionBun.TabIndex = 529;
+            this.btnAddSelectionBun.Text = "Add Selection From Master to Current";
+            this.btnAddSelectionBun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddSelectionBun.Textcolor = System.Drawing.Color.White;
+            this.btnAddSelectionBun.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSelectionBun.Click += new System.EventHandler(this.btnAddSelectionBun_Click);
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "Search Job";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = null;
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 100D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(1379, 599);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(85, 25);
+            this.bunifuFlatButton2.TabIndex = 530;
+            this.bunifuFlatButton2.Text = "Search Job";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "Search Master";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = null;
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = true;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = true;
+            this.bunifuFlatButton3.IconZoom = 100D;
+            this.bunifuFlatButton3.IsTab = false;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(1470, 599);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.selected = false;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(102, 25);
+            this.bunifuFlatButton3.TabIndex = 531;
+            this.bunifuFlatButton3.Text = "Search Master";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
+            // 
+            // bunifuFlatButton5
+            // 
+            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton5.BorderRadius = 0;
+            this.bunifuFlatButton5.ButtonText = "Export To Excel";
+            this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton5.Iconimage = null;
+            this.bunifuFlatButton5.Iconimage_right = null;
+            this.bunifuFlatButton5.Iconimage_right_Selected = null;
+            this.bunifuFlatButton5.Iconimage_Selected = null;
+            this.bunifuFlatButton5.IconMarginLeft = 0;
+            this.bunifuFlatButton5.IconMarginRight = 0;
+            this.bunifuFlatButton5.IconRightVisible = true;
+            this.bunifuFlatButton5.IconRightZoom = 0D;
+            this.bunifuFlatButton5.IconVisible = true;
+            this.bunifuFlatButton5.IconZoom = 100D;
+            this.bunifuFlatButton5.IsTab = false;
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(1460, 1017);
+            this.bunifuFlatButton5.Name = "bunifuFlatButton5";
+            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton5.selected = false;
+            this.bunifuFlatButton5.Size = new System.Drawing.Size(112, 25);
+            this.bunifuFlatButton5.TabIndex = 533;
+            this.bunifuFlatButton5.Text = "Export To Excel";
+            this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton5.Click += new System.EventHandler(this.bunifuFlatButton5_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1584, 1054);
+            this.Controls.Add(this.bunifuFlatButton5);
+            this.Controls.Add(this.bunifuFlatButton3);
+            this.Controls.Add(this.bunifuFlatButton2);
+            this.Controls.Add(this.btnAddSelectionBun);
+            this.Controls.Add(this.bunifuImageButton3);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.bunifuImageButton2);
+            this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.btnSubmitBun);
+            this.Controls.Add(this.dgJobGridBun);
+            this.Controls.Add(this.dgMasterGridBun);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.txtLastNotesInput);
             this.Controls.Add(this.cmbOuterDimension);
             this.Controls.Add(this.cmbWeldSeamType);
             this.Controls.Add(this.cmbProductDescription);
-            this.Controls.Add(this.btnAddToCurrentJob);
-            this.Controls.Add(this.btnExportToExcel);
-            this.Controls.Add(this.btnRefreshInput);
-            this.Controls.Add(this.btnSearchMaster);
             this.Controls.Add(this.lblDgJobTitle);
             this.Controls.Add(this.txtSearchJob);
-            this.Controls.Add(this.btnSearchJob);
             this.Controls.Add(this.lblMasterDataGrid);
-            this.Controls.Add(this.dgMasterGridView);
             this.Controls.Add(this.btnRefreshJobName);
             this.Controls.Add(this.txtLastStandardInput);
             this.Controls.Add(this.txtLastAnsiAsmeInput);
@@ -1011,20 +1373,6 @@
             this.Controls.Add(this.txtLastMillLocationInput);
             this.Controls.Add(this.txtLastManufacturerInput);
             this.Controls.Add(this.txtLastJobInput);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblJobName);
             this.Controls.Add(this.cmbJobName);
             this.Controls.Add(this.lblStandard);
@@ -1050,23 +1398,28 @@
             this.Controls.Add(this.cmbManufacturer);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BomApplication";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mTR_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbManufacturer;
         private System.Windows.Forms.ComboBox cmbMillLocation;
         private System.Windows.Forms.ComboBox cmbWallThickness;
@@ -1093,20 +1446,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jobToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtLastJobInput;
         private System.Windows.Forms.TextBox txtLastManufacturerInput;
         private System.Windows.Forms.TextBox txtLastMillLocationInput;
@@ -1132,24 +1471,50 @@
         private System.Windows.Forms.ToolStripMenuItem gradeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aNSIASMEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgMasterGridView;
         private System.Windows.Forms.Label lblMasterDataGrid;
-        private System.Windows.Forms.Button btnSearchJob;
         private System.Windows.Forms.TextBox txtSearchJob;
         private System.Windows.Forms.Label lblDgJobTitle;
-        private System.Windows.Forms.Button btnSearchMaster;
-        private System.Windows.Forms.Button btnRefreshInput;
-        private System.Windows.Forms.Button btnExportToExcel;
-        private System.Windows.Forms.Button btnAddToCurrentJob;
         private System.Windows.Forms.ComboBox cmbProductDescription;
         private System.Windows.Forms.ComboBox cmbWeldSeamType;
         private System.Windows.Forms.ComboBox cmbOuterDimension;
         private System.Windows.Forms.TextBox txtLastNotesInput;
-        private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.ToolStripMenuItem importFromExcelToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTips;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgMasterGridBun;
+        private MTR_App.MTR_DatabaseDataSet mTR_DatabaseDataSet;
+        private System.Windows.Forms.BindingSource masterTableBindingSource;
+        private MTR_App.MTR_DatabaseDataSetTableAdapters.MasterTableTableAdapter masterTableTableAdapter;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgJobGridBun;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSubmitBun;
+        private System.Windows.Forms.Button btnSubmit;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAddSelectionBun;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
     }
 }
 

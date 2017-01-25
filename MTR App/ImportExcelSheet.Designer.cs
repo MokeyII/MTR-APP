@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ImportExcel = new System.Windows.Forms.Button();
+            this.btnImportExcel = new System.Windows.Forms.Button();
             this.btnFolderBrowserDiag = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.txtSheet = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ImportExcel
+            // btnImportExcel
             // 
-            this.ImportExcel.Location = new System.Drawing.Point(195, 102);
-            this.ImportExcel.Name = "ImportExcel";
-            this.ImportExcel.Size = new System.Drawing.Size(75, 23);
-            this.ImportExcel.TabIndex = 0;
-            this.ImportExcel.Text = "Import";
-            this.ImportExcel.UseVisualStyleBackColor = true;
-            this.ImportExcel.Click += new System.EventHandler(this.button1_Click);
+            this.btnImportExcel.Location = new System.Drawing.Point(390, 77);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnImportExcel.TabIndex = 0;
+            this.btnImportExcel.Text = "Import";
+            this.btnImportExcel.UseVisualStyleBackColor = true;
+            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // btnFolderBrowserDiag
             // 
-            this.btnFolderBrowserDiag.Location = new System.Drawing.Point(390, 52);
+            this.btnFolderBrowserDiag.Location = new System.Drawing.Point(390, 48);
             this.btnFolderBrowserDiag.Name = "btnFolderBrowserDiag";
             this.btnFolderBrowserDiag.Size = new System.Drawing.Size(75, 23);
             this.btnFolderBrowserDiag.TabIndex = 2;
@@ -56,45 +57,46 @@
             this.btnFolderBrowserDiag.UseVisualStyleBackColor = true;
             this.btnFolderBrowserDiag.Click += new System.EventHandler(this.btnFolderBrowserDiag_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(13, 209);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // richTextBox1
+            // dataGridView1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 52);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(372, 23);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(215, 260);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(12, 52);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(372, 20);
+            this.txtFilePath.TabIndex = 7;
+            // 
+            // txtSheet
+            // 
+            this.txtSheet.Location = new System.Drawing.Point(12, 78);
+            this.txtSheet.Name = "txtSheet";
+            this.txtSheet.Size = new System.Drawing.Size(372, 20);
+            this.txtSheet.TabIndex = 8;
             // 
             // ImportExcelSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 457);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1363, 608);
+            this.Controls.Add(this.txtSheet);
+            this.Controls.Add(this.txtFilePath);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnFolderBrowserDiag);
-            this.Controls.Add(this.ImportExcel);
+            this.Controls.Add(this.btnImportExcel);
             this.Name = "ImportExcelSheet";
             this.Text = "ImportExcelSheet";
+            this.Load += new System.EventHandler(this.ImportExcelSheet_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,11 +104,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ImportExcel;
+        private System.Windows.Forms.Button btnImportExcel;
         private System.Windows.Forms.Button btnFolderBrowserDiag;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.TextBox txtSheet;
     }
 }

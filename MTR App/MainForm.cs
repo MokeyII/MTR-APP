@@ -17,6 +17,14 @@ namespace MTR_APP
             InitializeComponent();
         }
 
+
+        // Testing|
+        private void zProgressbar()
+        {
+
+        }
+
+
         // Populate All Combo Boxes
 
         #region ComboBoxPopulate
@@ -360,18 +368,18 @@ namespace MTR_APP
                 int cellColumnIndex = 1;
 
                 //Loop through each row and read value from each column.
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                for (int i = 0; i < dgJobGridBun.Rows.Count - 1; i++)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    for (int j = 0; j < dgJobGridBun.Columns.Count; j++)
                     {
                         // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
                         if (cellRowIndex == 0)
                         {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Columns[j].HeaderText;
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Columns[j].HeaderText;
                         }
                         else
                         {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Rows[i].Cells[j].Value.ToString();
                         }
                         cellColumnIndex++;
                     }
@@ -470,11 +478,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dataGridView1.DataSource = myDT;
+                    dgJobGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
             }
             //Catch Exception
@@ -522,11 +530,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridView.DataSource = myDT;
+                    dgMasterGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgMasterGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
             }
             //Catch Exception
@@ -632,11 +640,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dataGridView1.DataSource = myDT;
+                    dgJobGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
             }
             //Catch Exception
@@ -720,11 +728,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridView.DataSource = myDT;
+                    dgMasterGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
             }
             //Catch Exception
@@ -753,21 +761,21 @@ namespace MTR_APP
         //Insert To Job From Master Table
         private void btnAddToCurrentJob_Click(object sender, EventArgs e)
         {
-            string ID = dgMasterGridView.SelectedRows[0].Cells[0].Value + string.Empty;
-            string JN = dgMasterGridView.SelectedRows[0].Cells[1].Value + string.Empty;
-            string Mnuf = dgMasterGridView.SelectedRows[0].Cells[2].Value + string.Empty;
-            string ML = dgMasterGridView.SelectedRows[0].Cells[3].Value + string.Empty;
-            string PD = dgMasterGridView.SelectedRows[0].Cells[4].Value + string.Empty;
-            string WST = dgMasterGridView.SelectedRows[0].Cells[5].Value + string.Empty;
-            string OD = dgMasterGridView.SelectedRows[0].Cells[6].Value + string.Empty;
-            string WT = dgMasterGridView.SelectedRows[0].Cells[7].Value + string.Empty;
-            string Coat = dgMasterGridView.SelectedRows[0].Cells[8].Value + string.Empty;
-            string Grad = dgMasterGridView.SelectedRows[0].Cells[9].Value + string.Empty;
-            string Heat = dgMasterGridView.SelectedRows[0].Cells[10].Value + string.Empty;
-            string Ansi = dgMasterGridView.SelectedRows[0].Cells[12].Value + string.Empty;
-            string PO = dgMasterGridView.SelectedRows[0].Cells[13].Value + string.Empty;
-            string STD = dgMasterGridView.SelectedRows[0].Cells[14].Value + string.Empty;
-            string Note = dgMasterGridView.SelectedRows[0].Cells[15].Value + string.Empty;
+            string ID = dgMasterGridBun.SelectedRows[0].Cells[0].Value + string.Empty;
+            string JN = dgMasterGridBun.SelectedRows[0].Cells[1].Value + string.Empty;
+            string Mnuf = dgMasterGridBun.SelectedRows[0].Cells[2].Value + string.Empty;
+            string ML = dgMasterGridBun.SelectedRows[0].Cells[3].Value + string.Empty;
+            string PD = dgMasterGridBun.SelectedRows[0].Cells[4].Value + string.Empty;
+            string WST = dgMasterGridBun.SelectedRows[0].Cells[5].Value + string.Empty;
+            string OD = dgMasterGridBun.SelectedRows[0].Cells[6].Value + string.Empty;
+            string WT = dgMasterGridBun.SelectedRows[0].Cells[7].Value + string.Empty;
+            string Coat = dgMasterGridBun.SelectedRows[0].Cells[8].Value + string.Empty;
+            string Grad = dgMasterGridBun.SelectedRows[0].Cells[9].Value + string.Empty;
+            string Heat = dgMasterGridBun.SelectedRows[0].Cells[10].Value + string.Empty;
+            string Ansi = dgMasterGridBun.SelectedRows[0].Cells[12].Value + string.Empty;
+            string PO = dgMasterGridBun.SelectedRows[0].Cells[13].Value + string.Empty;
+            string STD = dgMasterGridBun.SelectedRows[0].Cells[14].Value + string.Empty;
+            string Note = dgMasterGridBun.SelectedRows[0].Cells[15].Value + string.Empty;
 
             var vID = ID;
             var vJN = JN;
@@ -932,11 +940,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dataGridView1.DataSource = myDT;
+                    dgJobGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
                     lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
@@ -982,11 +990,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridView.DataSource = myDT;
+                    dgMasterGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
             }
             //Catch Exception
@@ -1049,11 +1057,11 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dataGridView1.DataSource = myDT;
+                    dgJobGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
                     lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
@@ -1114,13 +1122,12 @@ namespace MTR_APP
                     myDA.FillSchema(myDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridView.DataSource = myDT;
+                    dgMasterGridBun.DataSource = myDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-                   
+
                 }
             }
             //Catch Exception
@@ -1436,6 +1443,671 @@ namespace MTR_APP
         {
             ImportExcelSheet fImportExcelSheet = new ImportExcelSheet();
             fImportExcelSheet.Show();
+        }
+
+        private void btnSubmitBun_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+
+                    cmd.Connection = con;
+
+                    // Connection to DB
+                    cmd.CommandText.Replace("\\s+", " ");
+
+                    //Parameters
+                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
+                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
+                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
+                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
+                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
+                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
+                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
+                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
+                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
+                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
+                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
+                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
+                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                    cmd.CommandText.Replace("\\s+", " ");
+
+                    //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
+                    txtLastJobInput.Text = cmbJobName.Text.ToString();
+                    txtLastManufacturerInput.Text = cmbManufacturer.Text.ToString();
+                    txtLastMillLocationInput.Text = cmbMillLocation.Text.ToString();
+                    txtLastProductDescriptionInput.Text = cmbProductDescription.Text.ToString();
+                    txtLastWeldSeamTypeInput.Text = cmbWeldSeamType.Text.ToString();
+                    txtLastOuterDimensionInput.Text = cmbOuterDimension.Text.ToString();
+                    txtLastWallThicknessInput.Text = cmbWallThickness.Text.ToString();
+                    txtLastCoatingIput.Text = cmbCoating.Text.ToString();
+                    txtLastGradeInput.Text = cmbGrade.Text.ToString();
+                    txtLastHeatinput.Text = txtHeat.Text.ToString();
+                    txtLastAnsiAsmeInput.Text = cmbANSI.Text.ToString();
+                    txtLastPurchaseOrderInput.Text = txtPurchaseOrder.Text.ToString();
+                    txtLastStandardInput.Text = cmbStandard.Text.ToString();
+                    txtLastNotesInput.Text = txtNotes.Text.ToString();
+
+                    //execute
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //catch error
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+
+                    cmd.Connection = con;
+
+                    //Parameters
+                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
+                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
+                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
+                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
+                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
+                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
+                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
+                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
+                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
+                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
+                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
+                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
+                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
+                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+
+                    //execute
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //catch error
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgMasterGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            cmbManufacturer.Text = String.Empty;
+            cmbMillLocation.Text = String.Empty;
+            cmbProductDescription.Text = String.Empty;
+            cmbWeldSeamType.Text = String.Empty;
+            cmbOuterDimension.Text = String.Empty;
+            cmbWallThickness.Text = String.Empty;
+            cmbCoating.Text = String.Empty;
+            cmbGrade.Text = String.Empty;
+            txtHeat.Clear();
+            cmbANSI.Text = String.Empty;
+            txtHeat.Clear();
+            txtPurchaseOrder.Clear();
+            cmbStandard.Text = String.Empty;
+            txtNotes.Clear();
+            cmbManufacturer.Focus();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            cmbManufacturer.Items.Clear();
+            cmbMillLocation.Items.Clear();
+            cmbProductDescription.Items.Clear();
+            cmbWeldSeamType.Items.Clear();
+            cmbOuterDimension.Items.Clear();
+            cmbWallThickness.Items.Clear();
+            cmbCoating.Items.Clear();
+            cmbGrade.Items.Clear();
+            cmbANSI.Items.Clear();
+            cmbStandard.Items.Clear();
+
+            zManufacturerCombo();
+            zMillLocationCombo();
+            zProductDescriptionCombo();
+            zWeldSeamTypeCombo();
+            zOuterDimensionCombo();
+            zWallThicknessCombo();
+            zCoatingCombo();
+            zGradeCombo();
+            zAnsiAsmeCombo();
+            zStandardCombo();
+        }
+
+        private void btnAddSelectionBun_Click(object sender, EventArgs e)
+        {
+            string ID = dgMasterGridBun.SelectedRows[0].Cells[0].Value + string.Empty;
+            string JN = dgMasterGridBun.SelectedRows[0].Cells[1].Value + string.Empty;
+            string Mnuf = dgMasterGridBun.SelectedRows[0].Cells[2].Value + string.Empty;
+            string ML = dgMasterGridBun.SelectedRows[0].Cells[3].Value + string.Empty;
+            string PD = dgMasterGridBun.SelectedRows[0].Cells[4].Value + string.Empty;
+            string WST = dgMasterGridBun.SelectedRows[0].Cells[5].Value + string.Empty;
+            string OD = dgMasterGridBun.SelectedRows[0].Cells[6].Value + string.Empty;
+            string WT = dgMasterGridBun.SelectedRows[0].Cells[7].Value + string.Empty;
+            string Coat = dgMasterGridBun.SelectedRows[0].Cells[8].Value + string.Empty;
+            string Grad = dgMasterGridBun.SelectedRows[0].Cells[9].Value + string.Empty;
+            string Heat = dgMasterGridBun.SelectedRows[0].Cells[10].Value + string.Empty;
+            string Ansi = dgMasterGridBun.SelectedRows[0].Cells[12].Value + string.Empty;
+            string PO = dgMasterGridBun.SelectedRows[0].Cells[13].Value + string.Empty;
+            string STD = dgMasterGridBun.SelectedRows[0].Cells[14].Value + string.Empty;
+            string Note = dgMasterGridBun.SelectedRows[0].Cells[15].Value + string.Empty;
+
+            var vID = ID;
+            var vJN = JN;
+            var vMnuf = Mnuf;
+            var vML = ML;
+            var vPD = PD;
+            var vWST = WST;
+            var vOD = OD;
+            var vWT = WT;
+            var vCoat = Coat;
+            var vGrad = Grad;
+            var vHeat = Heat;
+            var vAnsi = Ansi;
+            var vPO = PO;
+            var vSTD = STD;
+            var vNote = Note;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard, @Notes)";
+
+                    cmd.Connection = con;
+
+                    //Parameters
+                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
+                    cmd.Parameters.AddWithValue("@MillLocation", vML);
+                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
+                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
+                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
+                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
+                    cmd.Parameters.AddWithValue("@Coating", vCoat);
+                    cmd.Parameters.AddWithValue("@Grade", vGrad);
+                    cmd.Parameters.AddWithValue("@Heat", vHeat);
+                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
+                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
+                    cmd.Parameters.AddWithValue("@Standard", vSTD);
+                    cmd.Parameters.AddWithValue("@Notes", vNote);
+
+                    //execute
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    con.Close();
+
+                    MessageBox.Show("" + vPD + " \nfrom " + vJN + " \nwith Heat Number: " + vHeat + " \nhas been transferred from the master table to \n" + cmbJobName.Text + "!");
+
+                    cmbManufacturer.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "INSERT INTO " + vJN + " SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            /// insert into Master Table
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+
+                    cmd.Connection = con;
+
+                    //Parameters
+                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
+                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
+                    cmd.Parameters.AddWithValue("@MillLocation", vML);
+                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
+                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
+                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
+                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
+                    cmd.Parameters.AddWithValue("@Coating", vCoat);
+                    cmd.Parameters.AddWithValue("@Grade", vGrad);
+                    cmd.Parameters.AddWithValue("@Heat", vHeat);
+                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
+                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
+                    cmd.Parameters.AddWithValue("@Standard", vSTD);
+                    cmd.Parameters.AddWithValue("@Notes", vNote);
+
+                    //execute
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    con.Close();
+
+                    //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW. //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
+                    txtLastJobInput.Text = cmbJobName.Text;
+                    txtLastManufacturerInput.Text = vML;
+                    txtLastMillLocationInput.Text = vPD;
+                    txtLastProductDescriptionInput.Text = vPD;
+                    txtLastWeldSeamTypeInput.Text = vWST;
+                    txtLastOuterDimensionInput.Text = vOD;
+                    txtLastWallThicknessInput.Text = vWT;
+                    txtLastCoatingIput.Text = vCoat;
+                    txtLastGradeInput.Text = vGrad;
+                    txtLastHeatinput.Text = vHeat;
+                    txtLastAnsiAsmeInput.Text = vAnsi;
+                    txtLastPurchaseOrderInput.Text = vPO;
+                    txtLastStandardInput.Text = vSTD;
+                    txtLastNotesInput.Text = vNote;
+                    txtLastJobInput.Text = cmbJobName.Text;
+                    txtLastManufacturerInput.Text = vML;
+                    txtLastMillLocationInput.Text = vPD;
+                    txtLastProductDescriptionInput.Text = vPD;
+                    txtLastWeldSeamTypeInput.Text = vWST;
+                    txtLastOuterDimensionInput.Text = vOD;
+                    txtLastWallThicknessInput.Text = vWT;
+                    txtLastCoatingIput.Text = vCoat;
+                    txtLastGradeInput.Text = vGrad;
+                    txtLastHeatinput.Text = vHeat;
+                    txtLastAnsiAsmeInput.Text = vAnsi;
+                    txtLastPurchaseOrderInput.Text = vPO;
+                    txtLastStandardInput.Text = vSTD;
+                    txtLastNotesInput.Text = vNote;
+                }
+            }
+            catch (Exception ex)
+            {
+                //catch error
+                MessageBox.Show(this, ex.Message, "INSERT INTO MASTER SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                    lblDgJobTitle.Text = cmbJobName.Text.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "REFRESH JOB LIST SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgMasterGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "REFRESH MASTER SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            cmbManufacturer.Text = String.Empty;
+            cmbMillLocation.Text = String.Empty;
+            cmbProductDescription.Text = String.Empty;
+            cmbWeldSeamType.Text = String.Empty;
+            cmbOuterDimension.Text = String.Empty;
+            cmbWallThickness.Text = String.Empty;
+            cmbCoating.Text = String.Empty;
+            cmbGrade.Text = String.Empty;
+            txtHeat.Clear();
+            cmbANSI.Text = String.Empty;
+            txtHeat.Clear();
+            txtPurchaseOrder.Clear();
+            cmbStandard.Text = String.Empty;
+            txtNotes.Clear();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
+
+                    cmd.Connection = con;
+
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
+
+                    cmd.Connection = con;
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgMasterGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgMasterGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            // Creating a Excel object.
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            try
+            {
+                worksheet = workbook.ActiveSheet;
+
+                worksheet.Name = "ExportedFromDatGrid";
+
+                int cellRowIndex = 1;
+                int cellColumnIndex = 1;
+
+                //Loop through each row and read value from each column.
+                for (int i = 0; i < dgJobGridBun.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dgJobGridBun.Columns.Count; j++)
+                    {
+                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                        if (cellRowIndex == 0)
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Columns[j].HeaderText;
+                        }
+                        else
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Rows[i].Cells[j].Value.ToString();
+                        }
+                        cellColumnIndex++;
+                    }
+                    cellColumnIndex = 1;
+                    cellRowIndex++;
+                }
+
+                //Getting the location and file name of the excel to save from user.
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 2;
+
+                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workbook.SaveAs(saveDialog.FileName);
+                    MessageBox.Show("Export Successful");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                excel.Quit();
+                workbook = null;
+                excel = null;
+            }
         }
     }
 }
