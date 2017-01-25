@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.cmbMillLocation = new System.Windows.Forms.ComboBox();
             this.cmbWallThickness = new System.Windows.Forms.ComboBox();
@@ -525,7 +525,7 @@
             this.txtLastJobInput.Location = new System.Drawing.Point(585, 139);
             this.txtLastJobInput.Name = "txtLastJobInput";
             this.txtLastJobInput.ReadOnly = true;
-            this.txtLastJobInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastJobInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastJobInput.TabIndex = 57;
             this.txtLastJobInput.TabStop = false;
             // 
@@ -537,7 +537,7 @@
             this.txtLastManufacturerInput.Location = new System.Drawing.Point(585, 176);
             this.txtLastManufacturerInput.Name = "txtLastManufacturerInput";
             this.txtLastManufacturerInput.ReadOnly = true;
-            this.txtLastManufacturerInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastManufacturerInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastManufacturerInput.TabIndex = 58;
             this.txtLastManufacturerInput.TabStop = false;
             // 
@@ -549,7 +549,7 @@
             this.txtLastMillLocationInput.Location = new System.Drawing.Point(585, 204);
             this.txtLastMillLocationInput.Name = "txtLastMillLocationInput";
             this.txtLastMillLocationInput.ReadOnly = true;
-            this.txtLastMillLocationInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastMillLocationInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastMillLocationInput.TabIndex = 59;
             this.txtLastMillLocationInput.TabStop = false;
             // 
@@ -561,7 +561,7 @@
             this.txtLastProductDescriptionInput.Location = new System.Drawing.Point(585, 231);
             this.txtLastProductDescriptionInput.Name = "txtLastProductDescriptionInput";
             this.txtLastProductDescriptionInput.ReadOnly = true;
-            this.txtLastProductDescriptionInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastProductDescriptionInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastProductDescriptionInput.TabIndex = 60;
             this.txtLastProductDescriptionInput.TabStop = false;
             // 
@@ -573,7 +573,7 @@
             this.txtLastWeldSeamTypeInput.Location = new System.Drawing.Point(585, 258);
             this.txtLastWeldSeamTypeInput.Name = "txtLastWeldSeamTypeInput";
             this.txtLastWeldSeamTypeInput.ReadOnly = true;
-            this.txtLastWeldSeamTypeInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastWeldSeamTypeInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastWeldSeamTypeInput.TabIndex = 61;
             this.txtLastWeldSeamTypeInput.TabStop = false;
             // 
@@ -585,7 +585,7 @@
             this.txtLastOuterDimensionInput.Location = new System.Drawing.Point(585, 284);
             this.txtLastOuterDimensionInput.Name = "txtLastOuterDimensionInput";
             this.txtLastOuterDimensionInput.ReadOnly = true;
-            this.txtLastOuterDimensionInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastOuterDimensionInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastOuterDimensionInput.TabIndex = 62;
             this.txtLastOuterDimensionInput.TabStop = false;
             // 
@@ -597,7 +597,7 @@
             this.txtLastWallThicknessInput.Location = new System.Drawing.Point(585, 312);
             this.txtLastWallThicknessInput.Name = "txtLastWallThicknessInput";
             this.txtLastWallThicknessInput.ReadOnly = true;
-            this.txtLastWallThicknessInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastWallThicknessInput.Size = new System.Drawing.Size(114, 14);
             this.txtLastWallThicknessInput.TabIndex = 63;
             this.txtLastWallThicknessInput.TabStop = false;
             // 
@@ -609,7 +609,7 @@
             this.txtLastCoatingIput.Location = new System.Drawing.Point(585, 339);
             this.txtLastCoatingIput.Name = "txtLastCoatingIput";
             this.txtLastCoatingIput.ReadOnly = true;
-            this.txtLastCoatingIput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastCoatingIput.Size = new System.Drawing.Size(114, 14);
             this.txtLastCoatingIput.TabIndex = 64;
             this.txtLastCoatingIput.TabStop = false;
             // 
@@ -621,7 +621,7 @@
             this.txtLastGradeInput.Location = new System.Drawing.Point(584, 366);
             this.txtLastGradeInput.Name = "txtLastGradeInput";
             this.txtLastGradeInput.ReadOnly = true;
-            this.txtLastGradeInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastGradeInput.Size = new System.Drawing.Size(115, 14);
             this.txtLastGradeInput.TabIndex = 65;
             this.txtLastGradeInput.TabStop = false;
             // 
@@ -633,7 +633,7 @@
             this.txtLastHeatinput.Location = new System.Drawing.Point(584, 392);
             this.txtLastHeatinput.Name = "txtLastHeatinput";
             this.txtLastHeatinput.ReadOnly = true;
-            this.txtLastHeatinput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastHeatinput.Size = new System.Drawing.Size(115, 14);
             this.txtLastHeatinput.TabIndex = 66;
             this.txtLastHeatinput.TabStop = false;
             // 
@@ -645,7 +645,7 @@
             this.txtLastPurchaseOrderInput.Location = new System.Drawing.Point(584, 445);
             this.txtLastPurchaseOrderInput.Name = "txtLastPurchaseOrderInput";
             this.txtLastPurchaseOrderInput.ReadOnly = true;
-            this.txtLastPurchaseOrderInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastPurchaseOrderInput.Size = new System.Drawing.Size(115, 14);
             this.txtLastPurchaseOrderInput.TabIndex = 67;
             this.txtLastPurchaseOrderInput.TabStop = false;
             // 
@@ -657,7 +657,7 @@
             this.txtLastAnsiAsmeInput.Location = new System.Drawing.Point(584, 419);
             this.txtLastAnsiAsmeInput.Name = "txtLastAnsiAsmeInput";
             this.txtLastAnsiAsmeInput.ReadOnly = true;
-            this.txtLastAnsiAsmeInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastAnsiAsmeInput.Size = new System.Drawing.Size(115, 14);
             this.txtLastAnsiAsmeInput.TabIndex = 68;
             this.txtLastAnsiAsmeInput.TabStop = false;
             // 
@@ -669,7 +669,7 @@
             this.txtLastStandardInput.Location = new System.Drawing.Point(584, 473);
             this.txtLastStandardInput.Name = "txtLastStandardInput";
             this.txtLastStandardInput.ReadOnly = true;
-            this.txtLastStandardInput.Size = new System.Drawing.Size(100, 14);
+            this.txtLastStandardInput.Size = new System.Drawing.Size(115, 14);
             this.txtLastStandardInput.TabIndex = 69;
             this.txtLastStandardInput.TabStop = false;
             // 
@@ -817,8 +817,8 @@
             // 
             // dgMasterGridBun
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgMasterGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgMasterGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -827,14 +827,14 @@
             this.dgMasterGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgMasterGridBun.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgMasterGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterGridBun.DoubleBuffered = true;
             this.dgMasterGridBun.EnableHeadersVisualStyles = false;
@@ -864,8 +864,8 @@
             // 
             // dgJobGridBun
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgJobGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgJobGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -873,20 +873,20 @@
             this.dgJobGridBun.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgJobGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgJobGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgJobGridBun.DoubleBuffered = true;
             this.dgJobGridBun.EnableHeadersVisualStyles = false;
             this.dgJobGridBun.HeaderBgColor = System.Drawing.Color.RoyalBlue;
             this.dgJobGridBun.HeaderForeColor = System.Drawing.Color.White;
-            this.dgJobGridBun.Location = new System.Drawing.Point(12, 630);
+            this.dgJobGridBun.Location = new System.Drawing.Point(12, 628);
             this.dgJobGridBun.Name = "dgJobGridBun";
             this.dgJobGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgJobGridBun.RowHeadersVisible = false;
