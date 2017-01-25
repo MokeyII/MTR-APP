@@ -521,6 +521,7 @@
             // 
             this.txtLastJobInput.BackColor = System.Drawing.Color.White;
             this.txtLastJobInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastJobInput.Enabled = false;
             this.txtLastJobInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastJobInput.Location = new System.Drawing.Point(585, 139);
             this.txtLastJobInput.Name = "txtLastJobInput";
@@ -533,6 +534,7 @@
             // 
             this.txtLastManufacturerInput.BackColor = System.Drawing.Color.White;
             this.txtLastManufacturerInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastManufacturerInput.Enabled = false;
             this.txtLastManufacturerInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastManufacturerInput.Location = new System.Drawing.Point(585, 176);
             this.txtLastManufacturerInput.Name = "txtLastManufacturerInput";
@@ -545,6 +547,7 @@
             // 
             this.txtLastMillLocationInput.BackColor = System.Drawing.Color.White;
             this.txtLastMillLocationInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastMillLocationInput.Enabled = false;
             this.txtLastMillLocationInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastMillLocationInput.Location = new System.Drawing.Point(585, 204);
             this.txtLastMillLocationInput.Name = "txtLastMillLocationInput";
@@ -557,6 +560,7 @@
             // 
             this.txtLastProductDescriptionInput.BackColor = System.Drawing.Color.White;
             this.txtLastProductDescriptionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastProductDescriptionInput.Enabled = false;
             this.txtLastProductDescriptionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastProductDescriptionInput.Location = new System.Drawing.Point(585, 231);
             this.txtLastProductDescriptionInput.Name = "txtLastProductDescriptionInput";
@@ -569,6 +573,7 @@
             // 
             this.txtLastWeldSeamTypeInput.BackColor = System.Drawing.Color.White;
             this.txtLastWeldSeamTypeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastWeldSeamTypeInput.Enabled = false;
             this.txtLastWeldSeamTypeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastWeldSeamTypeInput.Location = new System.Drawing.Point(585, 258);
             this.txtLastWeldSeamTypeInput.Name = "txtLastWeldSeamTypeInput";
@@ -581,6 +586,7 @@
             // 
             this.txtLastOuterDimensionInput.BackColor = System.Drawing.Color.White;
             this.txtLastOuterDimensionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastOuterDimensionInput.Enabled = false;
             this.txtLastOuterDimensionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastOuterDimensionInput.Location = new System.Drawing.Point(585, 284);
             this.txtLastOuterDimensionInput.Name = "txtLastOuterDimensionInput";
@@ -593,6 +599,7 @@
             // 
             this.txtLastWallThicknessInput.BackColor = System.Drawing.Color.White;
             this.txtLastWallThicknessInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastWallThicknessInput.Enabled = false;
             this.txtLastWallThicknessInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastWallThicknessInput.Location = new System.Drawing.Point(585, 312);
             this.txtLastWallThicknessInput.Name = "txtLastWallThicknessInput";
@@ -605,6 +612,7 @@
             // 
             this.txtLastCoatingIput.BackColor = System.Drawing.Color.White;
             this.txtLastCoatingIput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastCoatingIput.Enabled = false;
             this.txtLastCoatingIput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastCoatingIput.Location = new System.Drawing.Point(585, 339);
             this.txtLastCoatingIput.Name = "txtLastCoatingIput";
@@ -617,6 +625,7 @@
             // 
             this.txtLastGradeInput.BackColor = System.Drawing.Color.White;
             this.txtLastGradeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastGradeInput.Enabled = false;
             this.txtLastGradeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastGradeInput.Location = new System.Drawing.Point(584, 366);
             this.txtLastGradeInput.Name = "txtLastGradeInput";
@@ -629,6 +638,7 @@
             // 
             this.txtLastHeatinput.BackColor = System.Drawing.Color.White;
             this.txtLastHeatinput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastHeatinput.Enabled = false;
             this.txtLastHeatinput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastHeatinput.Location = new System.Drawing.Point(584, 392);
             this.txtLastHeatinput.Name = "txtLastHeatinput";
@@ -641,6 +651,7 @@
             // 
             this.txtLastPurchaseOrderInput.BackColor = System.Drawing.Color.White;
             this.txtLastPurchaseOrderInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastPurchaseOrderInput.Enabled = false;
             this.txtLastPurchaseOrderInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastPurchaseOrderInput.Location = new System.Drawing.Point(584, 445);
             this.txtLastPurchaseOrderInput.Name = "txtLastPurchaseOrderInput";
@@ -653,6 +664,7 @@
             // 
             this.txtLastAnsiAsmeInput.BackColor = System.Drawing.Color.White;
             this.txtLastAnsiAsmeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastAnsiAsmeInput.Enabled = false;
             this.txtLastAnsiAsmeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastAnsiAsmeInput.Location = new System.Drawing.Point(584, 419);
             this.txtLastAnsiAsmeInput.Name = "txtLastAnsiAsmeInput";
@@ -665,6 +677,7 @@
             // 
             this.txtLastStandardInput.BackColor = System.Drawing.Color.White;
             this.txtLastStandardInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastStandardInput.Enabled = false;
             this.txtLastStandardInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastStandardInput.Location = new System.Drawing.Point(584, 473);
             this.txtLastStandardInput.Name = "txtLastStandardInput";
@@ -763,6 +776,7 @@
             // 
             this.txtLastNotesInput.BackColor = System.Drawing.Color.White;
             this.txtLastNotesInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastNotesInput.Enabled = false;
             this.txtLastNotesInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastNotesInput.Location = new System.Drawing.Point(582, 500);
             this.txtLastNotesInput.Multiline = true;
