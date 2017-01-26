@@ -23,7 +23,7 @@ namespace MTR_App
         private void btnImport_Click(object sender, EventArgs e)
         {
             // Connection String to Excel Workbook,Replace DataSource value to point to your excel file location
-            string excelConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\xls\\ExcelFile.xls ;Extended Properties=Excel 8.0";
+            string excelConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + txtFileDir.Text + " ;Extended Properties=Excel 8.0";
 
 
             // Create Connection to Excel Workbook
