@@ -1446,8 +1446,7 @@ namespace MTR_APP
 
         private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ImportExcelSheet fImportExcelSheet = new ImportExcelSheet();
-            fImportExcelSheet.Show();
+            
         }
 
         private void btnSubmitBun_Click(object sender, EventArgs e)

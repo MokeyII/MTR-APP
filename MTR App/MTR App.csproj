@@ -83,11 +83,11 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Functions.cs" />
-    <Compile Include="ImportExcelSheet.cs">
+    <Compile Include="ImportExcel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportExcelSheet.Designer.cs">
-      <DependentUpon>ImportExcelSheet.cs</DependentUpon>
+    <Compile Include="ImportExcel.Designer.cs">
+      <DependentUpon>ImportExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -173,8 +173,8 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ImportExcelSheet.resx">
-      <DependentUpon>ImportExcelSheet.cs</DependentUpon>
+    <EmbeddedResource Include="ImportExcel.resx">
+      <DependentUpon>ImportExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -255,7 +255,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
