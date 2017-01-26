@@ -1,6 +1,10 @@
 ﻿using MTR_APP;
 using System;
 using System.Windows.Forms;
+using Bunifu;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+
 
 namespace MTR_App
 {
@@ -14,12 +18,13 @@ namespace MTR_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SplashForm.ShowSplashScreen();
-            MainForm mainForm = new MainForm(); //this takes ages
-            System.Threading.Thread.Sleep(5000);
-            SplashForm.CloseForm();
-            Application.Run(mainForm);
-            //Application.Run(new MTR_APP.MainForm());
+            Application.Run(new MTR_APP.MainForm());
+            //SplashForm.ShowSplashScreen();
+            //MainForm mainForm = new MainForm(); //this takes ages
+            //System.Threading.Thread.Sleep(5000);
+            //SplashForm.CloseForm();
+            //Application.Run(mainForm);
+
         }
     }
 }
