@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,34 +23,116 @@ namespace MTR_App
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            // Connection String to Excel Workbook,Replace DataSource value to point to your excel file location
-            string excelConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + txtFileDir.Text + " ;Extended Properties=Excel 8.0";
 
-
-            // Create Connection to Excel Workbook
-            using (OleDbConnection connection =
-                         new OleDbConnection(excelConnectionString))
+            try
             {
-                OleDbCommand command = new OleDbCommand
-                        ("Select * FROM [Sheet1$]", connection);
-
-                connection.Open();
-
-                // Create DbDataReader to Data Worksheet
-                using (DbDataReader dr = command.ExecuteReader())
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                 {
-                    // SQL Server Connection String
-                    string sqlConnectionString = "Data Source=YourSource;Initial Catalog=YourDataBase;Integrated Security=True";
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "CREATE TABLE[dbo].[" + txtJobName.Text + "]([Item #] INT NOT NULL PRIMARY KEY IDENTITY,[Manufacturer] VARCHAR(55) NULL,[Mill Location] VARCHAR(55) NULL,[Product Description] VARCHAR(55) NULL,[Weld Seam Type] VARCHAR(55) NULL,[Outer Dimension] VARCHAR(55) NULL,[Wall Thickness] VARCHAR(55) NULL,[Coating] VARCHAR(55) NULL,[Grade] VARCHAR(55) NULL,[Heat] VARCHAR(55) NULL,[i] VARCHAR(55) NULL,[ANSI/ASME] VARCHAR(55) NULL,[Purchase Order] VARCHAR(55) NULL,[Standard] VARCHAR(55) NULL,[Notes] VARCHAR(55) NULL);";
+                    cmd.Connection = con;
 
-                    // Bulk Copy to SQL Server
-                    using (SqlBulkCopy bulkCopy =
-                               new SqlBulkCopy(sqlConnectionString))
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    string excelConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + txtFileDir.Text + ";Extended Properties='Excel 12.0;IMEX=1;'";
+
+                    // Create Connection to Excel Workbook
+                    using (OleDbConnection connection =
+                                 new OleDbConnection(excelConnectionString))
                     {
-                        bulkCopy.DestinationTableName = "YourTableName";
-                        bulkCopy.WriteToServer(dr);
-                        MessageBox.Show("Data Exoprted To Sql Server Succefully");
+                        OleDbCommand command = new OleDbCommand
+                                ("Select * FROM [Sheet1$]", connection);
+
+                        connection.Open();
+
+                        // Create DbDataReader to Data Worksheet
+                        using (DbDataReader dr = command.ExecuteReader())
+                        {
+                            // SQL Server Connection String
+                            // Bulk Copy to SQL Server
+                            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(con))
+
+                            {
+                                
+                                con.Open();
+                                bulkCopy.DestinationTableName = "" + txtJobName.Text + "";
+                                bulkCopy.WriteToServer(dr);
+                                MessageBox.Show("Data Exoprted To Sql Server Succefully");
+                            }
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //// Connection String to Excel Workbook,Replace DataSource value to point to your excel file location
+            //string excelConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + txtFileDir.Text + ";Extended Properties='Excel 12.0;IMEX=1;'";
+
+            //// Create Connection to Excel Workbook
+            //using (OleDbConnection connection =
+            //             new OleDbConnection(excelConnectionString))
+            //{
+            //    OleDbCommand command = new OleDbCommand
+            //            ("Select * FROM [Sheet1$]", connection);
+
+            //    connection.Open();
+
+            //    // Create DbDataReader to Data Worksheet
+            //    using (DbDataReader dr = command.ExecuteReader())
+            //    {
+            //        // SQL Server Connection String
+            //        SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+
+            //        // Bulk Copy to SQL Server
+            //        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(con))
+
+            //        {
+            //            con.Open();
+            //            bulkCopy.DestinationTableName = "" + txtJobName.Text + "";
+            //            bulkCopy.WriteToServer(dr);
+            //            MessageBox.Show("Data Exoprted To Sql Server Succefully");
+            //        }
+            //    }
+            //}
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            //openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            txtFileDir.Text = openFileDialog1.FileName;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
+
+        }
+
     }
+
 }

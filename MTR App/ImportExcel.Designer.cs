@@ -32,6 +32,7 @@
             this.txtFileDir = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnBrowse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnImport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txtJobName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.SuspendLayout();
             // 
             // txtFileDir
@@ -44,7 +45,7 @@
             this.txtFileDir.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtFileDir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFileDir.isPassword = false;
-            this.txtFileDir.Location = new System.Drawing.Point(35, 49);
+            this.txtFileDir.Location = new System.Drawing.Point(174, 112);
             this.txtFileDir.Margin = new System.Windows.Forms.Padding(4);
             this.txtFileDir.Name = "txtFileDir";
             this.txtFileDir.Size = new System.Drawing.Size(370, 44);
@@ -72,7 +73,7 @@
             this.btnBrowse.IconVisible = true;
             this.btnBrowse.IconZoom = 90D;
             this.btnBrowse.IsTab = false;
-            this.btnBrowse.Location = new System.Drawing.Point(412, 49);
+            this.btnBrowse.Location = new System.Drawing.Point(551, 112);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnBrowse.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -84,6 +85,7 @@
             this.btnBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBrowse.Textcolor = System.Drawing.Color.White;
             this.btnBrowse.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // btnImport
             // 
@@ -106,7 +108,7 @@
             this.btnImport.IconVisible = true;
             this.btnImport.IconZoom = 90D;
             this.btnImport.IsTab = false;
-            this.btnImport.Location = new System.Drawing.Point(35, 100);
+            this.btnImport.Location = new System.Drawing.Point(174, 163);
             this.btnImport.Name = "btnImport";
             this.btnImport.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnImport.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -120,11 +122,29 @@
             this.btnImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // txtJobName
+            // 
+            this.txtJobName.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtJobName.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtJobName.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtJobName.BorderThickness = 3;
+            this.txtJobName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtJobName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtJobName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtJobName.isPassword = false;
+            this.txtJobName.Location = new System.Drawing.Point(174, 13);
+            this.txtJobName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtJobName.Name = "txtJobName";
+            this.txtJobName.Size = new System.Drawing.Size(370, 44);
+            this.txtJobName.TabIndex = 3;
+            this.txtJobName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // ImportExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 516);
+            this.Controls.Add(this.txtJobName);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtFileDir);
@@ -139,5 +159,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtFileDir;
         private Bunifu.Framework.UI.BunifuFlatButton btnBrowse;
         private Bunifu.Framework.UI.BunifuFlatButton btnImport;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtJobName;
     }
 }
