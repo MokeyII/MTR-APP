@@ -129,6 +129,7 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCurrTableToMaster = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mTR_DatabaseDataSet)).BeginInit();
@@ -1333,12 +1334,49 @@
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton5.Click += new System.EventHandler(this.bunifuFlatButton5_Click);
             // 
+            // btnCurrTableToMaster
+            // 
+            this.btnCurrTableToMaster.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.btnCurrTableToMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCurrTableToMaster.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCurrTableToMaster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCurrTableToMaster.BorderRadius = 0;
+            this.btnCurrTableToMaster.ButtonText = "Push Table To Master Table";
+            this.btnCurrTableToMaster.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCurrTableToMaster.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCurrTableToMaster.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCurrTableToMaster.Iconimage = null;
+            this.btnCurrTableToMaster.Iconimage_right = null;
+            this.btnCurrTableToMaster.Iconimage_right_Selected = null;
+            this.btnCurrTableToMaster.Iconimage_Selected = null;
+            this.btnCurrTableToMaster.IconMarginLeft = 0;
+            this.btnCurrTableToMaster.IconMarginRight = 0;
+            this.btnCurrTableToMaster.IconRightVisible = true;
+            this.btnCurrTableToMaster.IconRightZoom = 0D;
+            this.btnCurrTableToMaster.IconVisible = true;
+            this.btnCurrTableToMaster.IconZoom = 100D;
+            this.btnCurrTableToMaster.IsTab = false;
+            this.btnCurrTableToMaster.Location = new System.Drawing.Point(16, 1015);
+            this.btnCurrTableToMaster.Name = "btnCurrTableToMaster";
+            this.btnCurrTableToMaster.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.btnCurrTableToMaster.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnCurrTableToMaster.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCurrTableToMaster.selected = false;
+            this.btnCurrTableToMaster.Size = new System.Drawing.Size(190, 25);
+            this.btnCurrTableToMaster.TabIndex = 534;
+            this.btnCurrTableToMaster.Text = "Push Table To Master Table";
+            this.btnCurrTableToMaster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCurrTableToMaster.Textcolor = System.Drawing.Color.White;
+            this.btnCurrTableToMaster.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCurrTableToMaster.Click += new System.EventHandler(this.btnCurrTableToMaster_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1584, 1054);
+            this.Controls.Add(this.btnCurrTableToMaster);
             this.Controls.Add(this.bunifuFlatButton5);
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.bunifuFlatButton2);
@@ -1530,6 +1568,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCurrTableToMaster;
     }
 }
 

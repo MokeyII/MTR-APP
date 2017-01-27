@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MTR_App
@@ -23,7 +17,6 @@ namespace MTR_App
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
@@ -36,6 +29,8 @@ namespace MTR_App
                     cmd.ExecuteNonQuery();
 
                     con.Close();
+
+                    Thread.Sleep(1000);
 
                     string excelConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + txtFileDir.Text + ";Extended Properties='Excel 12.0;IMEX=1;'";
 
@@ -56,50 +51,20 @@ namespace MTR_App
                             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(con))
 
                             {
-                                
                                 con.Open();
                                 bulkCopy.DestinationTableName = "" + txtJobName.Text + "";
                                 bulkCopy.WriteToServer(dr);
+
                                 MessageBox.Show("Data Exoprted To Sql Server Succefully");
                             }
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            //// Connection String to Excel Workbook,Replace DataSource value to point to your excel file location
-            //string excelConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + txtFileDir.Text + ";Extended Properties='Excel 12.0;IMEX=1;'";
-
-            //// Create Connection to Excel Workbook
-            //using (OleDbConnection connection =
-            //             new OleDbConnection(excelConnectionString))
-            //{
-            //    OleDbCommand command = new OleDbCommand
-            //            ("Select * FROM [Sheet1$]", connection);
-
-            //    connection.Open();
-
-            //    // Create DbDataReader to Data Worksheet
-            //    using (DbDataReader dr = command.ExecuteReader())
-            //    {
-            //        // SQL Server Connection String
-            //        SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-
-            //        // Bulk Copy to SQL Server
-            //        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(con))
-
-            //        {
-            //            con.Open();
-            //            bulkCopy.DestinationTableName = "" + txtJobName.Text + "";
-            //            bulkCopy.WriteToServer(dr);
-            //            MessageBox.Show("Data Exoprted To Sql Server Succefully");
-            //        }
-            //    }
-            //}
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -130,9 +95,6 @@ namespace MTR_App
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
-
         }
-
     }
-
 }

@@ -132,7 +132,7 @@
             this.txtJobName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtJobName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtJobName.isPassword = false;
-            this.txtJobName.Location = new System.Drawing.Point(174, 13);
+            this.txtJobName.Location = new System.Drawing.Point(174, 42);
             this.txtJobName.Margin = new System.Windows.Forms.Padding(4);
             this.txtJobName.Name = "txtJobName";
             this.txtJobName.Size = new System.Drawing.Size(370, 44);

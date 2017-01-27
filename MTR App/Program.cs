@@ -1,10 +1,5 @@
-﻿using MTR_APP;
-using System;
+﻿using System;
 using System.Windows.Forms;
-using Bunifu;
-using System.Data.OleDb;
-using System.Data.SqlClient;
-
 
 namespace MTR_App
 {
@@ -24,7 +19,6 @@ namespace MTR_App
             //System.Threading.Thread.Sleep(5000);
             //SplashForm.CloseForm();
             //Application.Run(mainForm);
-
         }
     }
 }
