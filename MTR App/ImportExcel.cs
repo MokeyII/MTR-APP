@@ -71,8 +71,6 @@ namespace MTR_App
                         cmd.Connection = con;
                         con.Open();
                         cmd.ExecuteNonQuery();
-
-
                     }
                     using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                     {
@@ -88,7 +86,6 @@ namespace MTR_App
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
             catch (SqlException ex)
             {
