@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportExcel));
             this.txtFileDir = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnBrowse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnImport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtJobName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.SuspendLayout();
             // 
             // txtFileDir
@@ -139,18 +144,59 @@
             this.txtJobName.TabIndex = 3;
             this.txtJobName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // bunifuCustomTextbox1
+            // 
+            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuCustomTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuCustomTextbox1.Enabled = false;
+            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(504, 12);
+            this.bunifuCustomTextbox1.Multiline = true;
+            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
+            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(245, 194);
+            this.bunifuCustomTextbox1.TabIndex = 4;
+            this.bunifuCustomTextbox1.Text = resources.GetString("bunifuCustomTextbox1.Text");
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(13, 21);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(55, 13);
+            this.bunifuCustomLabel1.TabIndex = 5;
+            this.bunifuCustomLabel1.Text = "Job Name";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(13, 94);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(51, 13);
+            this.bunifuCustomLabel2.TabIndex = 6;
+            this.bunifuCustomLabel2.Text = "File Path:";
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // ImportExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 218);
+            this.ClientSize = new System.Drawing.Size(761, 218);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.bunifuCustomTextbox1);
             this.Controls.Add(this.txtJobName);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtFileDir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ImportExcel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImportExcel";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +206,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnBrowse;
         private Bunifu.Framework.UI.BunifuFlatButton btnImport;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtJobName;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

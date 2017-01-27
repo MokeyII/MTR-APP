@@ -11,7 +11,9 @@ namespace MTR_App
             InitializeComponent();
         }
 
-        private void btnSubmitJobName_Click(object sender, EventArgs e)
+        
+
+        private void btnSubmitJob_Click(object sender, EventArgs e)
         {
             try
             {
@@ -35,12 +37,6 @@ namespace MTR_App
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void txtCreateJobName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-                btnSubmitJobName.PerformClick();
         }
     }
 }
