@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.cmbMillLocation = new System.Windows.Forms.ComboBox();
             this.cmbWallThickness = new System.Windows.Forms.ComboBox();
@@ -105,9 +105,7 @@
             this.masterTableTableAdapter = new MTR_App.MTR_DatabaseDataSetTableAdapters.MasterTableTableAdapter();
             this.dgJobGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnSubmitBun = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -134,8 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mTR_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -396,7 +392,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.menuStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -411,7 +407,7 @@
             this.newToolStripMenuItem,
             this.addFieldToolStripMenuItem,
             this.importFromExcelToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -716,7 +712,7 @@
             // 
             this.txtSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearchJob.Location = new System.Drawing.Point(1130, 604);
+            this.txtSearchJob.Location = new System.Drawing.Point(1129, 576);
             this.txtSearchJob.Name = "txtSearchJob";
             this.txtSearchJob.Size = new System.Drawing.Size(243, 20);
             this.txtSearchJob.TabIndex = 18;
@@ -727,7 +723,7 @@
             this.lblDgJobTitle.AutoSize = true;
             this.lblDgJobTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDgJobTitle.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgJobTitle.Location = new System.Drawing.Point(12, 603);
+            this.lblDgJobTitle.Location = new System.Drawing.Point(12, 576);
             this.lblDgJobTitle.Name = "lblDgJobTitle";
             this.lblDgJobTitle.Size = new System.Drawing.Size(109, 22);
             this.lblDgJobTitle.TabIndex = 75;
@@ -778,7 +774,7 @@
             this.txtLastNotesInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLastNotesInput.Enabled = false;
             this.txtLastNotesInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastNotesInput.Location = new System.Drawing.Point(582, 500);
+            this.txtLastNotesInput.Location = new System.Drawing.Point(585, 500);
             this.txtLastNotesInput.Multiline = true;
             this.txtLastNotesInput.Name = "txtLastNotesInput";
             this.txtLastNotesInput.Size = new System.Drawing.Size(190, 96);
@@ -831,8 +827,8 @@
             // 
             // dgMasterGridBun
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgMasterGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgMasterGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -841,14 +837,14 @@
             this.dgMasterGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgMasterGridBun.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgMasterGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterGridBun.DoubleBuffered = true;
             this.dgMasterGridBun.EnableHeadersVisualStyles = false;
@@ -859,7 +855,7 @@
             this.dgMasterGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgMasterGridBun.RowHeadersVisible = false;
             this.dgMasterGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMasterGridBun.Size = new System.Drawing.Size(794, 519);
+            this.dgMasterGridBun.Size = new System.Drawing.Size(794, 397);
             this.dgMasterGridBun.TabIndex = 506;
             // 
             // mTR_DatabaseDataSet
@@ -878,8 +874,8 @@
             // 
             // dgJobGridBun
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgJobGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgJobGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -888,26 +884,26 @@
             this.dgJobGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgJobGridBun.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgJobGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgJobGridBun.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgJobGridBun.DoubleBuffered = true;
             this.dgJobGridBun.EnableHeadersVisualStyles = false;
             this.dgJobGridBun.HeaderBgColor = System.Drawing.Color.RoyalBlue;
             this.dgJobGridBun.HeaderForeColor = System.Drawing.Color.White;
-            this.dgJobGridBun.Location = new System.Drawing.Point(12, 628);
+            this.dgJobGridBun.Location = new System.Drawing.Point(12, 602);
             this.dgJobGridBun.Name = "dgJobGridBun";
             this.dgJobGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgJobGridBun.RowHeadersVisible = false;
             this.dgJobGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgJobGridBun.Size = new System.Drawing.Size(1560, 381);
+            this.dgJobGridBun.Size = new System.Drawing.Size(1560, 407);
             this.dgJobGridBun.TabIndex = 507;
             // 
             // btnSubmitBun
@@ -945,21 +941,6 @@
             this.btnSubmitBun.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitBun.Click += new System.EventHandler(this.btnSubmitBun_Click);
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1562, 1);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 509;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.LightSteelBlue;
@@ -994,20 +975,6 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(1539, 1);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(19, 19);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 511;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 12;
             // 
             // label1
             // 
@@ -1193,6 +1160,7 @@
             // btnAddSelectionBun
             // 
             this.btnAddSelectionBun.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.btnAddSelectionBun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddSelectionBun.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnAddSelectionBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddSelectionBun.BorderRadius = 0;
@@ -1211,7 +1179,7 @@
             this.btnAddSelectionBun.IconVisible = true;
             this.btnAddSelectionBun.IconZoom = 100D;
             this.btnAddSelectionBun.IsTab = false;
-            this.btnAddSelectionBun.Location = new System.Drawing.Point(778, 590);
+            this.btnAddSelectionBun.Location = new System.Drawing.Point(1334, 472);
             this.btnAddSelectionBun.Name = "btnAddSelectionBun";
             this.btnAddSelectionBun.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnAddSelectionBun.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1247,7 +1215,7 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 100D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(1379, 599);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(1378, 571);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1283,7 +1251,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 100D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(1470, 599);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(1469, 571);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1337,6 +1305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1584, 1054);
             this.Controls.Add(this.bunifuFlatButton5);
@@ -1360,9 +1329,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.btnSubmitBun);
             this.Controls.Add(this.dgJobGridBun);
             this.Controls.Add(this.dgMasterGridBun);
@@ -1418,6 +1385,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1426,8 +1394,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mTR_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1506,9 +1472,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgJobGridBun;
         private Bunifu.Framework.UI.BunifuFlatButton btnSubmitBun;
         private System.Windows.Forms.Button btnSubmit;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
