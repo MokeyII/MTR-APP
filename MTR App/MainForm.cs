@@ -2114,35 +2114,5 @@ namespace MTR_APP
                 excel = null;
             }
         }
-
-        private void btnCurrTableToMaster_Click(object sender, EventArgs e)
-        {
-            //string foo = dgJobGridBun.Rows[0].Cells["Manufacturer"].Value + string.Empty;
-
-            //txtLastManufacturerInput.Text = foo;
-
-            string StrQuery;
-            try
-            {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
-                {
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = con;
-                        con.Open();
-                        for (int i = 0; i < dgJobGridBun.Rows.Count; i++)
-                        {
-                            StrQuery = @"INSERT INTO [dbo].[MasterTable] VALUES (" + dgJobGridBun.Rows[i].Cells["Manufacturer"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Mill Location"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Product Description"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Weld Seam Type"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Outer Dimension"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Wall Thickness"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Coating"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Grade"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Heat"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["i"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["ANSI/ASME"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Purchase Order"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Standard"].Value + string.Empty + ", " + dgJobGridBun.Rows[i].Cells["Notes"].Value + string.Empty + ");";
-                            cmd.CommandText = StrQuery;
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

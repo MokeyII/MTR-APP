@@ -60,6 +60,35 @@ namespace MTR_App
                         }
                     }
                 }
+
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = ("INSERT INTO dbo.MasterTable ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) SELECT [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes] FROM dbo." + txtJobName.Text + " ");
+
+                        cmd.Connection = con;
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+
+
+                    }
+                    using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = ("UPDATE dbo.MasterTable SET [Job Name] = (@JobName) WHERE [Job Name] IS NULL;");
+                        cmd.Connection = con;
+                        cmd.Parameters.AddWithValue("@Jobname", txtJobName.Text);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
             catch (SqlException ex)
             {
