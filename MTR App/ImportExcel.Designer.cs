@@ -45,7 +45,7 @@
             this.txtFileDir.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtFileDir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFileDir.isPassword = false;
-            this.txtFileDir.Location = new System.Drawing.Point(174, 112);
+            this.txtFileDir.Location = new System.Drawing.Point(13, 111);
             this.txtFileDir.Margin = new System.Windows.Forms.Padding(4);
             this.txtFileDir.Name = "txtFileDir";
             this.txtFileDir.Size = new System.Drawing.Size(370, 44);
@@ -73,7 +73,7 @@
             this.btnBrowse.IconVisible = true;
             this.btnBrowse.IconZoom = 90D;
             this.btnBrowse.IsTab = false;
-            this.btnBrowse.Location = new System.Drawing.Point(551, 112);
+            this.btnBrowse.Location = new System.Drawing.Point(390, 111);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnBrowse.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -108,7 +108,7 @@
             this.btnImport.IconVisible = true;
             this.btnImport.IconZoom = 90D;
             this.btnImport.IsTab = false;
-            this.btnImport.Location = new System.Drawing.Point(174, 163);
+            this.btnImport.Location = new System.Drawing.Point(13, 162);
             this.btnImport.Name = "btnImport";
             this.btnImport.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnImport.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -132,7 +132,7 @@
             this.txtJobName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtJobName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtJobName.isPassword = false;
-            this.txtJobName.Location = new System.Drawing.Point(174, 42);
+            this.txtJobName.Location = new System.Drawing.Point(13, 41);
             this.txtJobName.Margin = new System.Windows.Forms.Padding(4);
             this.txtJobName.Name = "txtJobName";
             this.txtJobName.Size = new System.Drawing.Size(370, 44);
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 516);
+            this.ClientSize = new System.Drawing.Size(512, 218);
             this.Controls.Add(this.txtJobName);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnBrowse);
