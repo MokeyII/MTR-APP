@@ -1087,7 +1087,6 @@ namespace MTR_APP
             zGradeCombo();
             zAnsiAsmeCombo();
             zStandardCombo();
-
             try
             {
                 SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
