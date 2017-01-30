@@ -43,5 +43,32 @@ namespace MTR_App
             if (e.KeyCode == Keys.Return)
                 btnSubmitWeldSeamType.PerformClick();
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType)";
+                    cmd.Connection = con;
+
+                    cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("New Weld Seam Type Added!");
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

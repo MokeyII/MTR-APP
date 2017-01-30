@@ -107,13 +107,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 124);
+            this.ClientSize = new System.Drawing.Size(511, 126);
             this.Controls.Add(this.btnSubmitJob);
             this.Controls.Add(this.txtCreateJobName);
             this.Controls.Add(this.lblCreateJobName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "New_Job";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create A New Job";
             this.ResumeLayout(false);
             this.PerformLayout();

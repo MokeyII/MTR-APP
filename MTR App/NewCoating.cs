@@ -43,5 +43,32 @@ namespace MTR_App
             if (e.KeyCode == Keys.Return)
                 btnSubmitCoating.PerformClick();
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRInfoTablesConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[Coating] ([Coating]) VALUES (@Coating)";
+                    cmd.Connection = con;
+
+                    cmd.Parameters.AddWithValue("@Coating", txtCreateCoating.Text);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("New Coating Added!");
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
