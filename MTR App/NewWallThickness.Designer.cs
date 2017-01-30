@@ -116,7 +116,7 @@
             this.Name = "NewWallThickness";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "NewWallThickness";
+            this.Text = "New Wall Thickness";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewWallThickness_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();

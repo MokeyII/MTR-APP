@@ -70,7 +70,7 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Create New Standard";
+            this.bunifuFlatButton1.ButtonText = "Create New Grade";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
@@ -85,15 +85,15 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(309, 65);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(328, 65);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightSteelBlue;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(186, 30);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(167, 30);
             this.bunifuFlatButton1.TabIndex = 6;
-            this.bunifuFlatButton1.Text = "Create New Standard";
+            this.bunifuFlatButton1.Text = "Create New Grade";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,7 +115,8 @@
             this.Controls.Add(this.txtCreateGradeName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewGrade";
-            this.Text = "NewGrade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Add New Grade";
             this.ResumeLayout(false);
             this.PerformLayout();
 

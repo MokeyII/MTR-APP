@@ -117,7 +117,7 @@
             this.Name = "NewWeldSeamType";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "NewWeldSeamType";
+            this.Text = "New Weld Seam Type";
             this.ResumeLayout(false);
             this.PerformLayout();
 
