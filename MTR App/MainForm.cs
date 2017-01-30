@@ -1271,61 +1271,61 @@ namespace MTR_APP
         private void jobToolStripMenuItem_Click(object sender, EventArgs e)
         {
             New_Job fNew_Job = new New_Job();
-            fNew_Job.Show();
+            fNew_Job.ShowDialog();
         }
 
         private void aNSIASMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewAnsiAsme fAnsiAsme = new NewAnsiAsme();
-            fAnsiAsme.Show();
+            fAnsiAsme.ShowDialog();
         }
 
         private void coatingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewCoating fCoating = new NewCoating();
-            fCoating.Show();
+            fCoating.ShowDialog();
         }
 
         private void gradeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGrade fGrade = new NewGrade();
-            fGrade.Show();
+            fGrade.ShowDialog();
         }
 
         private void manufacturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewManufacturer fManufacturer = new NewManufacturer();
-            fManufacturer.Show();
+            fManufacturer.ShowDialog();
         }
 
         private void millLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewMillLocation fMillLocation = new NewMillLocation();
-            fMillLocation.Show();
+            fMillLocation.ShowDialog();
         }
 
         private void productDescriptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewProductDescription fProductDescription = new NewProductDescription();
-            fProductDescription.Show();
+            fProductDescription.ShowDialog();
         }
 
         private void standardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewStandard fStandard = new NewStandard();
-            fStandard.Show();
+            fStandard.ShowDialog();
         }
 
         private void wallThicknessToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewWallThickness fWallThickness = new NewWallThickness();
-            fWallThickness.Show();
+            fWallThickness.ShowDialog();
         }
 
         private void weldSeamTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewWeldSeamType fWeldSeamType = new NewWeldSeamType();
-            fWeldSeamType.Show();
+            fWeldSeamType.ShowDialog();
         }
 
         #endregion Show New Forms Btn
@@ -1441,7 +1441,7 @@ namespace MTR_APP
         private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImportExcel fImportExcel = new ImportExcel();
-            fImportExcel.Show();
+            fImportExcel.ShowDialog();
         }
 
         private void btnSubmitBun_Click(object sender, EventArgs e)
