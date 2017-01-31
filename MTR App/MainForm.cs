@@ -1078,6 +1078,12 @@ namespace MTR_APP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Left = Top = 0;
+            Width = Screen.PrimaryScreen.WorkingArea.Width;
+            Height = Screen.PrimaryScreen.WorkingArea.Height;
+
+
             zManufacturerCombo();
             zMillLocationCombo();
             zProductDescriptionCombo();

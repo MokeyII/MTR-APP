@@ -95,16 +95,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MTRInfoTablesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MTRInfoTablesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MTR_DatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MTR_DatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NewAnsiAsme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,28 +211,6 @@
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="MTRInfoTablesDataSet.xsc">
-      <DependentUpon>MTRInfoTablesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MTRInfoTablesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MTRInfoTablesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MTRInfoTablesDataSet.xss">
-      <DependentUpon>MTRInfoTablesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MTR_DatabaseDataSet.xsc">
-      <DependentUpon>MTR_DatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MTR_DatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MTR_DatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MTR_DatabaseDataSet.xss">
-      <DependentUpon>MTR_DatabaseDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
