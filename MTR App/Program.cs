@@ -13,7 +13,7 @@ namespace MTR_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MTR_APP.MainForm());
+            Application.Run(new Login());
             //SplashForm.ShowSplashScreen();
             //MainForm mainForm = new MainForm(); //this takes ages
             //System.Threading.Thread.Sleep(5000);
