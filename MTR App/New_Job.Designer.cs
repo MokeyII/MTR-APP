@@ -34,8 +34,8 @@
             this.lblCreateJobName = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnSubmitJob = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.txtCreateJobName = new System.Windows.Forms.TextBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.txtCreateJobName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,14 +88,6 @@
             this.btnSubmitJob.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitJob.Click += new System.EventHandler(this.btnSubmitJob_Click);
             // 
-            // txtCreateJobName
-            // 
-            this.txtCreateJobName.Location = new System.Drawing.Point(12, 53);
-            this.txtCreateJobName.Name = "txtCreateJobName";
-            this.txtCreateJobName.Size = new System.Drawing.Size(501, 20);
-            this.txtCreateJobName.TabIndex = 5;
-            this.txtCreateJobName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateJobName_KeyPress);
-            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -111,13 +103,20 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
+            // txtCreateJobName
+            // 
+            this.txtCreateJobName.Location = new System.Drawing.Point(13, 40);
+            this.txtCreateJobName.Name = "txtCreateJobName";
+            this.txtCreateJobName.Size = new System.Drawing.Size(500, 20);
+            this.txtCreateJobName.TabIndex = 537;
+            // 
             // New_Job
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 125);
-            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.txtCreateJobName);
+            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.btnSubmitJob);
             this.Controls.Add(this.lblCreateJobName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -134,7 +133,7 @@
         private System.Windows.Forms.Label lblCreateJobName;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton btnSubmitJob;
-        private System.Windows.Forms.TextBox txtCreateJobName;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.TextBox txtCreateJobName;
     }
 }

@@ -26,8 +26,9 @@ namespace MTR_App.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MTR_Database;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PRISM-SERVER\\BMICONNECT;Initial Catalog=MTR_Database;Integrated Secur" +
+            "ity=False;User ID=Sa;Password=BMI5q1d8#;Connect Timeout=15;Encrypt=False;TrustSe" +
+            "rverCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")]
         public string MTR_DatabaseConn {
             get {
                 return ((string)(this["MTR_DatabaseConn"]));
@@ -37,11 +38,24 @@ namespace MTR_App.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MTRInfoTables;Integrated Secur" +
-            "ity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PRISM-SERVER\\BMICONNECT;Initial Catalog=MTRInfoTables;Integrated Secu" +
+            "rity=False;User ID=Sa;Password=BMI5q1d8#;Connect Timeout=15;Encrypt=False;TrustS" +
+            "erverCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")]
         public string MTRInfoTablesConn {
             get {
                 return ((string)(this["MTRInfoTablesConn"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PRISM-SERVER\\BMICONNECT;Initial Catalog=Credentials;Integrated Securi" +
+            "ty=False;User ID=Sa;Password=BMI5q1d8#;Connect Timeout=15;Encrypt=False;TrustSer" +
+            "verCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")]
+        public string Credentials {
+            get {
+                return ((string)(this["Credentials"]));
             }
         }
     }
