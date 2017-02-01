@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblRegister = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -54,7 +55,7 @@
             this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUserName.isPassword = false;
-            this.txtUserName.Location = new System.Drawing.Point(13, 96);
+            this.txtUserName.Location = new System.Drawing.Point(12, 29);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(340, 44);
@@ -71,7 +72,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.isPassword = true;
-            this.txtPassword.Location = new System.Drawing.Point(13, 161);
+            this.txtPassword.Location = new System.Drawing.Point(12, 94);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(340, 44);
@@ -82,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 76);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 2;
@@ -91,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 144);
+            this.label2.Location = new System.Drawing.Point(12, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -118,7 +119,7 @@
             this.btnLogin.IconVisible = true;
             this.btnLogin.IconZoom = 90D;
             this.btnLogin.IsTab = false;
-            this.btnLogin.Location = new System.Drawing.Point(237, 212);
+            this.btnLogin.Location = new System.Drawing.Point(236, 145);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnLogin.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -153,7 +154,7 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 90D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(16, 212);
+            this.btnCancel.Location = new System.Drawing.Point(15, 145);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnCancel.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -167,11 +168,24 @@
             this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblRegister.Location = new System.Drawing.Point(306, 207);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(54, 13);
+            this.lblRegister.TabIndex = 5;
+            this.lblRegister.Text = "Register";
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 272);
+            this.ClientSize = new System.Drawing.Size(366, 228);
+            this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
@@ -201,5 +215,6 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtPassword;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtUserName;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblRegister;
     }
 }

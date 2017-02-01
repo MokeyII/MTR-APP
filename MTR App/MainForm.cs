@@ -17,13 +17,6 @@ namespace MTR_APP
             InitializeComponent();
         }
 
-        // Testing|
-        private void zProgressbar()
-        {
-        }
-
-        //Auto Updater Test
-
         // Populate All Combo Boxes
 
         #region ComboBoxPopulate
@@ -2146,7 +2139,10 @@ namespace MTR_APP
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Left = Top = 0;
+            Width = Screen.PrimaryScreen.WorkingArea.Width;
+            Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
     }
 }

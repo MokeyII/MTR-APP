@@ -82,7 +82,6 @@ namespace MTR_App
             {
                 //Click Submit button
                 btnSubmitWeldSeamType_Click(sender, e);
-                
             }
         }
     }

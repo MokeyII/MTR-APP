@@ -21,16 +21,22 @@ namespace MTR_App
         {
             try
             {
-                string userLogin = txtUserName.Text;
-                string userPassword = txtPassword.Text;
-
                 using (SqlConnection con = new SqlConnection(Connection.UserCreds))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT Count (*) from dbo.UserCreds WHERE Username=@Username AND Password=@Password AND IsActive=1";
-                    cmd.Parameters.AddWithValue("@Username", userLogin);
-                    cmd.Parameters.AddWithValue("@Password", userPassword);
+
+                    Credentials logIn = new Credentials();
+
+                    String hashedPassword = logIn.GenHash(txtPassword.Text, logIn.salt);
+
+                    // Parameters
+                    logIn.Username = txtUserName.Text;
+                    logIn.Password = hashedPassword;
+
+                    cmd.Parameters.AddWithValue("@Username", logIn.Username);
+                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
 
                     cmd.Connection = con;
 
@@ -67,6 +73,12 @@ namespace MTR_App
                 //Click Submit button
                 btnLogin_Click(sender, e);
             }
+        }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            Register fRegister = new Register();
+            fRegister.Show();
         }
     }
 }
