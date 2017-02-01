@@ -200,6 +200,35 @@ Be sure to refresh selections after adding a new Outer Dimension.</value>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>49</value>
   </metadata>
+  <data name="bunifuImageButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFVSURBVGhD7ZrRTcNQEARdAiVQCh1BCXQEHUAn0AF0EG6R7yf22dGItc7ojbQf0b2N58mRLcWe
+        BifgIfIWuTTNS0SOmzxH1sodI9dVtEst+I48Re4i3ZCT3OQo19Uz8x7RUAu7I0e5vv5+ukIDpeOZuOY+
+        kr4LykFTxka6MTaiS91HJNe5o2Nt3fhy3YJyMHPkJjI6ZkWuWVAOZvbmfw32wUUT2OfW4tGpKOe3Fo9O
+        RTnHRRPYBxdNYB9cNIF9cNEE9sFFE9gHF01gH1w0gX1w0QT2wUUT2AcXTWAfXDSBfXDRBPbBRRPYBxdN
+        YB9cNIF9cNEE9sFFE9gHF01gH1w0gX32ivlM4sh8RipyzYJyMKN//fTFuc4dHcvyT2M3xka6MTbSjd2N
+        nP5hqB71anD6x9O6Zmv4FXmMdH1hQG55Nsr7zL94hSPRLvNn1jFy27rjDxowTT9ZYVN5tPDI2AAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuImageButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAA9SURBVHhe7c2xCQAwDAQx7790AukCLl28QYKrrwAAAAAAAADgc5Y1rpskN66bJDeumyQHAAAA
+        AAAAAE/VBW1Ir1GTIcCQAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAENSURBVHhe7ZpRDoIwEAU5ikfxKN5Mb6pgeIlppCnQbrvLTLJpkI9985AvnQAAAAAAAAAOc1tP
+        S+7r2Z3HPO/1tEI7n9+rjiiIxqKEdGe3Epav/W8QTcsSUnlNt9dhK1CLEix37cIi2LDyomXA4eVFi6Bu
+        5EXNwO7kRY3gbuXFGQH38uKISBh5sUconLwoEQsrL3KC4eXFlui/CScvSkoIKy9yJYSXX7h0ATl5TdgS
+        SuQ14UrYkl8+z90LQYlg2BL2iIUr4YhQmBLOiLgvoYaA2xJqBndXQovAbkpoGXT4EiwCDluCZbDhSuDH
+        0Zk0kMXTSHe+5umKAlnIC+3sLi8u/RcZAAAAAAAA8MU0fQDQRl5elB+SNAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="bunifuImageButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAABYCAYAAAAa2ClIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

@@ -35,12 +35,14 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnSubmitJob = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtCreateJobName = new System.Windows.Forms.TextBox();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCreateJobName
             // 
             this.lblCreateJobName.AutoSize = true;
-            this.lblCreateJobName.Location = new System.Drawing.Point(12, 9);
+            this.lblCreateJobName.Location = new System.Drawing.Point(9, 23);
             this.lblCreateJobName.Name = "lblCreateJobName";
             this.lblCreateJobName.Size = new System.Drawing.Size(121, 13);
             this.lblCreateJobName.TabIndex = 2;
@@ -72,7 +74,7 @@
             this.btnSubmitJob.IconVisible = true;
             this.btnSubmitJob.IconZoom = 90D;
             this.btnSubmitJob.IsTab = false;
-            this.btnSubmitJob.Location = new System.Drawing.Point(368, 52);
+            this.btnSubmitJob.Location = new System.Drawing.Point(382, 79);
             this.btnSubmitJob.Name = "btnSubmitJob";
             this.btnSubmitJob.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnSubmitJob.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -88,23 +90,40 @@
             // 
             // txtCreateJobName
             // 
-            this.txtCreateJobName.Location = new System.Drawing.Point(13, 26);
+            this.txtCreateJobName.Location = new System.Drawing.Point(12, 53);
             this.txtCreateJobName.Name = "txtCreateJobName";
-            this.txtCreateJobName.Size = new System.Drawing.Size(486, 20);
+            this.txtCreateJobName.Size = new System.Drawing.Size(501, 20);
             this.txtCreateJobName.TabIndex = 5;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.LightGray;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(489, 12);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(24, 24);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 536;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // New_Job
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 100);
+            this.ClientSize = new System.Drawing.Size(525, 125);
+            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.txtCreateJobName);
             this.Controls.Add(this.btnSubmitJob);
             this.Controls.Add(this.lblCreateJobName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "New_Job";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create A New Job";
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +134,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton btnSubmitJob;
         private System.Windows.Forms.TextBox txtCreateJobName;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }

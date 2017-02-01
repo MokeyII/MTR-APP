@@ -38,5 +38,10 @@ namespace MTR_App
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -35,12 +35,14 @@
             this.txtCreateWallThickness = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCreateWeldSeamType
             // 
             this.lblCreateWeldSeamType.AutoSize = true;
-            this.lblCreateWeldSeamType.Location = new System.Drawing.Point(13, 19);
+            this.lblCreateWeldSeamType.Location = new System.Drawing.Point(12, 21);
             this.lblCreateWeldSeamType.Name = "lblCreateWeldSeamType";
             this.lblCreateWeldSeamType.Size = new System.Drawing.Size(146, 13);
             this.lblCreateWeldSeamType.TabIndex = 14;
@@ -58,9 +60,9 @@
             // 
             // txtCreateWallThickness
             // 
-            this.txtCreateWallThickness.Location = new System.Drawing.Point(12, 38);
+            this.txtCreateWallThickness.Location = new System.Drawing.Point(12, 56);
             this.txtCreateWallThickness.Name = "txtCreateWallThickness";
-            this.txtCreateWallThickness.Size = new System.Drawing.Size(484, 20);
+            this.txtCreateWallThickness.Size = new System.Drawing.Size(502, 20);
             this.txtCreateWallThickness.TabIndex = 12;
             // 
             // bunifuFlatButton1
@@ -84,7 +86,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(312, 65);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(330, 83);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -103,21 +105,38 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.LightGray;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(490, 10);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(24, 24);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 538;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
             // NewWallThickness
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 107);
+            this.ClientSize = new System.Drawing.Size(525, 125);
+            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.lblCreateWeldSeamType);
             this.Controls.Add(this.btnSubmitWallThickness);
             this.Controls.Add(this.txtCreateWallThickness);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewWallThickness";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Wall Thickness";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewWallThickness_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +149,6 @@
         private System.Windows.Forms.TextBox txtCreateWallThickness;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }
