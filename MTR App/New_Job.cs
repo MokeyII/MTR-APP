@@ -11,8 +11,6 @@ namespace MTR_App
             InitializeComponent();
         }
 
-        
-
         private void btnSubmitJob_Click(object sender, EventArgs e)
         {
             try

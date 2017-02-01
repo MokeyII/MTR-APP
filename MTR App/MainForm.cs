@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace MTR_APP
@@ -407,7 +406,6 @@ namespace MTR_APP
                 excel = null;
             }
         }
-        
 
         // RefreshJob Name ComboBox
         private void btnRefreshJobName_Click(object sender, EventArgs e)
@@ -1079,7 +1077,6 @@ namespace MTR_APP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             zManufacturerCombo();
             zMillLocationCombo();
             zProductDescriptionCombo();
@@ -2127,13 +2124,12 @@ namespace MTR_APP
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
