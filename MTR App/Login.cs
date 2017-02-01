@@ -59,5 +59,14 @@ namespace MTR_App
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnLogin_Click(sender, e);
+            }
+        }
     }
 }

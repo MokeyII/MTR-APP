@@ -94,6 +94,7 @@
             this.txtCreateJobName.Name = "txtCreateJobName";
             this.txtCreateJobName.Size = new System.Drawing.Size(501, 20);
             this.txtCreateJobName.TabIndex = 5;
+            this.txtCreateJobName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateJobName_KeyPress);
             // 
             // bunifuImageButton1
             // 

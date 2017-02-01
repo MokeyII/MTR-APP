@@ -64,6 +64,7 @@
             this.txtCreateWallThickness.Name = "txtCreateWallThickness";
             this.txtCreateWallThickness.Size = new System.Drawing.Size(502, 20);
             this.txtCreateWallThickness.TabIndex = 12;
+            this.txtCreateWallThickness.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateWallThickness_KeyPress);
             // 
             // bunifuFlatButton1
             // 

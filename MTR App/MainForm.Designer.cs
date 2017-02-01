@@ -144,7 +144,7 @@
             this.cmbManufacturer.Location = new System.Drawing.Point(151, 173);
             this.cmbManufacturer.Name = "cmbManufacturer";
             this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
-            this.cmbManufacturer.TabIndex = 3;
+            this.cmbManufacturer.TabIndex = 2;
             this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
             this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
             // 
@@ -157,7 +157,7 @@
             this.cmbMillLocation.Location = new System.Drawing.Point(151, 200);
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
-            this.cmbMillLocation.TabIndex = 4;
+            this.cmbMillLocation.TabIndex = 3;
             this.toolTips.SetToolTip(this.cmbMillLocation, resources.GetString("cmbMillLocation.ToolTip"));
             this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
             // 
@@ -170,7 +170,7 @@
             this.cmbWallThickness.Location = new System.Drawing.Point(151, 308);
             this.cmbWallThickness.Name = "cmbWallThickness";
             this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
-            this.cmbWallThickness.TabIndex = 8;
+            this.cmbWallThickness.TabIndex = 7;
             this.toolTips.SetToolTip(this.cmbWallThickness, resources.GetString("cmbWallThickness.ToolTip"));
             this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
             // 
@@ -183,7 +183,7 @@
             this.cmbCoating.Location = new System.Drawing.Point(151, 335);
             this.cmbCoating.Name = "cmbCoating";
             this.cmbCoating.Size = new System.Drawing.Size(121, 21);
-            this.cmbCoating.TabIndex = 9;
+            this.cmbCoating.TabIndex = 8;
             this.toolTips.SetToolTip(this.cmbCoating, resources.GetString("cmbCoating.ToolTip"));
             this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
             // 
@@ -196,7 +196,7 @@
             this.cmbGrade.Location = new System.Drawing.Point(151, 362);
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrade.TabIndex = 10;
+            this.cmbGrade.TabIndex = 9;
             this.toolTips.SetToolTip(this.cmbGrade, resources.GetString("cmbGrade.ToolTip"));
             this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
             // 
@@ -207,7 +207,7 @@
             this.txtHeat.Location = new System.Drawing.Point(149, 389);
             this.txtHeat.Name = "txtHeat";
             this.txtHeat.Size = new System.Drawing.Size(123, 20);
-            this.txtHeat.TabIndex = 11;
+            this.txtHeat.TabIndex = 10;
             this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
             this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
             // 
@@ -220,7 +220,7 @@
             this.cmbANSI.Location = new System.Drawing.Point(151, 415);
             this.cmbANSI.Name = "cmbANSI";
             this.cmbANSI.Size = new System.Drawing.Size(121, 21);
-            this.cmbANSI.TabIndex = 12;
+            this.cmbANSI.TabIndex = 11;
             this.toolTips.SetToolTip(this.cmbANSI, resources.GetString("cmbANSI.ToolTip"));
             this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
             // 
@@ -229,7 +229,7 @@
             this.txtPurchaseOrder.Location = new System.Drawing.Point(151, 442);
             this.txtPurchaseOrder.Name = "txtPurchaseOrder";
             this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
-            this.txtPurchaseOrder.TabIndex = 13;
+            this.txtPurchaseOrder.TabIndex = 12;
             this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
             this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
             // 
@@ -242,7 +242,7 @@
             this.cmbStandard.Location = new System.Drawing.Point(149, 469);
             this.cmbStandard.Name = "cmbStandard";
             this.cmbStandard.Size = new System.Drawing.Size(121, 21);
-            this.cmbStandard.TabIndex = 14;
+            this.cmbStandard.TabIndex = 13;
             this.toolTips.SetToolTip(this.cmbStandard, resources.GetString("cmbStandard.ToolTip"));
             this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
             // 
@@ -738,7 +738,7 @@
             this.cmbProductDescription.Location = new System.Drawing.Point(151, 227);
             this.cmbProductDescription.Name = "cmbProductDescription";
             this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
-            this.cmbProductDescription.TabIndex = 5;
+            this.cmbProductDescription.TabIndex = 4;
             this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
             this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
             // 
@@ -751,7 +751,7 @@
             this.cmbWeldSeamType.Location = new System.Drawing.Point(151, 254);
             this.cmbWeldSeamType.Name = "cmbWeldSeamType";
             this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
-            this.cmbWeldSeamType.TabIndex = 6;
+            this.cmbWeldSeamType.TabIndex = 5;
             this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
             this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
             // 
@@ -764,7 +764,7 @@
             this.cmbOuterDimension.Location = new System.Drawing.Point(149, 281);
             this.cmbOuterDimension.Name = "cmbOuterDimension";
             this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
-            this.cmbOuterDimension.TabIndex = 7;
+            this.cmbOuterDimension.TabIndex = 6;
             this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
             this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
             // 
@@ -795,7 +795,7 @@
             this.txtNotes.Location = new System.Drawing.Point(149, 497);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(301, 20);
-            this.txtNotes.TabIndex = 15;
+            this.txtNotes.TabIndex = 14;
             this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
             this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
             // 
@@ -857,6 +857,7 @@
             this.dgMasterGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMasterGridBun.Size = new System.Drawing.Size(794, 397);
             this.dgMasterGridBun.TabIndex = 506;
+            this.dgMasterGridBun.TabStop = false;
             // 
             // dgJobGridBun
             // 
@@ -891,6 +892,7 @@
             this.dgJobGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgJobGridBun.Size = new System.Drawing.Size(1560, 407);
             this.dgJobGridBun.TabIndex = 507;
+            this.dgJobGridBun.TabStop = false;
             // 
             // btnSubmitBun
             // 
@@ -920,7 +922,7 @@
             this.btnSubmitBun.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSubmitBun.selected = false;
             this.btnSubmitBun.Size = new System.Drawing.Size(96, 33);
-            this.btnSubmitBun.TabIndex = 508;
+            this.btnSubmitBun.TabIndex = 15;
             this.btnSubmitBun.Text = "Submit";
             this.btnSubmitBun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubmitBun.Textcolor = System.Drawing.Color.White;
@@ -1173,6 +1175,7 @@
             this.btnAddSelectionBun.selected = false;
             this.btnAddSelectionBun.Size = new System.Drawing.Size(238, 25);
             this.btnAddSelectionBun.TabIndex = 529;
+            this.btnAddSelectionBun.TabStop = false;
             this.btnAddSelectionBun.Text = "Add Selection From Master to Current";
             this.btnAddSelectionBun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddSelectionBun.Textcolor = System.Drawing.Color.White;
@@ -1208,7 +1211,7 @@
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(85, 25);
-            this.bunifuFlatButton2.TabIndex = 530;
+            this.bunifuFlatButton2.TabIndex = 16;
             this.bunifuFlatButton2.Text = "Search Job";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
@@ -1244,7 +1247,7 @@
             this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton3.selected = false;
             this.bunifuFlatButton3.Size = new System.Drawing.Size(102, 25);
-            this.bunifuFlatButton3.TabIndex = 531;
+            this.bunifuFlatButton3.TabIndex = 17;
             this.bunifuFlatButton3.Text = "Search Master";
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
@@ -1280,7 +1283,7 @@
             this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton5.selected = false;
             this.bunifuFlatButton5.Size = new System.Drawing.Size(112, 25);
-            this.bunifuFlatButton5.TabIndex = 533;
+            this.bunifuFlatButton5.TabIndex = 18;
             this.bunifuFlatButton5.Text = "Export To Excel";
             this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;

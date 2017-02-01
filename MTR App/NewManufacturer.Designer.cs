@@ -64,6 +64,7 @@
             this.txtCreateManufacturer.Name = "txtCreateManufacturer";
             this.txtCreateManufacturer.Size = new System.Drawing.Size(501, 20);
             this.txtCreateManufacturer.TabIndex = 3;
+            this.txtCreateManufacturer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateManufacturer_KeyPress);
             // 
             // bunifuFlatButton1
             // 

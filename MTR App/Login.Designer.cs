@@ -77,6 +77,7 @@
             this.txtPassword.Size = new System.Drawing.Size(340, 44);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // label1
             // 
@@ -124,7 +125,7 @@
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
             this.btnLogin.Size = new System.Drawing.Size(116, 48);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Textcolor = System.Drawing.Color.White;
@@ -159,7 +160,7 @@
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(116, 48);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Textcolor = System.Drawing.Color.White;

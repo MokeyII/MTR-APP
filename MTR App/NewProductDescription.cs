@@ -75,5 +75,14 @@ namespace MTR_App
         {
             this.Close();
         }
+
+        private void NewProductDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnSubmitProductDescription_Click(sender, e);
+            }
+        }
     }
 }

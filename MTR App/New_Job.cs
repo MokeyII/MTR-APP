@@ -41,5 +41,14 @@ namespace MTR_App
         {
             this.Close();
         }
+
+        private void txtCreateJobName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnSubmitJob_Click(sender, e);
+            }
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.txtCreateStandard.Name = "txtCreateStandard";
             this.txtCreateStandard.Size = new System.Drawing.Size(502, 20);
             this.txtCreateStandard.TabIndex = 21;
+            this.txtCreateStandard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateStandard_KeyPress);
             // 
             // bunifuFlatButton1
             // 

@@ -75,5 +75,14 @@ namespace MTR_App
         {
             this.Close();
         }
+
+        private void txtCreateWallThickness_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnSubmitWallThickness_Click(sender, e);
+            }
+        }
     }
 }

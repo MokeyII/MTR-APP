@@ -135,6 +135,7 @@
             this.Name = "NewGrade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Grade";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewGrade_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

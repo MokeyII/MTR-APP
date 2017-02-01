@@ -65,6 +65,7 @@
             this.txtCreateAnsiAsme.Size = new System.Drawing.Size(502, 20);
             this.txtCreateAnsiAsme.TabIndex = 18;
             this.txtCreateAnsiAsme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCreateAnsiAsme_KeyDown);
+            this.txtCreateAnsiAsme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateAnsiAsme_KeyPress);
             // 
             // bunifuFlatButton1
             // 

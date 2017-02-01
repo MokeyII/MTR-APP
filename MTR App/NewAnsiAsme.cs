@@ -75,5 +75,14 @@ namespace MTR_App
         {
             this.Close();
         }
+
+        private void txtCreateAnsiAsme_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnSubmitAnsiAsme_Click(sender, e);
+            }
+        }
     }
 }

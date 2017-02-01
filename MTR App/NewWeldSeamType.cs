@@ -75,5 +75,15 @@ namespace MTR_App
         {
             this.Close();
         }
+
+        private void NewWeldSeamType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Click Submit button
+                btnSubmitWeldSeamType_Click(sender, e);
+                
+            }
+        }
     }
 }

@@ -60,6 +60,7 @@
             this.txtCreateCoating.Name = "txtCreateCoating";
             this.txtCreateCoating.Size = new System.Drawing.Size(501, 20);
             this.txtCreateCoating.TabIndex = 15;
+            this.txtCreateCoating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreateCoating_KeyPress);
             // 
             // lblCreateCoating
             // 
