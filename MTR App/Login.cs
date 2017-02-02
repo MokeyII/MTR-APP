@@ -35,8 +35,14 @@ namespace MTR_App
                     logIn.Username = txtUserName.Text;
                     logIn.Password = hashedPassword;
 
-                    cmd.Parameters.AddWithValue("@Username", logIn.Username);
-                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                    SqlParameter pUsername = new SqlParameter("@Username", System.Data.SqlDbType.VarChar, 50);
+                    SqlParameter pPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
+
+                    pUsername.Value = logIn.Username;
+                    pPassword.Value = hashedPassword;
+
+                    cmd.Parameters.Add(pUsername);
+                    cmd.Parameters.Add(pPassword);
 
                     cmd.Connection = con;
 

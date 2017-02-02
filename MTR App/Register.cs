@@ -53,12 +53,19 @@ namespace MTR_App
                         // Parameters
                         logIn.Username = txtUserName.Text;
                         logIn.Password = hashedPassword;
+                        logIn.eMail = txtEmail.Text;
 
-                        //Parameters
+                        SqlParameter pUsername = new SqlParameter("@Username", System.Data.SqlDbType.VarChar, 50);
+                        SqlParameter pPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
+                        SqlParameter pEmail = new SqlParameter("@Email", System.Data.SqlDbType.VarChar, 50);
 
-                        cmd.Parameters.AddWithValue("@Username", logIn.Username);
-                        cmd.Parameters.AddWithValue("@Password", logIn.Password);
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        pUsername.Value = logIn.Username;
+                        pPassword.Value = hashedPassword;
+                        pEmail.Value = logIn.eMail;
+
+                        cmd.Parameters.Add(pUsername);
+                        cmd.Parameters.Add(pPassword);
+                        cmd.Parameters.Add(pEmail);
 
                         //execute
                         cmd.ExecuteNonQuery();

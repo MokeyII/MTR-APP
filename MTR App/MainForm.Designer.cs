@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +67,21 @@
             this.txtLastNotesInput = new System.Windows.Forms.TextBox();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
+            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
+            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
+            this.btnRefreshJobName = new System.Windows.Forms.Button();
+            this.cmbJobName = new System.Windows.Forms.ComboBox();
+            this.cmbStandard = new System.Windows.Forms.ComboBox();
+            this.txtPurchaseOrder = new System.Windows.Forms.TextBox();
+            this.cmbANSI = new System.Windows.Forms.ComboBox();
+            this.txtHeat = new System.Windows.Forms.TextBox();
+            this.cmbGrade = new System.Windows.Forms.ComboBox();
+            this.cmbCoating = new System.Windows.Forms.ComboBox();
+            this.cmbWallThickness = new System.Windows.Forms.ComboBox();
+            this.cmbMillLocation = new System.Windows.Forms.ComboBox();
+            this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgMasterGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.dgJobGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -91,15 +106,9 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.txtNotes = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
-            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
             this.btnSubmitBun = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnRefreshJobName = new System.Windows.Forms.Button();
-            this.cmbJobName = new System.Windows.Forms.ComboBox();
             this.lblStandard = new System.Windows.Forms.Label();
             this.lblPurchasePrder = new System.Windows.Forms.Label();
             this.lblANSI = new System.Windows.Forms.Label();
@@ -112,21 +121,14 @@
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.lblMillLocation = new System.Windows.Forms.Label();
             this.lblManufacturer = new System.Windows.Forms.Label();
-            this.cmbStandard = new System.Windows.Forms.ComboBox();
-            this.txtPurchaseOrder = new System.Windows.Forms.TextBox();
-            this.cmbANSI = new System.Windows.Forms.ComboBox();
-            this.txtHeat = new System.Windows.Forms.TextBox();
-            this.cmbGrade = new System.Windows.Forms.ComboBox();
-            this.cmbCoating = new System.Windows.Forms.ComboBox();
-            this.cmbWallThickness = new System.Windows.Forms.ComboBox();
-            this.cmbMillLocation = new System.Windows.Forms.ComboBox();
-            this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.lblJobName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateTable = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).BeginInit();
@@ -446,7 +448,7 @@
             this.lblDgJobTitle.AutoSize = true;
             this.lblDgJobTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDgJobTitle.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgJobTitle.Location = new System.Drawing.Point(17, 531);
+            this.lblDgJobTitle.Location = new System.Drawing.Point(17, 299);
             this.lblDgJobTitle.Name = "lblDgJobTitle";
             this.lblDgJobTitle.Size = new System.Drawing.Size(109, 22);
             this.lblDgJobTitle.TabIndex = 75;
@@ -485,6 +487,191 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(155, 381);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(301, 20);
+            this.txtNotes.TabIndex = 14;
+            this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
+            this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
+            // 
+            // cmbOuterDimension
+            // 
+            this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbOuterDimension.FormattingEnabled = true;
+            this.cmbOuterDimension.Location = new System.Drawing.Point(155, 165);
+            this.cmbOuterDimension.Name = "cmbOuterDimension";
+            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
+            this.cmbOuterDimension.TabIndex = 6;
+            this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
+            this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
+            // 
+            // cmbWeldSeamType
+            // 
+            this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbWeldSeamType.FormattingEnabled = true;
+            this.cmbWeldSeamType.Location = new System.Drawing.Point(157, 138);
+            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
+            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
+            this.cmbWeldSeamType.TabIndex = 5;
+            this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
+            this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
+            // 
+            // cmbProductDescription
+            // 
+            this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbProductDescription.FormattingEnabled = true;
+            this.cmbProductDescription.Location = new System.Drawing.Point(157, 111);
+            this.cmbProductDescription.Name = "cmbProductDescription";
+            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
+            this.cmbProductDescription.TabIndex = 4;
+            this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
+            this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
+            // 
+            // btnRefreshJobName
+            // 
+            this.btnRefreshJobName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshJobName.BackgroundImage")));
+            this.btnRefreshJobName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefreshJobName.Location = new System.Drawing.Point(210, 12);
+            this.btnRefreshJobName.Name = "btnRefreshJobName";
+            this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
+            this.btnRefreshJobName.TabIndex = 2;
+            this.toolTips.SetToolTip(this.btnRefreshJobName, "Click here to refresh your jobs list after adding a new job.");
+            this.btnRefreshJobName.UseVisualStyleBackColor = true;
+            this.btnRefreshJobName.Click += new System.EventHandler(this.btnRefreshJobName_Click);
+            // 
+            // cmbJobName
+            // 
+            this.cmbJobName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbJobName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbJobName.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbJobName.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbJobName.FormattingEnabled = true;
+            this.cmbJobName.Location = new System.Drawing.Point(83, 12);
+            this.cmbJobName.Name = "cmbJobName";
+            this.cmbJobName.Size = new System.Drawing.Size(121, 21);
+            this.cmbJobName.TabIndex = 1;
+            this.toolTips.SetToolTip(this.cmbJobName, "Select the dropdown to select a job.");
+            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
+            // 
+            // cmbStandard
+            // 
+            this.cmbStandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbStandard.FormattingEnabled = true;
+            this.cmbStandard.Location = new System.Drawing.Point(155, 353);
+            this.cmbStandard.Name = "cmbStandard";
+            this.cmbStandard.Size = new System.Drawing.Size(121, 21);
+            this.cmbStandard.TabIndex = 13;
+            this.toolTips.SetToolTip(this.cmbStandard, resources.GetString("cmbStandard.ToolTip"));
+            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
+            // 
+            // txtPurchaseOrder
+            // 
+            this.txtPurchaseOrder.Location = new System.Drawing.Point(157, 326);
+            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
+            this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
+            this.txtPurchaseOrder.TabIndex = 12;
+            this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
+            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
+            // 
+            // cmbANSI
+            // 
+            this.cmbANSI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbANSI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbANSI.FormattingEnabled = true;
+            this.cmbANSI.Location = new System.Drawing.Point(157, 299);
+            this.cmbANSI.Name = "cmbANSI";
+            this.cmbANSI.Size = new System.Drawing.Size(121, 21);
+            this.cmbANSI.TabIndex = 11;
+            this.toolTips.SetToolTip(this.cmbANSI, resources.GetString("cmbANSI.ToolTip"));
+            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
+            // 
+            // txtHeat
+            // 
+            this.txtHeat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtHeat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtHeat.Location = new System.Drawing.Point(155, 273);
+            this.txtHeat.Name = "txtHeat";
+            this.txtHeat.Size = new System.Drawing.Size(123, 20);
+            this.txtHeat.TabIndex = 10;
+            this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
+            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
+            // 
+            // cmbGrade
+            // 
+            this.cmbGrade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbGrade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbGrade.FormattingEnabled = true;
+            this.cmbGrade.Location = new System.Drawing.Point(157, 246);
+            this.cmbGrade.Name = "cmbGrade";
+            this.cmbGrade.Size = new System.Drawing.Size(121, 21);
+            this.cmbGrade.TabIndex = 9;
+            this.toolTips.SetToolTip(this.cmbGrade, resources.GetString("cmbGrade.ToolTip"));
+            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
+            // 
+            // cmbCoating
+            // 
+            this.cmbCoating.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCoating.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbCoating.FormattingEnabled = true;
+            this.cmbCoating.Location = new System.Drawing.Point(157, 219);
+            this.cmbCoating.Name = "cmbCoating";
+            this.cmbCoating.Size = new System.Drawing.Size(121, 21);
+            this.cmbCoating.TabIndex = 8;
+            this.toolTips.SetToolTip(this.cmbCoating, resources.GetString("cmbCoating.ToolTip"));
+            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
+            // 
+            // cmbWallThickness
+            // 
+            this.cmbWallThickness.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWallThickness.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbWallThickness.FormattingEnabled = true;
+            this.cmbWallThickness.Location = new System.Drawing.Point(157, 192);
+            this.cmbWallThickness.Name = "cmbWallThickness";
+            this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
+            this.cmbWallThickness.TabIndex = 7;
+            this.toolTips.SetToolTip(this.cmbWallThickness, resources.GetString("cmbWallThickness.ToolTip"));
+            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
+            // 
+            // cmbMillLocation
+            // 
+            this.cmbMillLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbMillLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbMillLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbMillLocation.FormattingEnabled = true;
+            this.cmbMillLocation.Location = new System.Drawing.Point(157, 84);
+            this.cmbMillLocation.Name = "cmbMillLocation";
+            this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
+            this.cmbMillLocation.TabIndex = 3;
+            this.toolTips.SetToolTip(this.cmbMillLocation, resources.GetString("cmbMillLocation.ToolTip"));
+            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
+            // 
+            // cmbManufacturer
+            // 
+            this.cmbManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbManufacturer.FormattingEnabled = true;
+            this.cmbManufacturer.Location = new System.Drawing.Point(157, 57);
+            this.cmbManufacturer.Name = "cmbManufacturer";
+            this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
+            this.cmbManufacturer.TabIndex = 2;
+            this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
+            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
+            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
@@ -492,8 +679,8 @@
             // 
             // dgMasterGridBun
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgMasterGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgMasterGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -502,14 +689,14 @@
             this.dgMasterGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgMasterGridBun.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgMasterGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterGridBun.DoubleBuffered = true;
             this.dgMasterGridBun.EnableHeadersVisualStyles = false;
@@ -518,7 +705,6 @@
             this.dgMasterGridBun.Location = new System.Drawing.Point(6, 19);
             this.dgMasterGridBun.Name = "dgMasterGridBun";
             this.dgMasterGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgMasterGridBun.RowHeadersVisible = false;
             this.dgMasterGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMasterGridBun.Size = new System.Drawing.Size(695, 435);
             this.dgMasterGridBun.TabIndex = 506;
@@ -526,8 +712,8 @@
             // 
             // dgJobGridBun
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgJobGridBun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -537,14 +723,14 @@
             this.dgJobGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgJobGridBun.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgJobGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgJobGridBun.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgJobGridBun.DoubleBuffered = true;
@@ -556,7 +742,7 @@
             this.dgJobGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgJobGridBun.RowHeadersVisible = false;
             this.dgJobGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgJobGridBun.Size = new System.Drawing.Size(1545, 430);
+            this.dgJobGridBun.Size = new System.Drawing.Size(1545, 198);
             this.dgJobGridBun.TabIndex = 507;
             this.dgJobGridBun.TabStop = false;
             // 
@@ -831,7 +1017,7 @@
             this.bunifuFlatButton5.IconVisible = true;
             this.bunifuFlatButton5.IconZoom = 100D;
             this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(1460, 1017);
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(1460, 785);
             this.bunifuFlatButton5.Name = "bunifuFlatButton5";
             this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -890,15 +1076,6 @@
             this.bunifuImageButton4.Zoom = 10;
             this.bunifuImageButton4.Click += new System.EventHandler(this.bunifuImageButton4_Click);
             // 
-            // txtNotes
-            // 
-            this.txtNotes.Location = new System.Drawing.Point(155, 381);
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(301, 20);
-            this.txtNotes.TabIndex = 14;
-            this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
-            this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -908,32 +1085,6 @@
             this.label15.Size = new System.Drawing.Size(42, 14);
             this.label15.TabIndex = 505;
             this.label15.Text = "Note:";
-            // 
-            // cmbOuterDimension
-            // 
-            this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbOuterDimension.FormattingEnabled = true;
-            this.cmbOuterDimension.Location = new System.Drawing.Point(155, 165);
-            this.cmbOuterDimension.Name = "cmbOuterDimension";
-            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
-            this.cmbOuterDimension.TabIndex = 6;
-            this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
-            this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
-            // 
-            // cmbWeldSeamType
-            // 
-            this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbWeldSeamType.FormattingEnabled = true;
-            this.cmbWeldSeamType.Location = new System.Drawing.Point(157, 138);
-            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
-            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
-            this.cmbWeldSeamType.TabIndex = 5;
-            this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
-            this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
             // 
             // btnSubmitBun
             // 
@@ -970,19 +1121,6 @@
             this.btnSubmitBun.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitBun.Click += new System.EventHandler(this.btnSubmitBun_Click);
             // 
-            // cmbProductDescription
-            // 
-            this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbProductDescription.FormattingEnabled = true;
-            this.cmbProductDescription.Location = new System.Drawing.Point(157, 111);
-            this.cmbProductDescription.Name = "cmbProductDescription";
-            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
-            this.cmbProductDescription.TabIndex = 4;
-            this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
-            this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
-            // 
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.LightSteelBlue;
@@ -1017,32 +1155,6 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
-            // btnRefreshJobName
-            // 
-            this.btnRefreshJobName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshJobName.BackgroundImage")));
-            this.btnRefreshJobName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshJobName.Location = new System.Drawing.Point(210, 12);
-            this.btnRefreshJobName.Name = "btnRefreshJobName";
-            this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
-            this.btnRefreshJobName.TabIndex = 2;
-            this.toolTips.SetToolTip(this.btnRefreshJobName, "Click here to refresh your jobs list after adding a new job.");
-            this.btnRefreshJobName.UseVisualStyleBackColor = true;
-            this.btnRefreshJobName.Click += new System.EventHandler(this.btnRefreshJobName_Click);
-            // 
-            // cmbJobName
-            // 
-            this.cmbJobName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbJobName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbJobName.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbJobName.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbJobName.FormattingEnabled = true;
-            this.cmbJobName.Location = new System.Drawing.Point(83, 12);
-            this.cmbJobName.Name = "cmbJobName";
-            this.cmbJobName.Size = new System.Drawing.Size(121, 21);
-            this.cmbJobName.TabIndex = 1;
-            this.toolTips.SetToolTip(this.cmbJobName, "Select the dropdown to select a job.");
-            this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
             // 
             // lblStandard
             // 
@@ -1164,117 +1276,6 @@
             this.lblManufacturer.TabIndex = 14;
             this.lblManufacturer.Text = "Manufacturer:";
             // 
-            // cmbStandard
-            // 
-            this.cmbStandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbStandard.FormattingEnabled = true;
-            this.cmbStandard.Location = new System.Drawing.Point(155, 353);
-            this.cmbStandard.Name = "cmbStandard";
-            this.cmbStandard.Size = new System.Drawing.Size(121, 21);
-            this.cmbStandard.TabIndex = 13;
-            this.toolTips.SetToolTip(this.cmbStandard, resources.GetString("cmbStandard.ToolTip"));
-            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
-            // 
-            // txtPurchaseOrder
-            // 
-            this.txtPurchaseOrder.Location = new System.Drawing.Point(157, 326);
-            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
-            this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
-            this.txtPurchaseOrder.TabIndex = 12;
-            this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
-            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
-            // 
-            // cmbANSI
-            // 
-            this.cmbANSI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbANSI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbANSI.FormattingEnabled = true;
-            this.cmbANSI.Location = new System.Drawing.Point(157, 299);
-            this.cmbANSI.Name = "cmbANSI";
-            this.cmbANSI.Size = new System.Drawing.Size(121, 21);
-            this.cmbANSI.TabIndex = 11;
-            this.toolTips.SetToolTip(this.cmbANSI, resources.GetString("cmbANSI.ToolTip"));
-            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
-            // 
-            // txtHeat
-            // 
-            this.txtHeat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtHeat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txtHeat.Location = new System.Drawing.Point(155, 273);
-            this.txtHeat.Name = "txtHeat";
-            this.txtHeat.Size = new System.Drawing.Size(123, 20);
-            this.txtHeat.TabIndex = 10;
-            this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
-            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
-            // 
-            // cmbGrade
-            // 
-            this.cmbGrade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbGrade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbGrade.FormattingEnabled = true;
-            this.cmbGrade.Location = new System.Drawing.Point(157, 246);
-            this.cmbGrade.Name = "cmbGrade";
-            this.cmbGrade.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrade.TabIndex = 9;
-            this.toolTips.SetToolTip(this.cmbGrade, resources.GetString("cmbGrade.ToolTip"));
-            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
-            // 
-            // cmbCoating
-            // 
-            this.cmbCoating.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbCoating.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbCoating.FormattingEnabled = true;
-            this.cmbCoating.Location = new System.Drawing.Point(157, 219);
-            this.cmbCoating.Name = "cmbCoating";
-            this.cmbCoating.Size = new System.Drawing.Size(121, 21);
-            this.cmbCoating.TabIndex = 8;
-            this.toolTips.SetToolTip(this.cmbCoating, resources.GetString("cmbCoating.ToolTip"));
-            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
-            // 
-            // cmbWallThickness
-            // 
-            this.cmbWallThickness.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbWallThickness.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbWallThickness.FormattingEnabled = true;
-            this.cmbWallThickness.Location = new System.Drawing.Point(157, 192);
-            this.cmbWallThickness.Name = "cmbWallThickness";
-            this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
-            this.cmbWallThickness.TabIndex = 7;
-            this.toolTips.SetToolTip(this.cmbWallThickness, resources.GetString("cmbWallThickness.ToolTip"));
-            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
-            // 
-            // cmbMillLocation
-            // 
-            this.cmbMillLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbMillLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbMillLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbMillLocation.FormattingEnabled = true;
-            this.cmbMillLocation.Location = new System.Drawing.Point(157, 84);
-            this.cmbMillLocation.Name = "cmbMillLocation";
-            this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
-            this.cmbMillLocation.TabIndex = 3;
-            this.toolTips.SetToolTip(this.cmbMillLocation, resources.GetString("cmbMillLocation.ToolTip"));
-            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
-            // 
-            // cmbManufacturer
-            // 
-            this.cmbManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbManufacturer.FormattingEnabled = true;
-            this.cmbManufacturer.Location = new System.Drawing.Point(157, 57);
-            this.cmbManufacturer.Name = "cmbManufacturer";
-            this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
-            this.cmbManufacturer.TabIndex = 2;
-            this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
-            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
-            // 
             // lblJobName
             // 
             this.lblJobName.AutoSize = true;
@@ -1387,9 +1388,81 @@
             this.groupBox4.Controls.Add(this.dgJobGridBun);
             this.groupBox4.Location = new System.Drawing.Point(12, 556);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1560, 455);
+            this.groupBox4.Size = new System.Drawing.Size(1560, 223);
             this.groupBox4.TabIndex = 541;
             this.groupBox4.TabStop = false;
+            // 
+            // btnUpdateTable
+            // 
+            this.btnUpdateTable.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdateTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUpdateTable.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdateTable.BorderRadius = 0;
+            this.btnUpdateTable.ButtonText = "Update Job Table";
+            this.btnUpdateTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateTable.DisabledColor = System.Drawing.Color.Gray;
+            this.btnUpdateTable.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnUpdateTable.Iconimage = null;
+            this.btnUpdateTable.Iconimage_right = null;
+            this.btnUpdateTable.Iconimage_right_Selected = null;
+            this.btnUpdateTable.Iconimage_Selected = null;
+            this.btnUpdateTable.IconMarginLeft = 0;
+            this.btnUpdateTable.IconMarginRight = 0;
+            this.btnUpdateTable.IconRightVisible = true;
+            this.btnUpdateTable.IconRightZoom = 0D;
+            this.btnUpdateTable.IconVisible = true;
+            this.btnUpdateTable.IconZoom = 100D;
+            this.btnUpdateTable.IsTab = false;
+            this.btnUpdateTable.Location = new System.Drawing.Point(14, 785);
+            this.btnUpdateTable.Name = "btnUpdateTable";
+            this.btnUpdateTable.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateTable.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdateTable.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnUpdateTable.selected = false;
+            this.btnUpdateTable.Size = new System.Drawing.Size(148, 25);
+            this.btnUpdateTable.TabIndex = 542;
+            this.btnUpdateTable.Text = "Update Job Table";
+            this.btnUpdateTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnUpdateTable.Textcolor = System.Drawing.Color.White;
+            this.btnUpdateTable.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateTable.Click += new System.EventHandler(this.btnUpdateTable_Click);
+            // 
+            // bunifuFlatButton4
+            // 
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 0;
+            this.bunifuFlatButton4.ButtonText = "Update Master Table";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = null;
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = true;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = true;
+            this.bunifuFlatButton4.IconZoom = 100D;
+            this.bunifuFlatButton4.IsTab = false;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(1166, 27);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.selected = false;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(156, 25);
+            this.bunifuFlatButton4.TabIndex = 543;
+            this.bunifuFlatButton4.Text = "Update Master Table";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // MainForm
             // 
@@ -1397,7 +1470,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1584, 1054);
+            this.ClientSize = new System.Drawing.Size(1584, 822);
+            this.Controls.Add(this.bunifuFlatButton4);
+            this.Controls.Add(this.btnUpdateTable);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -1415,6 +1490,7 @@
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -1534,6 +1610,8 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.GroupBox groupBox4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUpdateTable;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
     }
 }
 

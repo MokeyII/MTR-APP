@@ -9,8 +9,10 @@ namespace MTR_APP
     public partial class MainForm : Form
     {
         private SqlDataAdapter myDA;
-
         private DataTable myDT;
+
+        private SqlDataAdapter masterDA;
+        private DataTable masterDT;
 
         public MainForm()
         {
@@ -496,33 +498,33 @@ namespace MTR_APP
                     cmd.CommandText = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
 
                     cmd.Connection = con;
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     dgMasterGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -694,33 +696,33 @@ namespace MTR_APP
                     cmd.Connection = con;
 
                     //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -956,33 +958,33 @@ namespace MTR_APP
                     cmd.Connection = con;
 
                     //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -1092,33 +1094,33 @@ namespace MTR_APP
                     cmd.Connection = con;
 
                     //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -1596,33 +1598,33 @@ namespace MTR_APP
                     cmd.Connection = con;
 
                     //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+                    SqlCommand masterCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = masterCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -1887,33 +1889,33 @@ namespace MTR_APP
                     cmd.Connection = con;
 
                     //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -2010,33 +2012,33 @@ namespace MTR_APP
                     cmd.CommandText = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
 
                     cmd.Connection = con;
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
-                    myDT = new DataTable();
+                    masterDT = new DataTable();
 
                     //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
 
                     //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
+                    masterDA.Fill(masterDT);
 
                     //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
 
                     //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = myDT;
+                    dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
                     dgMasterGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -2143,6 +2145,16 @@ namespace MTR_APP
             Left = Top = 0;
             Width = Screen.PrimaryScreen.WorkingArea.Width;
             Height = Screen.PrimaryScreen.WorkingArea.Height;
+        }
+
+        private void btnUpdateTable_Click(object sender, EventArgs e)
+        {
+            int rows = myDA.Update(myDT);
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            int rows = masterDA.Update(masterDT);
         }
     }
 }
