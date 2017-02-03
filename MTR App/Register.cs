@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -55,9 +56,9 @@ namespace MTR_App
                         logIn.Password = hashedPassword;
                         logIn.eMail = txtEmail.Text;
 
-                        SqlParameter pUsername = new SqlParameter("@Username", System.Data.SqlDbType.VarChar, 50);
-                        SqlParameter pPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
-                        SqlParameter pEmail = new SqlParameter("@Email", System.Data.SqlDbType.VarChar, 50);
+                        SqlParameter pUsername = new SqlParameter("@Username", SqlDbType.VarChar, 50);
+                        SqlParameter pPassword = new SqlParameter("@Password", SqlDbType.VarChar, 50);
+                        SqlParameter pEmail = new SqlParameter("@Email", SqlDbType.VarChar, 50);
 
                         pUsername.Value = logIn.Username;
                         pPassword.Value = hashedPassword;

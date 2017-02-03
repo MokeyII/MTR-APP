@@ -551,23 +551,49 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    // Connection to DB
-                    cmd.CommandText.Replace("\\s+", " ");
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
-                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
-                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
-                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
-                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
-                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
-                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
-                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
-                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
-                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbManufacturer.Text;
+                    pProductDescription.Value = cmbManufacturer.Text;
+                    pWeldSeamType.Value = cmbManufacturer.Text;
+                    pOuterDimension.Value = cmbManufacturer.Text;
+                    pWallThickness.Value = cmbManufacturer.Text;
+                    pCoating.Value = cmbManufacturer.Text;
+                    pGrade.Value = cmbManufacturer.Text;
+                    pHeat.Value = cmbManufacturer.Text;
+                    pAnsiAsme.Value = cmbManufacturer.Text;
+                    pPurchaseOrder.Value = cmbManufacturer.Text;
+                    pStandard.Value = cmbManufacturer.Text;
+                    pNotes.Value = cmbManufacturer.Text;
+
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    // Connection to DB
                     cmd.CommandText.Replace("\\s+", " ");
 
                     //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
@@ -657,21 +683,52 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
-                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
-                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
-                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
-                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
-                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
-                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
-                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
-                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
-                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
-                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                    SqlParameter pJobName = new SqlParameter("@JobName", SqlDbType.VarChar, 50);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pJobName.Value = cmbJobName.Text;
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbManufacturer.Text;
+                    pProductDescription.Value = cmbManufacturer.Text;
+                    pWeldSeamType.Value = cmbManufacturer.Text;
+                    pOuterDimension.Value = cmbManufacturer.Text;
+                    pWallThickness.Value = cmbManufacturer.Text;
+                    pCoating.Value = cmbManufacturer.Text;
+                    pGrade.Value = cmbManufacturer.Text;
+                    pHeat.Value = cmbManufacturer.Text;
+                    pAnsiAsme.Value = cmbManufacturer.Text;
+                    pPurchaseOrder.Value = cmbManufacturer.Text;
+                    pStandard.Value = cmbManufacturer.Text;
+                    pNotes.Value = cmbManufacturer.Text;
+
+                    cmd.Parameters.Add(pJobName);
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    cmd.CommandText.Replace("\\s+", " ");
 
                     //execute
                     cmd.ExecuteNonQuery();
@@ -797,20 +854,49 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
-                    cmd.Parameters.AddWithValue("@MillLocation", vML);
-                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
-                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
-                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
-                    cmd.Parameters.AddWithValue("@Coating", vCoat);
-                    cmd.Parameters.AddWithValue("@Grade", vGrad);
-                    cmd.Parameters.AddWithValue("@Heat", vHeat);
-                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
-                    cmd.Parameters.AddWithValue("@Standard", vSTD);
-                    cmd.Parameters.AddWithValue("@Notes", vNote);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pManufactuter.Value = vMnuf;
+                    pMillLocation.Value = vML;
+                    pProductDescription.Value = vPD;
+                    pWeldSeamType.Value = vWST;
+                    pOuterDimension.Value = vOD;
+                    pWallThickness.Value = vWT;
+                    pCoating.Value = vCoat;
+                    pGrade.Value = vGrad;
+                    pHeat.Value = vHeat;
+                    pAnsiAsme.Value = vAnsi;
+                    pPurchaseOrder.Value = vPO;
+                    pStandard.Value = vSTD;
+                    pNotes.Value = vNote;
+
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    cmd.CommandText.Replace("\\s+", " ");
 
                     //execute
                     cmd.ExecuteNonQuery();
@@ -839,21 +925,52 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
-                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
-                    cmd.Parameters.AddWithValue("@MillLocation", vML);
-                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
-                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
-                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
-                    cmd.Parameters.AddWithValue("@Coating", vCoat);
-                    cmd.Parameters.AddWithValue("@Grade", vGrad);
-                    cmd.Parameters.AddWithValue("@Heat", vHeat);
-                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
-                    cmd.Parameters.AddWithValue("@Standard", vSTD);
-                    cmd.Parameters.AddWithValue("@Notes", vNote);
+                    SqlParameter pJobName = new SqlParameter("@JobName", SqlDbType.VarChar, 50);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pJobName.Value = cmbJobName.Text;
+                    pManufactuter.Value = vMnuf;
+                    pMillLocation.Value = vML;
+                    pProductDescription.Value = vPD;
+                    pWeldSeamType.Value = vWST;
+                    pOuterDimension.Value = vOD;
+                    pWallThickness.Value = vWT;
+                    pCoating.Value = vCoat;
+                    pGrade.Value = vGrad;
+                    pHeat.Value = vHeat;
+                    pAnsiAsme.Value = vAnsi;
+                    pPurchaseOrder.Value = vPO;
+                    pStandard.Value = vSTD;
+                    pNotes.Value = vNote;
+
+                    cmd.Parameters.Add(pJobName);
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    cmd.CommandText.Replace("\\s+", " ");
 
                     //execute
                     cmd.ExecuteNonQuery();
@@ -1453,23 +1570,49 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    // Connection to DB
-                    cmd.CommandText.Replace("\\s+", " ");
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
-                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
-                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
-                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
-                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
-                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
-                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
-                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
-                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
-                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbManufacturer.Text;
+                    pProductDescription.Value = cmbManufacturer.Text;
+                    pWeldSeamType.Value = cmbManufacturer.Text;
+                    pOuterDimension.Value = cmbManufacturer.Text;
+                    pWallThickness.Value = cmbManufacturer.Text;
+                    pCoating.Value = cmbManufacturer.Text;
+                    pGrade.Value = cmbManufacturer.Text;
+                    pHeat.Value = cmbManufacturer.Text;
+                    pAnsiAsme.Value = cmbManufacturer.Text;
+                    pPurchaseOrder.Value = cmbManufacturer.Text;
+                    pStandard.Value = cmbManufacturer.Text;
+                    pNotes.Value = cmbManufacturer.Text;
+
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    // Connection to DB
                     cmd.CommandText.Replace("\\s+", " ");
 
                     //REPEAT SUBMITTED INFORMATION TO TEXT BOXES FOR REVIEW.
@@ -1559,30 +1702,60 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
-                    cmd.Parameters.AddWithValue("@Manufacturer", cmbManufacturer.Text);
-                    cmd.Parameters.AddWithValue("@MillLocation", cmbMillLocation.Text);
-                    cmd.Parameters.AddWithValue("@ProductDescription", cmbProductDescription.Text);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", cmbWeldSeamType.Text);
-                    cmd.Parameters.AddWithValue("@OuterDimension", cmbOuterDimension.Text);
-                    cmd.Parameters.AddWithValue("@WallThickness", cmbWallThickness.Text);
-                    cmd.Parameters.AddWithValue("@Coating", cmbCoating.Text);
-                    cmd.Parameters.AddWithValue("@Grade", cmbGrade.Text);
-                    cmd.Parameters.AddWithValue("@Heat", txtHeat.Text);
-                    cmd.Parameters.AddWithValue("@ANSIASME", cmbANSI.Text);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", txtPurchaseOrder.Text);
-                    cmd.Parameters.AddWithValue("@Standard", cmbStandard.Text);
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.ToString());
+                    SqlParameter pJobName = new SqlParameter("@JobName", System.Data.SqlDbType.VarChar, 50);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pJobName.Value = cmbJobName.Text;
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbManufacturer.Text;
+                    pProductDescription.Value = cmbManufacturer.Text;
+                    pWeldSeamType.Value = cmbManufacturer.Text;
+                    pOuterDimension.Value = cmbManufacturer.Text;
+                    pWallThickness.Value = cmbManufacturer.Text;
+                    pCoating.Value = cmbManufacturer.Text;
+                    pGrade.Value = cmbManufacturer.Text;
+                    pHeat.Value = cmbManufacturer.Text;
+                    pAnsiAsme.Value = cmbManufacturer.Text;
+                    pPurchaseOrder.Value = cmbManufacturer.Text;
+                    pStandard.Value = cmbManufacturer.Text;
+                    pNotes.Value = cmbManufacturer.Text;
+
+                    cmd.Parameters.Add(pJobName);
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    cmd.CommandText.Replace("\\s+", " ");
 
                     //execute
                     cmd.ExecuteNonQuery();
 
                     //close connection
-                    con.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 //catch error
                 MessageBox.Show(ex.Message);
@@ -1601,10 +1774,10 @@ namespace MTR_APP
                     masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
                     //MySqlCommand
-                    SqlCommand masterCMD = new SqlCommand(cmd.CommandText, con);
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
                     //DataAdapter to Command
-                    masterDA.SelectCommand = masterCMD;
+                    masterDA.SelectCommand = myCMD;
 
                     //Define Datatable
                     masterDT = new DataTable();
@@ -1728,20 +1901,47 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
-                    cmd.Parameters.AddWithValue("@MillLocation", vML);
-                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
-                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
-                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
-                    cmd.Parameters.AddWithValue("@Coating", vCoat);
-                    cmd.Parameters.AddWithValue("@Grade", vGrad);
-                    cmd.Parameters.AddWithValue("@Heat", vHeat);
-                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
-                    cmd.Parameters.AddWithValue("@Standard", vSTD);
-                    cmd.Parameters.AddWithValue("@Notes", vNote);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pManufactuter.Value = vMnuf;
+                    pMillLocation.Value = vML;
+                    pProductDescription.Value = vPD;
+                    pWeldSeamType.Value = vWST;
+                    pOuterDimension.Value = vOD;
+                    pWallThickness.Value = vWT;
+                    pCoating.Value = vCoat;
+                    pGrade.Value = vGrad;
+                    pHeat.Value = vHeat;
+                    pAnsiAsme.Value = vAnsi;
+                    pPurchaseOrder.Value = vPO;
+                    pStandard.Value = vSTD;
+                    pNotes.Value = vNote;
+
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
 
                     //execute
                     cmd.ExecuteNonQuery();
@@ -1762,7 +1962,7 @@ namespace MTR_APP
             /// insert into Master Table
             try
             {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -1770,21 +1970,52 @@ namespace MTR_APP
 
                     cmd.Connection = con;
 
-                    //Parameters
-                    cmd.Parameters.AddWithValue("@JobName", cmbJobName.Text);
-                    cmd.Parameters.AddWithValue("@Manufacturer", vMnuf);
-                    cmd.Parameters.AddWithValue("@MillLocation", vML);
-                    cmd.Parameters.AddWithValue("@ProductDescription", vPD);
-                    cmd.Parameters.AddWithValue("@WeldSeamType", vWST);
-                    cmd.Parameters.AddWithValue("@OuterDimension", vOD);
-                    cmd.Parameters.AddWithValue("@WallThickness", vWT);
-                    cmd.Parameters.AddWithValue("@Coating", vCoat);
-                    cmd.Parameters.AddWithValue("@Grade", vGrad);
-                    cmd.Parameters.AddWithValue("@Heat", vHeat);
-                    cmd.Parameters.AddWithValue("@ANSIASME", vAnsi);
-                    cmd.Parameters.AddWithValue("@PurchaseOrder", vPO);
-                    cmd.Parameters.AddWithValue("@Standard", vSTD);
-                    cmd.Parameters.AddWithValue("@Notes", vNote);
+                    SqlParameter pJobName = new SqlParameter("@JobName", SqlDbType.VarChar, 50);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pJobName.Value = cmbJobName.Text;
+                    pManufactuter.Value = vMnuf;
+                    pMillLocation.Value = vML;
+                    pProductDescription.Value = vPD;
+                    pWeldSeamType.Value = vWST;
+                    pOuterDimension.Value = vOD;
+                    pWallThickness.Value = vWT;
+                    pCoating.Value = vCoat;
+                    pGrade.Value = vGrad;
+                    pHeat.Value = vHeat;
+                    pAnsiAsme.Value = vAnsi;
+                    pPurchaseOrder.Value = vPO;
+                    pStandard.Value = vSTD;
+                    pNotes.Value = vNote;
+
+                    cmd.Parameters.Add(pJobName);
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    cmd.CommandText.Replace("\\s+", " ");
 
                     //execute
                     cmd.ExecuteNonQuery();
