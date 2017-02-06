@@ -26,7 +26,7 @@ namespace MTR_App
                     SqlParameter pAnsiAsme = new SqlParameter("@AnsiAsme", SqlDbType.VarChar, 50);
 
                     pAnsiAsme.Value = txtCreateAnsiAsme.Text;
-                    
+
                     cmd.Parameters.Add(pAnsiAsme);
 
                     cmd.ExecuteNonQuery();
