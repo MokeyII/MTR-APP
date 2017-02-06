@@ -29,7 +29,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -127,6 +127,12 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Credentials.cs" />
+    <Compile Include="FirstRunDiag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstRunDiag.Designer.cs">
+      <DependentUpon>FirstRunDiag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="ImportExcel.cs">
       <SubType>Form</SubType>
@@ -220,6 +226,9 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FirstRunDiag.resx">
+      <DependentUpon>FirstRunDiag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportExcel.resx">
       <DependentUpon>ImportExcel.cs</DependentUpon>
     </EmbeddedResource>

@@ -1191,6 +1191,20 @@ namespace MTR_APP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            if ((bool)MTR_App.Properties.Settings.Default["FirstRun"] == true)
+            {
+                //First application run
+                //Update setting
+                MTR_App.Properties.Settings.Default["FirstRun"] = false;
+                //Save setting
+                MTR_App.Properties.Settings.Default.Save();
+                //Create new instance of Dialog you want to show
+                FirstRunDiag frd = new FirstRunDiag();
+                //Show the dialog
+                frd.ShowDialog();
+            }
+
             zManufacturerCombo();
             zMillLocationCombo();
             zProductDescriptionCombo();
