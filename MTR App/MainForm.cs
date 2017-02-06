@@ -23,6 +23,37 @@ namespace MTR_APP
             InitializeComponent();
         }
 
+        #region Animated Side Panel
+
+        private void btnInsertJobSidePanel_Click(object sender, EventArgs e)
+        {
+            //if (sidemenu.Width == 50)
+            //{
+            //    //EXPAND
+            //    // Expand the panel
+            //    //Show the Logo
+
+            //    sidemenu.Visible = false;
+            //    sidemenu.Width = 375;
+            //    panelTransition.ShowSync(sidemenu);
+            //    logoTransition.ShowSync(logo);
+            //}
+            //else
+            //{
+            //    //COLLAPSE
+            //    //Using Bunifu Animator
+            //    // 1. Hide the logo.
+            //    // 2. Slide the Panel
+
+            //    logoTransition.Hide(logo);
+            //    sidemenu.Visible = false;
+            //    sidemenu.Width = 50;
+            //    panelTransition.ShowSync(sidemenu);
+            //}
+        }
+
+        #endregion Animated Side Panel
+
         #region Combo Box Populate
 
         //Populate Ansi / ASME Combo Box
@@ -346,156 +377,68 @@ namespace MTR_APP
 
         #endregion Combo Box Populate
 
-        #region Refresh Job List
+        #region Export to Excel
 
-        // RefreshJob Name ComboBox
-        private void btnRefreshJobName_Click(object sender, EventArgs e)
+        private void btnExportToExcel_Click(object sender, EventArgs e)
         {
+            // Creating a Excel object.
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
-                    cmd.Connection = con;
+                worksheet = workbook.ActiveSheet;
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                worksheet.Name = "ExportedFromDatGrid";
+
+                int cellRowIndex = 1;
+                int cellColumnIndex = 1;
+
+                //Loop through each row and read value from each column.
+                for (int i = 0; i < dgJobGridBun.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dgJobGridBun.Columns.Count; j++)
                     {
-                        cmbJobName.Items.Clear();
-                        while (reader.Read())
+                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                        if (cellRowIndex == 0)
                         {
-                            cmbJobName.Items.Add((string)reader["TABLE_NAME"]);
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Columns[j].HeaderText;
                         }
+                        else
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Rows[i].Cells[j].Value.ToString();
+                        }
+                        cellColumnIndex++;
                     }
-                    con.Close();
+                    cellColumnIndex = 1;
+                    cellRowIndex++;
+                }
+
+                //Getting the location and file name of the excel to save from user.
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 2;
+
+                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workbook.SaveAs(saveDialog.FileName);
+                    MessageBox.Show("Export Successful");
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        #endregion Refresh Job List
-
-        #region Search Job Table
-
-        //Search Job Table
-        private void btnSearchJob_Click(object sender, EventArgs e)
-        {
-            try
+            finally
             {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtSearchJob.Text + "')";
-
-                    cmd.Connection = con;
-
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                excel.Quit();
+                workbook = null;
+                excel = null;
             }
         }
 
-        #endregion Search Job Table
-
-        #region Job Combo Box Changed
-
-        private void cmbJobName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    // Resize the master DataGridView columns to fit the newly loaded data.
-                    dgMasterGridBun.AutoResizeColumns();
-
-                    // Configure the details DataGridView so that its columns automatically
-                    // adjust their widths when the data changes.
-                    dgMasterGridBun.AutoSizeColumnsMode =
-                        DataGridViewAutoSizeColumnsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        #endregion Job Combo Box Changed
+        #endregion Export to Excel
 
         #region Form Load Event
 
@@ -592,75 +535,88 @@ namespace MTR_APP
 
         #endregion Form Load Event
 
-        #region Show New Forms Btn
+        #region Header Bar Buttons
 
-        private void jobToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnCloseApp_Click_1(object sender, EventArgs e)
         {
-            New_Job fNew_Job = new New_Job();
-            fNew_Job.ShowDialog();
+            Application.Exit();
         }
 
-        private void aNSIASMEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnMinimizeApp_Click(object sender, EventArgs e)
         {
-            NewAnsiAsme fAnsiAsme = new NewAnsiAsme();
-            fAnsiAsme.ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void coatingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnMaximizeApp_Click(object sender, EventArgs e)
         {
-            NewCoating fCoating = new NewCoating();
-            fCoating.ShowDialog();
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Left = Top = 0;
+            Width = Screen.PrimaryScreen.WorkingArea.Width;
+            Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
-        private void gradeToolStripMenuItem_Click(object sender, EventArgs e)
+        #endregion Header Bar Buttons
+
+        #region Job Combo Box Changed
+
+        private void cmbJobName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            NewGrade fGrade = new NewGrade();
-            fGrade.ShowDialog();
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    // Resize the master DataGridView columns to fit the newly loaded data.
+                    dgMasterGridBun.AutoResizeColumns();
+
+                    // Configure the details DataGridView so that its columns automatically
+                    // adjust their widths when the data changes.
+                    dgMasterGridBun.AutoSizeColumnsMode =
+                        DataGridViewAutoSizeColumnsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void manufacturerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewManufacturer fManufacturer = new NewManufacturer();
-            fManufacturer.ShowDialog();
-        }
-
-        private void millLocationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewMillLocation fMillLocation = new NewMillLocation();
-            fMillLocation.ShowDialog();
-        }
-
-        private void productDescriptionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewProductDescription fProductDescription = new NewProductDescription();
-            fProductDescription.ShowDialog();
-        }
-
-        private void standardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewStandard fStandard = new NewStandard();
-            fStandard.ShowDialog();
-        }
-
-        private void wallThicknessToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewWallThickness fWallThickness = new NewWallThickness();
-            fWallThickness.ShowDialog();
-        }
-
-        private void weldSeamTypeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewWeldSeamType fWeldSeamType = new NewWeldSeamType();
-            fWeldSeamType.ShowDialog();
-        }
-
-        private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ImportExcel fImportExcel = new ImportExcel();
-            fImportExcel.ShowDialog();
-        }
-
-        #endregion Show New Forms Btn
+        #endregion Job Combo Box Changed
 
         #region Perfrom clicks
 
@@ -744,36 +700,6 @@ namespace MTR_APP
         }
 
         #endregion Perfrom clicks
-
-        #region Refresh Combo Boxes
-
-        // Refresh Combo Buttons
-        private void btnRefreshComboBoxes_Click(object sender, EventArgs e)
-        {
-            cmbManufacturer.Items.Clear();
-            cmbMillLocation.Items.Clear();
-            cmbProductDescription.Items.Clear();
-            cmbWeldSeamType.Items.Clear();
-            cmbOuterDimension.Items.Clear();
-            cmbWallThickness.Items.Clear();
-            cmbCoating.Items.Clear();
-            cmbGrade.Items.Clear();
-            cmbANSI.Items.Clear();
-            cmbStandard.Items.Clear();
-
-            zManufacturerCombo();
-            zMillLocationCombo();
-            zProductDescriptionCombo();
-            zWeldSeamTypeCombo();
-            zOuterDimensionCombo();
-            zWallThicknessCombo();
-            zCoatingCombo();
-            zGradeCombo();
-            zAnsiAsmeCombo();
-            zStandardCombo();
-        }
-
-        #endregion Refresh Combo Boxes
 
         #region Push from Master to Current
 
@@ -1100,7 +1026,127 @@ namespace MTR_APP
 
         #endregion Push from Master to Current
 
-        #region Search Master
+        #region Refresh Combo Boxes
+
+        // Refresh Combo Buttons
+        private void btnRefreshComboBoxes_Click(object sender, EventArgs e)
+        {
+            cmbManufacturer.Items.Clear();
+            cmbMillLocation.Items.Clear();
+            cmbProductDescription.Items.Clear();
+            cmbWeldSeamType.Items.Clear();
+            cmbOuterDimension.Items.Clear();
+            cmbWallThickness.Items.Clear();
+            cmbCoating.Items.Clear();
+            cmbGrade.Items.Clear();
+            cmbANSI.Items.Clear();
+            cmbStandard.Items.Clear();
+
+            zManufacturerCombo();
+            zMillLocationCombo();
+            zProductDescriptionCombo();
+            zWeldSeamTypeCombo();
+            zOuterDimensionCombo();
+            zWallThicknessCombo();
+            zCoatingCombo();
+            zGradeCombo();
+            zAnsiAsmeCombo();
+            zStandardCombo();
+        }
+
+        #endregion Refresh Combo Boxes
+
+        #region Refresh Job List
+
+        // RefreshJob Name ComboBox
+        private void btnRefreshJobName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
+                    cmd.Connection = con;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        cmbJobName.Items.Clear();
+                        while (reader.Read())
+                        {
+                            cmbJobName.Items.Add((string)reader["TABLE_NAME"]);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion Refresh Job List
+
+        #region Search Job Table
+
+        //Search Job Table
+        private void btnSearchJob_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtSearchJob.Text + "')";
+
+                    cmd.Connection = con;
+
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion Search Job Table
+
+        #region Search Master Table
 
         private void btnSearchMaster_Click(object sender, EventArgs e)
         {
@@ -1153,106 +1199,77 @@ namespace MTR_APP
             }
         }
 
-        #endregion Search Master
+        #endregion Search Master Table
 
-        #region Export to Excel
+        #region Show New Forms Btn
 
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void jobToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Creating a Excel object.
-            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-            try
-            {
-                worksheet = workbook.ActiveSheet;
-
-                worksheet.Name = "ExportedFromDatGrid";
-
-                int cellRowIndex = 1;
-                int cellColumnIndex = 1;
-
-                //Loop through each row and read value from each column.
-                for (int i = 0; i < dgJobGridBun.Rows.Count - 1; i++)
-                {
-                    for (int j = 0; j < dgJobGridBun.Columns.Count; j++)
-                    {
-                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
-                        if (cellRowIndex == 0)
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Columns[j].HeaderText;
-                        }
-                        else
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgJobGridBun.Rows[i].Cells[j].Value.ToString();
-                        }
-                        cellColumnIndex++;
-                    }
-                    cellColumnIndex = 1;
-                    cellRowIndex++;
-                }
-
-                //Getting the location and file name of the excel to save from user.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-                saveDialog.FilterIndex = 2;
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Export Successful");
-                }
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
-            }
+            New_Job fNew_Job = new New_Job();
+            fNew_Job.ShowDialog();
         }
 
-        #endregion Export to Excel
-
-        #region Header Bar Buttons
-
-        private void btnCloseApp_Click_1(object sender, EventArgs e)
+        private void aNSIASMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            NewAnsiAsme fAnsiAsme = new NewAnsiAsme();
+            fAnsiAsme.ShowDialog();
         }
 
-        private void btnMinimizeApp_Click(object sender, EventArgs e)
+        private void coatingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            NewCoating fCoating = new NewCoating();
+            fCoating.ShowDialog();
         }
 
-        private void btnMaximizeApp_Click(object sender, EventArgs e)
+        private void gradeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Left = Top = 0;
-            Width = Screen.PrimaryScreen.WorkingArea.Width;
-            Height = Screen.PrimaryScreen.WorkingArea.Height;
+            NewGrade fGrade = new NewGrade();
+            fGrade.ShowDialog();
         }
 
-        #endregion Header Bar Buttons
-
-        #region Update Tables
-
-        private void btnUpdateTable_Click(object sender, EventArgs e)
+        private void manufacturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int rows = myDA.Update(myDT);
+            NewManufacturer fManufacturer = new NewManufacturer();
+            fManufacturer.ShowDialog();
         }
 
-        private void btnUpdateMaster_Click(object sender, EventArgs e)
+        private void millLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int rows = masterDA.Update(masterDT);
+            NewMillLocation fMillLocation = new NewMillLocation();
+            fMillLocation.ShowDialog();
         }
 
-        #endregion Update Tables
+        private void productDescriptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewProductDescription fProductDescription = new NewProductDescription();
+            fProductDescription.ShowDialog();
+        }
+
+        private void standardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewStandard fStandard = new NewStandard();
+            fStandard.ShowDialog();
+        }
+
+        private void wallThicknessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewWallThickness fWallThickness = new NewWallThickness();
+            fWallThickness.ShowDialog();
+        }
+
+        private void weldSeamTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewWeldSeamType fWeldSeamType = new NewWeldSeamType();
+            fWeldSeamType.ShowDialog();
+        }
+
+        private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImportExcel fImportExcel = new ImportExcel();
+            fImportExcel.ShowDialog();
+        }
+
+        #endregion Show New Forms Btn
 
         #region Submit Fields to Databases
 
@@ -1527,31 +1544,18 @@ namespace MTR_APP
 
         #endregion Submit Fields to Databases
 
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        #region Update Tables
+
+        private void btnUpdateTable_Click(object sender, EventArgs e)
         {
-            //if (sidemenu.Width == 50)
-            //{
-            //    //EXPAND
-            //    // Expand the panel
-            //    //Show the Logo
-
-            //    sidemenu.Visible = false;
-            //    sidemenu.Width = 375;
-            //    panelTransition.ShowSync(sidemenu);
-            //    logoTransition.ShowSync(logo);
-            //}
-            //else
-            //{
-            //    //COLLAPSE
-            //    //Using Bunifu Animator
-            //    // 1. Hide the logo.
-            //    // 2. Slide the Panel
-
-            //    logoTransition.Hide(logo);
-            //    sidemenu.Visible = false;
-            //    sidemenu.Width = 50;
-            //    panelTransition.ShowSync(sidemenu);
-            //}
+            int rows = myDA.Update(myDT);
         }
+
+        private void btnUpdateMaster_Click(object sender, EventArgs e)
+        {
+            int rows = masterDA.Update(masterDT);
+        }
+
+        #endregion Update Tables
     }
 }
