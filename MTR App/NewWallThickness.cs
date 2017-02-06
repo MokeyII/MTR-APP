@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[WallThickness] ([Wall Thickness]) VALUES (@WallThickness)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@WallThickness", txtCreateWallThickness.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pWallThickness.Value = txtCreateWallThickness.Text;
+
+                    cmd.Parameters.Add(pWallThickness);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Wall Thickness Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[WallThickness] ([Wall Thickness]) VALUES (@WallThickness)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@WallThickness", txtCreateWallThickness.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pWallThickness.Value = txtCreateWallThickness.Text;
+
+                    cmd.Parameters.Add(pWallThickness);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Wall Thickness Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

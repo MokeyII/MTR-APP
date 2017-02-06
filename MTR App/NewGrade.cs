@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Grade] ([Grade]) VALUES (@Grade)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Grade", txtCreateGradeName.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pGrade.Value = txtCreateGradeName.Text;
+
+                    cmd.Parameters.Add(pGrade);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Grade Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Grade] ([Grade]) VALUES (@Grade)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Grade", txtCreateGradeName.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pGrade.Value = txtCreateGradeName.Text;
+
+                    cmd.Parameters.Add(pGrade);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Grade Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

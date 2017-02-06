@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[MillLocation] ([Mill Location]) VALUES (@MillLocation)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@MillLocation", txtCreateMillLocation.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pMillLocation.Value = txtCreateMillLocation.Text;
+
+                    cmd.Parameters.Add(pMillLocation);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Mill Location Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[MillLocation] ([Mill Location]) VALUES (@MillLocation)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@MillLocation", txtCreateMillLocation.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pMillLocation.Value = txtCreateMillLocation.Text;
+
+                    cmd.Parameters.Add(pMillLocation);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Mill Location Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

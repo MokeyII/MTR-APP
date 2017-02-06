@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Manufacturer] ([Manufacturer]) VALUES (@Manufacturer)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Manufacturer", txtCreateManufacturer.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pManufacturer = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pManufacturer.Value = txtCreateManufacturer.Text;
+
+                    cmd.Parameters.Add(pManufacturer);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Manufacturer Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Manufacturer] ([Manufacturer]) VALUES (@Manufacturer)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Manufacturer", txtCreateManufacturer.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pManufacturer = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pManufacturer.Value = txtCreateManufacturer.Text;
+
+                    cmd.Parameters.Add(pManufacturer);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Manufacturer Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Coating] ([Coating]) VALUES (@Coating)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Coating", txtCreateCoating.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pCoating.Value = txtCreateCoating.Text;
+
+                    cmd.Parameters.Add(pCoating);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Coating Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Coating] ([Coating]) VALUES (@Coating)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Coating", txtCreateCoating.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pCoating.Value = txtCreateCoating.Text;
+
+                    cmd.Parameters.Add(pCoating);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Coating Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

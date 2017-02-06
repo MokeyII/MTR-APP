@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pWeldSeamType = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pWeldSeamType.Value = txtCreateWeldSeamType.Text;
+
+                    cmd.Parameters.Add(pWeldSeamType);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Weld Seam Type Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[WeldSeamType] ([Weld Seam Type]) VALUES (@WeldSeamType)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@WeldSeamType", txtCreateWeldSeamType.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pWeldSeamType = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pWeldSeamType.Value = txtCreateWeldSeamType.Text;
+
+                    cmd.Parameters.Add(pWeldSeamType);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Weld Seam Type Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

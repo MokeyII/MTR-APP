@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[ProductDescription] ([Product Description]) VALUES (@ProductDescription)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@ProductDescription", txtCreateProductDescription.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pProductDescription.Value = txtCreateProductDescription.Text;
+
+                    cmd.Parameters.Add(pProductDescription);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Product Description Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[ProductDescription] ([Product Description]) VALUES (@ProductDescription)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@ProductDescription", txtCreateProductDescription.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pProductDescription.Value = txtCreateProductDescription.Text;
+
+                    cmd.Parameters.Add(pProductDescription);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Product Description Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

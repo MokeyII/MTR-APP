@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -22,17 +23,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Standard] ([Standard]) VALUES (@Standard)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Standard", txtCreateStandard.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pStandard.Value = txtCreateStandard.Text;
+
+                    cmd.Parameters.Add(pStandard);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Standard Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,17 +59,20 @@ namespace MTR_App
                     cmd.CommandText = "INSERT INTO dbo.[Standard] ([Standard]) VALUES (@Standard)";
                     cmd.Connection = con;
 
-                    cmd.Parameters.AddWithValue("@Standard", txtCreateStandard.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
 
-                    con.Close();
+                    pStandard.Value = txtCreateStandard.Text;
+
+                    cmd.Parameters.Add(pStandard);
+
+                    cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New Standard Added!");
 
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
