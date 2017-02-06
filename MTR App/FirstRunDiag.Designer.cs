@@ -66,7 +66,7 @@
             "",
             "• Removed redundant coding to help program run smoother.",
             "",
-            "• Created a \"Patch Notes\" Window on Installation 1st Launch."});
+            "• Created a \"Patch Notes\" Window on Launch."});
             this.listBox1.Location = new System.Drawing.Point(6, 19);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(337, 147);

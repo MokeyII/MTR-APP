@@ -1204,93 +1204,95 @@ namespace MTR_APP
                 //Show the dialog
                 frd.ShowDialog();
             }
-
-            zManufacturerCombo();
-            zMillLocationCombo();
-            zProductDescriptionCombo();
-            zWeldSeamTypeCombo();
-            zOuterDimensionCombo();
-            zWallThicknessCombo();
-            zCoatingCombo();
-            zGradeCombo();
-            zAnsiAsmeCombo();
-            zStandardCombo();
-            try
+            else
             {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                zManufacturerCombo();
+                zMillLocationCombo();
+                zProductDescriptionCombo();
+                zWeldSeamTypeCombo();
+                zOuterDimensionCombo();
+                zWallThicknessCombo();
+                zCoatingCombo();
+                zGradeCombo();
+                zAnsiAsmeCombo();
+                zStandardCombo();
+                try
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    masterDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    masterDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
-
-                    //Teach Command builder to be a boss!
-                    masterDA.UpdateCommand = cb.GetUpdateCommand();
-                    masterDA.InsertCommand = cb.GetInsertCommand();
-                    masterDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    masterDA.Fill(masterDT);
-
-                    //Fill DataTable with Database Schema
-                    masterDA.FillSchema(masterDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = masterDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //////////////////////////////////////////////////////////////////////////
-            /////////////////////      Populate Job Name ComboBox    /////////////////
-            //////////////////////////////////////////////////////////////////////////
-
-            //Select Table
-            try
-            {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
-                    cmd.Connection = con;
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                     {
-                        cmbJobName.Items.Clear();
-                        while (reader.Read())
-                        {
-                            cmbJobName.Items.Add((string)reader["TABLE_NAME"]);
-                        }
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                        cmd.Connection = con;
+
+                        //DataAdapter
+                        masterDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                        //MySqlCommand
+                        SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                        //DataAdapter to Command
+                        masterDA.SelectCommand = myCMD;
+
+                        //Define Datatable
+                        masterDT = new DataTable();
+
+                        //Command Builder (IS GOD!)
+                        SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
+
+                        //Teach Command builder to be a boss!
+                        masterDA.UpdateCommand = cb.GetUpdateCommand();
+                        masterDA.InsertCommand = cb.GetInsertCommand();
+                        masterDA.DeleteCommand = cb.GetDeleteCommand();
+
+                        //Fill the DataTable with DataAdapter information
+                        masterDA.Fill(masterDT);
+
+                        //Fill DataTable with Database Schema
+                        masterDA.FillSchema(masterDT, SchemaType.Source);
+
+                        //Bind The Data Table to the DataGrid
+                        dgMasterGridBun.DataSource = masterDT;
+
+                        //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                        dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     }
-                    con.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                //Catch Exception
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                //////////////////////////////////////////////////////////////////////////
+                /////////////////////      Populate Job Name ComboBox    /////////////////
+                //////////////////////////////////////////////////////////////////////////
+
+                //Select Table
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
+                        cmd.Connection = con;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            cmbJobName.Items.Clear();
+                            while (reader.Read())
+                            {
+                                cmbJobName.Items.Add((string)reader["TABLE_NAME"]);
+                            }
+                        }
+                        con.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
