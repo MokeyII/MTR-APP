@@ -1191,21 +1191,6 @@ namespace MTR_APP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            if ((bool)MTR_App.Properties.Settings.Default["FirstRun"] == true)
-            {
-                //First application run
-                //Update setting
-                MTR_App.Properties.Settings.Default["FirstRun"] = false;
-                //Save setting
-                MTR_App.Properties.Settings.Default.Save();
-                //Create new instance of Dialog you want to show
-                FirstRunDiag frd = new FirstRunDiag();
-                //Show the dialog
-                frd.ShowDialog();
-            }
-            else
-            {
                 zManufacturerCombo();
                 zMillLocationCombo();
                 zProductDescriptionCombo();
@@ -1294,7 +1279,7 @@ namespace MTR_APP
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
+        
 
         #region EnterKeyDownSubmit
 
@@ -2376,15 +2361,6 @@ namespace MTR_APP
 
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
