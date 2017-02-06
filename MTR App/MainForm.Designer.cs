@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,25 +69,24 @@
             this.txtLastAnsiAsmeInput = new System.Windows.Forms.TextBox();
             this.txtLastStandardInput = new System.Windows.Forms.TextBox();
             this.txtSearchJob = new System.Windows.Forms.TextBox();
-            this.lblDgJobTitle = new System.Windows.Forms.Label();
             this.txtLastNotesInput = new System.Windows.Forms.TextBox();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtNotes = new System.Windows.Forms.TextBox();
-            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
-            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
-            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
             this.btnRefreshJobName = new System.Windows.Forms.Button();
             this.cmbJobName = new System.Windows.Forms.ComboBox();
-            this.cmbStandard = new System.Windows.Forms.ComboBox();
-            this.txtPurchaseOrder = new System.Windows.Forms.TextBox();
-            this.cmbANSI = new System.Windows.Forms.ComboBox();
-            this.txtHeat = new System.Windows.Forms.TextBox();
-            this.cmbGrade = new System.Windows.Forms.ComboBox();
-            this.cmbCoating = new System.Windows.Forms.ComboBox();
-            this.cmbWallThickness = new System.Windows.Forms.ComboBox();
-            this.cmbMillLocation = new System.Windows.Forms.ComboBox();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
+            this.cmbMillLocation = new System.Windows.Forms.ComboBox();
+            this.txtHeat = new System.Windows.Forms.TextBox();
+            this.txtPurchaseOrder = new System.Windows.Forms.TextBox();
+            this.cmbProductDescription = new System.Windows.Forms.ComboBox();
+            this.cmbWeldSeamType = new System.Windows.Forms.ComboBox();
+            this.cmbOuterDimension = new System.Windows.Forms.ComboBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.cmbWallThickness = new System.Windows.Forms.ComboBox();
+            this.cmbCoating = new System.Windows.Forms.ComboBox();
+            this.cmbGrade = new System.Windows.Forms.ComboBox();
+            this.cmbANSI = new System.Windows.Forms.ComboBox();
+            this.cmbStandard = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgMasterGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.dgJobGridBun = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -107,23 +108,9 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label15 = new System.Windows.Forms.Label();
             this.btnSubmitBun = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lblStandard = new System.Windows.Forms.Label();
-            this.lblPurchasePrder = new System.Windows.Forms.Label();
-            this.lblANSI = new System.Windows.Forms.Label();
-            this.lblHeat = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblGrade = new System.Windows.Forms.Label();
-            this.lblCoating = new System.Windows.Forms.Label();
-            this.lblWallThickness = new System.Windows.Forms.Label();
-            this.lblWeldSeamType = new System.Windows.Forms.Label();
-            this.lblProductDescription = new System.Windows.Forms.Label();
-            this.lblMillLocation = new System.Windows.Forms.Label();
-            this.lblManufacturer = new System.Windows.Forms.Label();
             this.lblJobName = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -134,21 +121,43 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.sidemenu = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.logoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.sidemenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.panelTransition.SetDecoration(this.menuStrip1, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.menuStrip1, BunifuAnimatorNS.DecorationType.None);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -271,8 +280,10 @@
             // 
             // txtLastJobInput
             // 
-            this.txtLastJobInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastJobInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastJobInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastJobInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastJobInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastJobInput.Enabled = false;
             this.txtLastJobInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastJobInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -285,8 +296,10 @@
             // 
             // txtLastManufacturerInput
             // 
-            this.txtLastManufacturerInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastManufacturerInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastManufacturerInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastManufacturerInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastManufacturerInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastManufacturerInput.Enabled = false;
             this.txtLastManufacturerInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastManufacturerInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -299,8 +312,10 @@
             // 
             // txtLastMillLocationInput
             // 
-            this.txtLastMillLocationInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastMillLocationInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastMillLocationInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastMillLocationInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastMillLocationInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastMillLocationInput.Enabled = false;
             this.txtLastMillLocationInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastMillLocationInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -313,8 +328,10 @@
             // 
             // txtLastProductDescriptionInput
             // 
-            this.txtLastProductDescriptionInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastProductDescriptionInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastProductDescriptionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastProductDescriptionInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastProductDescriptionInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastProductDescriptionInput.Enabled = false;
             this.txtLastProductDescriptionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastProductDescriptionInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -327,8 +344,10 @@
             // 
             // txtLastWeldSeamTypeInput
             // 
-            this.txtLastWeldSeamTypeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastWeldSeamTypeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastWeldSeamTypeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastWeldSeamTypeInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastWeldSeamTypeInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastWeldSeamTypeInput.Enabled = false;
             this.txtLastWeldSeamTypeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastWeldSeamTypeInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -341,8 +360,10 @@
             // 
             // txtLastOuterDimensionInput
             // 
-            this.txtLastOuterDimensionInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastOuterDimensionInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastOuterDimensionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastOuterDimensionInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastOuterDimensionInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastOuterDimensionInput.Enabled = false;
             this.txtLastOuterDimensionInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastOuterDimensionInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -355,8 +376,10 @@
             // 
             // txtLastWallThicknessInput
             // 
-            this.txtLastWallThicknessInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastWallThicknessInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastWallThicknessInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastWallThicknessInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastWallThicknessInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastWallThicknessInput.Enabled = false;
             this.txtLastWallThicknessInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastWallThicknessInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -369,8 +392,10 @@
             // 
             // txtLastCoatingIput
             // 
-            this.txtLastCoatingIput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastCoatingIput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastCoatingIput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastCoatingIput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastCoatingIput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastCoatingIput.Enabled = false;
             this.txtLastCoatingIput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastCoatingIput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -383,8 +408,10 @@
             // 
             // txtLastGradeInput
             // 
-            this.txtLastGradeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastGradeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastGradeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastGradeInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastGradeInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastGradeInput.Enabled = false;
             this.txtLastGradeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastGradeInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -397,8 +424,10 @@
             // 
             // txtLastHeatinput
             // 
-            this.txtLastHeatinput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastHeatinput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastHeatinput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastHeatinput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastHeatinput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastHeatinput.Enabled = false;
             this.txtLastHeatinput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastHeatinput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -411,8 +440,10 @@
             // 
             // txtLastPurchaseOrderInput
             // 
-            this.txtLastPurchaseOrderInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastPurchaseOrderInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastPurchaseOrderInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastPurchaseOrderInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastPurchaseOrderInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastPurchaseOrderInput.Enabled = false;
             this.txtLastPurchaseOrderInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastPurchaseOrderInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -425,8 +456,10 @@
             // 
             // txtLastAnsiAsmeInput
             // 
-            this.txtLastAnsiAsmeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastAnsiAsmeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastAnsiAsmeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastAnsiAsmeInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastAnsiAsmeInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastAnsiAsmeInput.Enabled = false;
             this.txtLastAnsiAsmeInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastAnsiAsmeInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -439,8 +472,10 @@
             // 
             // txtLastStandardInput
             // 
-            this.txtLastStandardInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastStandardInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastStandardInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastStandardInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastStandardInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastStandardInput.Enabled = false;
             this.txtLastStandardInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastStandardInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -455,28 +490,20 @@
             // 
             this.txtSearchJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.logoTransition.SetDecoration(this.txtSearchJob, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtSearchJob, BunifuAnimatorNS.DecorationType.None);
             this.txtSearchJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
             this.txtSearchJob.Location = new System.Drawing.Point(1124, 522);
             this.txtSearchJob.Name = "txtSearchJob";
             this.txtSearchJob.Size = new System.Drawing.Size(243, 20);
             this.txtSearchJob.TabIndex = 18;
             // 
-            // lblDgJobTitle
-            // 
-            this.lblDgJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblDgJobTitle.AutoSize = true;
-            this.lblDgJobTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDgJobTitle.Font = new System.Drawing.Font("Monospac821 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgJobTitle.Location = new System.Drawing.Point(17, 299);
-            this.lblDgJobTitle.Name = "lblDgJobTitle";
-            this.lblDgJobTitle.Size = new System.Drawing.Size(109, 22);
-            this.lblDgJobTitle.TabIndex = 75;
-            this.lblDgJobTitle.Text = "Job Name:";
-            // 
             // txtLastNotesInput
             // 
-            this.txtLastNotesInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.txtLastNotesInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txtLastNotesInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logoTransition.SetDecoration(this.txtLastNotesInput, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtLastNotesInput, BunifuAnimatorNS.DecorationType.None);
             this.txtLastNotesInput.Enabled = false;
             this.txtLastNotesInput.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastNotesInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
@@ -499,6 +526,8 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Transparent;
             this.btnSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.logoTransition.SetDecoration(this.btnSubmit, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.btnSubmit, BunifuAnimatorNS.DecorationType.None);
             this.btnSubmit.Location = new System.Drawing.Point(0, 472);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(0, 0);
@@ -507,67 +536,13 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtNotes
-            // 
-            this.txtNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.txtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.txtNotes.Location = new System.Drawing.Point(155, 381);
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(301, 20);
-            this.txtNotes.TabIndex = 14;
-            this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
-            this.txtNotes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotes_KeyDown);
-            // 
-            // cmbOuterDimension
-            // 
-            this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbOuterDimension.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbOuterDimension.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbOuterDimension.FormattingEnabled = true;
-            this.cmbOuterDimension.Location = new System.Drawing.Point(156, 165);
-            this.cmbOuterDimension.Name = "cmbOuterDimension";
-            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
-            this.cmbOuterDimension.TabIndex = 6;
-            this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
-            this.cmbOuterDimension.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbOuterDimension_KeyDown);
-            // 
-            // cmbWeldSeamType
-            // 
-            this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWeldSeamType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbWeldSeamType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbWeldSeamType.FormattingEnabled = true;
-            this.cmbWeldSeamType.Location = new System.Drawing.Point(157, 138);
-            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
-            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
-            this.cmbWeldSeamType.TabIndex = 5;
-            this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
-            this.cmbWeldSeamType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWeldSeamType_KeyDown);
-            // 
-            // cmbProductDescription
-            // 
-            this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbProductDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbProductDescription.FormattingEnabled = true;
-            this.cmbProductDescription.Location = new System.Drawing.Point(157, 111);
-            this.cmbProductDescription.Name = "cmbProductDescription";
-            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
-            this.cmbProductDescription.TabIndex = 4;
-            this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
-            this.cmbProductDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProductDescription_KeyDown);
-            // 
             // btnRefreshJobName
             // 
             this.btnRefreshJobName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshJobName.BackgroundImage")));
             this.btnRefreshJobName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshJobName.Location = new System.Drawing.Point(210, 12);
+            this.logoTransition.SetDecoration(this.btnRefreshJobName, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.btnRefreshJobName, BunifuAnimatorNS.DecorationType.None);
+            this.btnRefreshJobName.Location = new System.Drawing.Point(309, 76);
             this.btnRefreshJobName.Name = "btnRefreshJobName";
             this.btnRefreshJobName.Size = new System.Drawing.Size(20, 20);
             this.btnRefreshJobName.TabIndex = 2;
@@ -580,144 +555,210 @@
             this.cmbJobName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbJobName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbJobName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbJobName, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbJobName, BunifuAnimatorNS.DecorationType.None);
             this.cmbJobName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbJobName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
             this.cmbJobName.FormattingEnabled = true;
-            this.cmbJobName.Location = new System.Drawing.Point(83, 12);
+            this.cmbJobName.Location = new System.Drawing.Point(182, 76);
             this.cmbJobName.Name = "cmbJobName";
             this.cmbJobName.Size = new System.Drawing.Size(121, 21);
             this.cmbJobName.TabIndex = 1;
             this.toolTips.SetToolTip(this.cmbJobName, "Select the dropdown to select a job.");
             this.cmbJobName.SelectedIndexChanged += new System.EventHandler(this.cmbJobName_SelectedIndexChanged);
             // 
-            // cmbStandard
+            // cmbManufacturer
             // 
-            this.cmbStandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbStandard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbStandard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbStandard.FormattingEnabled = true;
-            this.cmbStandard.Location = new System.Drawing.Point(157, 353);
-            this.cmbStandard.Name = "cmbStandard";
-            this.cmbStandard.Size = new System.Drawing.Size(121, 21);
-            this.cmbStandard.TabIndex = 13;
-            this.toolTips.SetToolTip(this.cmbStandard, resources.GetString("cmbStandard.ToolTip"));
-            this.cmbStandard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbStandard_KeyDown_1);
-            // 
-            // txtPurchaseOrder
-            // 
-            this.txtPurchaseOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.txtPurchaseOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.txtPurchaseOrder.Location = new System.Drawing.Point(157, 326);
-            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
-            this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
-            this.txtPurchaseOrder.TabIndex = 12;
-            this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
-            this.txtPurchaseOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseOrder_KeyDown_1);
-            // 
-            // cmbANSI
-            // 
-            this.cmbANSI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbANSI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbANSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbANSI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbANSI.FormattingEnabled = true;
-            this.cmbANSI.Location = new System.Drawing.Point(157, 299);
-            this.cmbANSI.Name = "cmbANSI";
-            this.cmbANSI.Size = new System.Drawing.Size(121, 21);
-            this.cmbANSI.TabIndex = 11;
-            this.toolTips.SetToolTip(this.cmbANSI, resources.GetString("cmbANSI.ToolTip"));
-            this.cmbANSI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbANSI_KeyDown_1);
-            // 
-            // txtHeat
-            // 
-            this.txtHeat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtHeat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txtHeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.txtHeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.txtHeat.Location = new System.Drawing.Point(156, 273);
-            this.txtHeat.Name = "txtHeat";
-            this.txtHeat.Size = new System.Drawing.Size(123, 20);
-            this.txtHeat.TabIndex = 10;
-            this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
-            this.txtHeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHeat_KeyDown_1);
-            // 
-            // cmbGrade
-            // 
-            this.cmbGrade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbGrade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbGrade.FormattingEnabled = true;
-            this.cmbGrade.Location = new System.Drawing.Point(157, 246);
-            this.cmbGrade.Name = "cmbGrade";
-            this.cmbGrade.Size = new System.Drawing.Size(121, 21);
-            this.cmbGrade.TabIndex = 9;
-            this.toolTips.SetToolTip(this.cmbGrade, resources.GetString("cmbGrade.ToolTip"));
-            this.cmbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbGrade_KeyDown_1);
-            // 
-            // cmbCoating
-            // 
-            this.cmbCoating.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbCoating.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCoating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbCoating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbCoating.FormattingEnabled = true;
-            this.cmbCoating.Location = new System.Drawing.Point(157, 219);
-            this.cmbCoating.Name = "cmbCoating";
-            this.cmbCoating.Size = new System.Drawing.Size(121, 21);
-            this.cmbCoating.TabIndex = 8;
-            this.toolTips.SetToolTip(this.cmbCoating, resources.GetString("cmbCoating.ToolTip"));
-            this.cmbCoating.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCoating_KeyDown_1);
-            // 
-            // cmbWallThickness
-            // 
-            this.cmbWallThickness.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbWallThickness.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbWallThickness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbWallThickness.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbWallThickness.FormattingEnabled = true;
-            this.cmbWallThickness.Location = new System.Drawing.Point(157, 192);
-            this.cmbWallThickness.Name = "cmbWallThickness";
-            this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
-            this.cmbWallThickness.TabIndex = 7;
-            this.toolTips.SetToolTip(this.cmbWallThickness, resources.GetString("cmbWallThickness.ToolTip"));
-            this.cmbWallThickness.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbWallThickness_KeyDown_1);
+            this.cmbManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbManufacturer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbManufacturer, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbManufacturer, BunifuAnimatorNS.DecorationType.None);
+            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbManufacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbManufacturer.FormattingEnabled = true;
+            this.cmbManufacturer.Location = new System.Drawing.Point(60, 136);
+            this.cmbManufacturer.Name = "cmbManufacturer";
+            this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
+            this.cmbManufacturer.TabIndex = 511;
+            this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
             // 
             // cmbMillLocation
             // 
             this.cmbMillLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbMillLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMillLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbMillLocation, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbMillLocation, BunifuAnimatorNS.DecorationType.None);
             this.cmbMillLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbMillLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
             this.cmbMillLocation.FormattingEnabled = true;
-            this.cmbMillLocation.Location = new System.Drawing.Point(157, 84);
+            this.cmbMillLocation.Location = new System.Drawing.Point(60, 173);
             this.cmbMillLocation.Name = "cmbMillLocation";
             this.cmbMillLocation.Size = new System.Drawing.Size(121, 21);
-            this.cmbMillLocation.TabIndex = 3;
+            this.cmbMillLocation.TabIndex = 512;
             this.toolTips.SetToolTip(this.cmbMillLocation, resources.GetString("cmbMillLocation.ToolTip"));
-            this.cmbMillLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbMillLocation_KeyDown_1);
             // 
-            // cmbManufacturer
+            // txtHeat
             // 
-            this.cmbManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbManufacturer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.cmbManufacturer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbManufacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.cmbManufacturer.FormattingEnabled = true;
-            this.cmbManufacturer.Location = new System.Drawing.Point(157, 57);
-            this.cmbManufacturer.Name = "cmbManufacturer";
-            this.cmbManufacturer.Size = new System.Drawing.Size(121, 21);
-            this.cmbManufacturer.TabIndex = 2;
-            this.toolTips.SetToolTip(this.cmbManufacturer, resources.GetString("cmbManufacturer.ToolTip"));
-            this.cmbManufacturer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbManufacturer_KeyDown_1);
+            this.txtHeat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtHeat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtHeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.logoTransition.SetDecoration(this.txtHeat, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtHeat, BunifuAnimatorNS.DecorationType.None);
+            this.txtHeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.txtHeat.Location = new System.Drawing.Point(59, 446);
+            this.txtHeat.Name = "txtHeat";
+            this.txtHeat.Size = new System.Drawing.Size(123, 20);
+            this.txtHeat.TabIndex = 519;
+            this.toolTips.SetToolTip(this.txtHeat, "Type in a Heat Number for the item.");
+            // 
+            // txtPurchaseOrder
+            // 
+            this.txtPurchaseOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.logoTransition.SetDecoration(this.txtPurchaseOrder, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtPurchaseOrder, BunifuAnimatorNS.DecorationType.None);
+            this.txtPurchaseOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.txtPurchaseOrder.Location = new System.Drawing.Point(58, 521);
+            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
+            this.txtPurchaseOrder.Size = new System.Drawing.Size(121, 20);
+            this.txtPurchaseOrder.TabIndex = 521;
+            this.toolTips.SetToolTip(this.txtPurchaseOrder, "Type in the Purchase Order");
+            // 
+            // cmbProductDescription
+            // 
+            this.cmbProductDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProductDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbProductDescription, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbProductDescription, BunifuAnimatorNS.DecorationType.None);
+            this.cmbProductDescription.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbProductDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbProductDescription.FormattingEnabled = true;
+            this.cmbProductDescription.Location = new System.Drawing.Point(60, 212);
+            this.cmbProductDescription.Name = "cmbProductDescription";
+            this.cmbProductDescription.Size = new System.Drawing.Size(121, 21);
+            this.cmbProductDescription.TabIndex = 513;
+            this.toolTips.SetToolTip(this.cmbProductDescription, resources.GetString("cmbProductDescription.ToolTip"));
+            // 
+            // cmbWeldSeamType
+            // 
+            this.cmbWeldSeamType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWeldSeamType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWeldSeamType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbWeldSeamType, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbWeldSeamType, BunifuAnimatorNS.DecorationType.None);
+            this.cmbWeldSeamType.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbWeldSeamType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbWeldSeamType.FormattingEnabled = true;
+            this.cmbWeldSeamType.Location = new System.Drawing.Point(60, 251);
+            this.cmbWeldSeamType.Name = "cmbWeldSeamType";
+            this.cmbWeldSeamType.Size = new System.Drawing.Size(121, 21);
+            this.cmbWeldSeamType.TabIndex = 514;
+            this.toolTips.SetToolTip(this.cmbWeldSeamType, resources.GetString("cmbWeldSeamType.ToolTip"));
+            // 
+            // cmbOuterDimension
+            // 
+            this.cmbOuterDimension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbOuterDimension.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbOuterDimension.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbOuterDimension, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbOuterDimension, BunifuAnimatorNS.DecorationType.None);
+            this.cmbOuterDimension.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbOuterDimension.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbOuterDimension.FormattingEnabled = true;
+            this.cmbOuterDimension.Location = new System.Drawing.Point(59, 290);
+            this.cmbOuterDimension.Name = "cmbOuterDimension";
+            this.cmbOuterDimension.Size = new System.Drawing.Size(121, 21);
+            this.cmbOuterDimension.TabIndex = 515;
+            this.toolTips.SetToolTip(this.cmbOuterDimension, resources.GetString("cmbOuterDimension.ToolTip"));
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.logoTransition.SetDecoration(this.txtNotes, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtNotes, BunifuAnimatorNS.DecorationType.None);
+            this.txtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.txtNotes.Location = new System.Drawing.Point(59, 602);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(301, 20);
+            this.txtNotes.TabIndex = 523;
+            this.toolTips.SetToolTip(this.txtNotes, "Type in any notes for the item here.");
+            // 
+            // cmbWallThickness
+            // 
+            this.cmbWallThickness.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWallThickness.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWallThickness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbWallThickness, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbWallThickness, BunifuAnimatorNS.DecorationType.None);
+            this.cmbWallThickness.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbWallThickness.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbWallThickness.FormattingEnabled = true;
+            this.cmbWallThickness.Location = new System.Drawing.Point(60, 329);
+            this.cmbWallThickness.Name = "cmbWallThickness";
+            this.cmbWallThickness.Size = new System.Drawing.Size(121, 21);
+            this.cmbWallThickness.TabIndex = 516;
+            // 
+            // cmbCoating
+            // 
+            this.cmbCoating.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCoating.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCoating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbCoating, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbCoating, BunifuAnimatorNS.DecorationType.None);
+            this.cmbCoating.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbCoating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbCoating.FormattingEnabled = true;
+            this.cmbCoating.Location = new System.Drawing.Point(60, 368);
+            this.cmbCoating.Name = "cmbCoating";
+            this.cmbCoating.Size = new System.Drawing.Size(121, 21);
+            this.cmbCoating.TabIndex = 517;
+            // 
+            // cmbGrade
+            // 
+            this.cmbGrade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbGrade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbGrade, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbGrade, BunifuAnimatorNS.DecorationType.None);
+            this.cmbGrade.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbGrade.FormattingEnabled = true;
+            this.cmbGrade.Location = new System.Drawing.Point(60, 407);
+            this.cmbGrade.Name = "cmbGrade";
+            this.cmbGrade.Size = new System.Drawing.Size(121, 21);
+            this.cmbGrade.TabIndex = 518;
+            // 
+            // cmbANSI
+            // 
+            this.cmbANSI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbANSI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbANSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbANSI, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbANSI, BunifuAnimatorNS.DecorationType.None);
+            this.cmbANSI.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbANSI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbANSI.FormattingEnabled = true;
+            this.cmbANSI.Location = new System.Drawing.Point(58, 482);
+            this.cmbANSI.Name = "cmbANSI";
+            this.cmbANSI.Size = new System.Drawing.Size(121, 21);
+            this.cmbANSI.TabIndex = 520;
+            // 
+            // cmbStandard
+            // 
+            this.cmbStandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbStandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbStandard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panelTransition.SetDecoration(this.cmbStandard, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.cmbStandard, BunifuAnimatorNS.DecorationType.None);
+            this.cmbStandard.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbStandard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.cmbStandard.FormattingEnabled = true;
+            this.cmbStandard.Location = new System.Drawing.Point(60, 562);
+            this.cmbStandard.Name = "cmbStandard";
+            this.cmbStandard.Size = new System.Drawing.Size(121, 21);
+            this.cmbStandard.TabIndex = 522;
             // 
             // bunifuElipse1
             // 
@@ -726,24 +767,26 @@
             // 
             // dgMasterGridBun
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.dgMasterGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgMasterGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgMasterGridBun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgMasterGridBun.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.dgMasterGridBun.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.dgMasterGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgMasterGridBun.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgMasterGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.logoTransition.SetDecoration(this.dgMasterGridBun, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.dgMasterGridBun, BunifuAnimatorNS.DecorationType.None);
             this.dgMasterGridBun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgMasterGridBun.DoubleBuffered = true;
             this.dgMasterGridBun.EnableHeadersVisualStyles = false;
@@ -754,43 +797,45 @@
             this.dgMasterGridBun.MultiSelect = false;
             this.dgMasterGridBun.Name = "dgMasterGridBun";
             this.dgMasterGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgMasterGridBun.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.dgMasterGridBun.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMasterGridBun.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.dgMasterGridBun.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgMasterGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMasterGridBun.Size = new System.Drawing.Size(701, 446);
+            this.dgMasterGridBun.Size = new System.Drawing.Size(803, 446);
             this.dgMasterGridBun.TabIndex = 506;
             this.dgMasterGridBun.TabStop = false;
             // 
             // dgJobGridBun
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.dgJobGridBun.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgJobGridBun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgJobGridBun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgJobGridBun.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.dgJobGridBun.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.dgJobGridBun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgJobGridBun.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgJobGridBun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgJobGridBun.Cursor = System.Windows.Forms.Cursors.Default;
+            this.logoTransition.SetDecoration(this.dgJobGridBun, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.dgJobGridBun, BunifuAnimatorNS.DecorationType.None);
             this.dgJobGridBun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgJobGridBun.DoubleBuffered = true;
             this.dgJobGridBun.EnableHeadersVisualStyles = false;
@@ -800,26 +845,28 @@
             this.dgJobGridBun.Location = new System.Drawing.Point(3, 16);
             this.dgJobGridBun.Name = "dgJobGridBun";
             this.dgJobGridBun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgJobGridBun.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgJobGridBun.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgJobGridBun.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.dgJobGridBun.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.dgJobGridBun.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgJobGridBun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgJobGridBun.Size = new System.Drawing.Size(1554, 204);
+            this.dgJobGridBun.Size = new System.Drawing.Size(1185, 204);
             this.dgJobGridBun.TabIndex = 507;
             this.dgJobGridBun.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(123, 380);
             this.label1.Name = "label1";
@@ -830,6 +877,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 17);
             this.label2.Name = "label2";
@@ -840,6 +889,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
             this.label4.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(95, 352);
             this.label4.Name = "label4";
@@ -850,6 +901,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.label5.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(54, 325);
             this.label5.Name = "label5";
@@ -860,6 +913,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
             this.label6.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(88, 298);
             this.label6.Name = "label6";
@@ -870,6 +925,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.label7.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(123, 272);
             this.label7.Name = "label7";
@@ -880,6 +937,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.label8.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(50, 164);
             this.label8.Name = "label8";
@@ -890,6 +949,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
             this.label9.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(118, 245);
             this.label9.Name = "label9";
@@ -900,6 +961,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.label10.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(104, 218);
             this.label10.Name = "label10";
@@ -910,6 +973,8 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
             this.label11.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(54, 191);
             this.label11.Name = "label11";
@@ -920,6 +985,8 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label12, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label12, BunifuAnimatorNS.DecorationType.None);
             this.label12.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(57, 137);
             this.label12.Name = "label12";
@@ -930,6 +997,8 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label13, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label13, BunifuAnimatorNS.DecorationType.None);
             this.label13.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(22, 110);
             this.label13.Name = "label13";
@@ -940,6 +1009,8 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label14, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label14, BunifuAnimatorNS.DecorationType.None);
             this.label14.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(64, 83);
             this.label14.Name = "label14";
@@ -950,6 +1021,8 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label16, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label16, BunifuAnimatorNS.DecorationType.None);
             this.label16.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(71, 56);
             this.label16.Name = "label16";
@@ -966,6 +1039,8 @@
             this.btnAddSelectionBun.BorderRadius = 0;
             this.btnAddSelectionBun.ButtonText = "Add Selection From Master to Current";
             this.btnAddSelectionBun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.btnAddSelectionBun, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.btnAddSelectionBun, BunifuAnimatorNS.DecorationType.None);
             this.btnAddSelectionBun.DisabledColor = System.Drawing.Color.Gray;
             this.btnAddSelectionBun.Iconcolor = System.Drawing.Color.Transparent;
             this.btnAddSelectionBun.Iconimage = null;
@@ -1003,6 +1078,8 @@
             this.bunifuFlatButton2.BorderRadius = 0;
             this.bunifuFlatButton2.ButtonText = "Search Job";
             this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.bunifuFlatButton2, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.bunifuFlatButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.Iconimage = null;
@@ -1039,6 +1116,8 @@
             this.bunifuFlatButton3.BorderRadius = 0;
             this.bunifuFlatButton3.ButtonText = "Search Master";
             this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.bunifuFlatButton3, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.bunifuFlatButton3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.Iconimage = null;
@@ -1075,6 +1154,8 @@
             this.bunifuFlatButton5.BorderRadius = 0;
             this.bunifuFlatButton5.ButtonText = "Export To Excel";
             this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.bunifuFlatButton5, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.bunifuFlatButton5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton5.Iconimage = null;
@@ -1102,16 +1183,6 @@
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton5.Click += new System.EventHandler(this.bunifuFlatButton5_Click);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(107, 384);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 14);
-            this.label15.TabIndex = 505;
-            this.label15.Text = "Note:";
-            // 
             // btnSubmitBun
             // 
             this.btnSubmitBun.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -1120,6 +1191,8 @@
             this.btnSubmitBun.BorderRadius = 0;
             this.btnSubmitBun.ButtonText = "Submit";
             this.btnSubmitBun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.btnSubmitBun, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.btnSubmitBun, BunifuAnimatorNS.DecorationType.None);
             this.btnSubmitBun.DisabledColor = System.Drawing.Color.Gray;
             this.btnSubmitBun.Iconcolor = System.Drawing.Color.Transparent;
             this.btnSubmitBun.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSubmitBun.Iconimage")));
@@ -1133,7 +1206,7 @@
             this.btnSubmitBun.IconVisible = true;
             this.btnSubmitBun.IconZoom = 90D;
             this.btnSubmitBun.IsTab = false;
-            this.btnSubmitBun.Location = new System.Drawing.Point(210, 422);
+            this.btnSubmitBun.Location = new System.Drawing.Point(59, 638);
             this.btnSubmitBun.Name = "btnSubmitBun";
             this.btnSubmitBun.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnSubmitBun.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1155,6 +1228,8 @@
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "Refresh Selections";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = null;
@@ -1168,7 +1243,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 100D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(293, 349);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(187, 562);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1182,177 +1257,22 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // lblStandard
-            // 
-            this.lblStandard.AutoSize = true;
-            this.lblStandard.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandard.Location = new System.Drawing.Point(79, 356);
-            this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(70, 14);
-            this.lblStandard.TabIndex = 25;
-            this.lblStandard.Text = "Standard:";
-            // 
-            // lblPurchasePrder
-            // 
-            this.lblPurchasePrder.AutoSize = true;
-            this.lblPurchasePrder.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchasePrder.Location = new System.Drawing.Point(38, 329);
-            this.lblPurchasePrder.Name = "lblPurchasePrder";
-            this.lblPurchasePrder.Size = new System.Drawing.Size(112, 14);
-            this.lblPurchasePrder.TabIndex = 24;
-            this.lblPurchasePrder.Text = "Purchase Order:";
-            // 
-            // lblANSI
-            // 
-            this.lblANSI.AutoSize = true;
-            this.lblANSI.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblANSI.Location = new System.Drawing.Point(72, 302);
-            this.lblANSI.Name = "lblANSI";
-            this.lblANSI.Size = new System.Drawing.Size(77, 14);
-            this.lblANSI.TabIndex = 23;
-            this.lblANSI.Text = "ANSI/ASME:";
-            // 
-            // lblHeat
-            // 
-            this.lblHeat.AutoSize = true;
-            this.lblHeat.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeat.Location = new System.Drawing.Point(107, 275);
-            this.lblHeat.Name = "lblHeat";
-            this.lblHeat.Size = new System.Drawing.Size(42, 14);
-            this.lblHeat.TabIndex = 22;
-            this.lblHeat.Text = "Heat:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 14);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Outer Dimension:";
-            // 
-            // lblGrade
-            // 
-            this.lblGrade.AutoSize = true;
-            this.lblGrade.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrade.Location = new System.Drawing.Point(102, 249);
-            this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(49, 14);
-            this.lblGrade.TabIndex = 20;
-            this.lblGrade.Text = "Grade:";
-            // 
-            // lblCoating
-            // 
-            this.lblCoating.AutoSize = true;
-            this.lblCoating.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoating.Location = new System.Drawing.Point(88, 222);
-            this.lblCoating.Name = "lblCoating";
-            this.lblCoating.Size = new System.Drawing.Size(63, 14);
-            this.lblCoating.TabIndex = 19;
-            this.lblCoating.Text = "Coating:";
-            // 
-            // lblWallThickness
-            // 
-            this.lblWallThickness.AutoSize = true;
-            this.lblWallThickness.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWallThickness.Location = new System.Drawing.Point(38, 195);
-            this.lblWallThickness.Name = "lblWallThickness";
-            this.lblWallThickness.Size = new System.Drawing.Size(112, 14);
-            this.lblWallThickness.TabIndex = 18;
-            this.lblWallThickness.Text = "Wall Thickness:";
-            // 
-            // lblWeldSeamType
-            // 
-            this.lblWeldSeamType.AutoSize = true;
-            this.lblWeldSeamType.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeldSeamType.Location = new System.Drawing.Point(41, 141);
-            this.lblWeldSeamType.Name = "lblWeldSeamType";
-            this.lblWeldSeamType.Size = new System.Drawing.Size(112, 14);
-            this.lblWeldSeamType.TabIndex = 17;
-            this.lblWeldSeamType.Text = "Weld Seam Type:";
-            // 
-            // lblProductDescription
-            // 
-            this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDescription.Location = new System.Drawing.Point(6, 114);
-            this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(147, 14);
-            this.lblProductDescription.TabIndex = 16;
-            this.lblProductDescription.Text = "Product Description:";
-            // 
-            // lblMillLocation
-            // 
-            this.lblMillLocation.AutoSize = true;
-            this.lblMillLocation.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMillLocation.Location = new System.Drawing.Point(48, 87);
-            this.lblMillLocation.Name = "lblMillLocation";
-            this.lblMillLocation.Size = new System.Drawing.Size(105, 14);
-            this.lblMillLocation.TabIndex = 15;
-            this.lblMillLocation.Text = "Mill Location:";
-            // 
-            // lblManufacturer
-            // 
-            this.lblManufacturer.AutoSize = true;
-            this.lblManufacturer.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManufacturer.Location = new System.Drawing.Point(55, 60);
-            this.lblManufacturer.Name = "lblManufacturer";
-            this.lblManufacturer.Size = new System.Drawing.Size(98, 14);
-            this.lblManufacturer.TabIndex = 14;
-            this.lblManufacturer.Text = "Manufacturer:";
-            // 
             // lblJobName
             // 
             this.lblJobName.AutoSize = true;
+            this.logoTransition.SetDecoration(this.lblJobName, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.lblJobName, BunifuAnimatorNS.DecorationType.None);
             this.lblJobName.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobName.Location = new System.Drawing.Point(6, 16);
+            this.lblJobName.Location = new System.Drawing.Point(105, 80);
             this.lblJobName.Name = "lblJobName";
             this.lblJobName.Size = new System.Drawing.Size(70, 14);
             this.lblJobName.TabIndex = 27;
             this.lblJobName.Text = "Job Name:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblJobName);
-            this.groupBox1.Controls.Add(this.cmbManufacturer);
-            this.groupBox1.Controls.Add(this.cmbMillLocation);
-            this.groupBox1.Controls.Add(this.cmbWallThickness);
-            this.groupBox1.Controls.Add(this.cmbCoating);
-            this.groupBox1.Controls.Add(this.cmbGrade);
-            this.groupBox1.Controls.Add(this.txtHeat);
-            this.groupBox1.Controls.Add(this.cmbANSI);
-            this.groupBox1.Controls.Add(this.txtPurchaseOrder);
-            this.groupBox1.Controls.Add(this.cmbStandard);
-            this.groupBox1.Controls.Add(this.lblManufacturer);
-            this.groupBox1.Controls.Add(this.lblMillLocation);
-            this.groupBox1.Controls.Add(this.lblProductDescription);
-            this.groupBox1.Controls.Add(this.lblWeldSeamType);
-            this.groupBox1.Controls.Add(this.lblWallThickness);
-            this.groupBox1.Controls.Add(this.lblCoating);
-            this.groupBox1.Controls.Add(this.lblGrade);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblHeat);
-            this.groupBox1.Controls.Add(this.lblANSI);
-            this.groupBox1.Controls.Add(this.lblPurchasePrder);
-            this.groupBox1.Controls.Add(this.lblStandard);
-            this.groupBox1.Controls.Add(this.cmbJobName);
-            this.groupBox1.Controls.Add(this.btnRefreshJobName);
-            this.groupBox1.Controls.Add(this.bunifuFlatButton1);
-            this.groupBox1.Controls.Add(this.cmbProductDescription);
-            this.groupBox1.Controls.Add(this.btnSubmitBun);
-            this.groupBox1.Controls.Add(this.cmbWeldSeamType);
-            this.groupBox1.Controls.Add(this.cmbOuterDimension);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtNotes);
-            this.groupBox1.Location = new System.Drawing.Point(12, 47);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 465);
-            this.groupBox1.TabIndex = 537;
-            this.groupBox1.TabStop = false;
-            // 
             // contextMenuStrip1
             // 
+            this.panelTransition.SetDecoration(this.contextMenuStrip1, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.contextMenuStrip1, BunifuAnimatorNS.DecorationType.None);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
@@ -1386,7 +1306,9 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(483, 48);
+            this.panelTransition.SetDecoration(this.groupBox2, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.groupBox2, BunifuAnimatorNS.DecorationType.None);
+            this.groupBox2.Location = new System.Drawing.Point(381, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(376, 465);
             this.groupBox2.TabIndex = 539;
@@ -1397,9 +1319,11 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dgMasterGridBun);
-            this.groupBox3.Location = new System.Drawing.Point(865, 48);
+            this.panelTransition.SetDecoration(this.groupBox3, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.groupBox3, BunifuAnimatorNS.DecorationType.None);
+            this.groupBox3.Location = new System.Drawing.Point(763, 48);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(707, 465);
+            this.groupBox3.Size = new System.Drawing.Size(809, 465);
             this.groupBox3.TabIndex = 540;
             this.groupBox3.TabStop = false;
             // 
@@ -1408,10 +1332,13 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox4.Controls.Add(this.dgJobGridBun);
-            this.groupBox4.Location = new System.Drawing.Point(12, 556);
+            this.panelTransition.SetDecoration(this.groupBox4, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.groupBox4, BunifuAnimatorNS.DecorationType.None);
+            this.groupBox4.Location = new System.Drawing.Point(381, 556);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1560, 223);
+            this.groupBox4.Size = new System.Drawing.Size(1191, 223);
             this.groupBox4.TabIndex = 541;
             this.groupBox4.TabStop = false;
             // 
@@ -1424,6 +1351,8 @@
             this.btnUpdateTable.BorderRadius = 0;
             this.btnUpdateTable.ButtonText = "Update Job Table";
             this.btnUpdateTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.btnUpdateTable, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.btnUpdateTable, BunifuAnimatorNS.DecorationType.None);
             this.btnUpdateTable.DisabledColor = System.Drawing.Color.Gray;
             this.btnUpdateTable.Iconcolor = System.Drawing.Color.Transparent;
             this.btnUpdateTable.Iconimage = null;
@@ -1437,7 +1366,7 @@
             this.btnUpdateTable.IconVisible = true;
             this.btnUpdateTable.IconZoom = 100D;
             this.btnUpdateTable.IsTab = false;
-            this.btnUpdateTable.Location = new System.Drawing.Point(14, 785);
+            this.btnUpdateTable.Location = new System.Drawing.Point(381, 782);
             this.btnUpdateTable.Name = "btnUpdateTable";
             this.btnUpdateTable.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnUpdateTable.OnHovercolor = System.Drawing.Color.LightSteelBlue;
@@ -1460,6 +1389,8 @@
             this.bunifuFlatButton4.BorderRadius = 0;
             this.bunifuFlatButton4.ButtonText = "Update Master Table";
             this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoTransition.SetDecoration(this.bunifuFlatButton4, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.bunifuFlatButton4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.Iconimage = null;
@@ -1491,6 +1422,8 @@
             // 
             this.bunifuImageButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.panelTransition.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
             this.bunifuImageButton4.ImageActive = null;
             this.bunifuImageButton4.Location = new System.Drawing.Point(1517, 0);
@@ -1506,6 +1439,8 @@
             // 
             this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.panelTransition.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(1487, 0);
@@ -1521,6 +1456,8 @@
             // 
             this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.panelTransition.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(1547, 0);
@@ -1539,19 +1476,290 @@
             this.bunifuDragControl1.TargetControl = this.menuStrip1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // sidemenu
+            // 
+            this.sidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.sidemenu.Controls.Add(this.logo);
+            this.sidemenu.Controls.Add(this.lblJobName);
+            this.sidemenu.Controls.Add(this.bunifuFlatButton1);
+            this.sidemenu.Controls.Add(this.label29);
+            this.sidemenu.Controls.Add(this.btnSubmitBun);
+            this.sidemenu.Controls.Add(this.label28);
+            this.sidemenu.Controls.Add(this.label27);
+            this.sidemenu.Controls.Add(this.label26);
+            this.sidemenu.Controls.Add(this.label25);
+            this.sidemenu.Controls.Add(this.label24);
+            this.sidemenu.Controls.Add(this.label23);
+            this.sidemenu.Controls.Add(this.label22);
+            this.sidemenu.Controls.Add(this.label21);
+            this.sidemenu.Controls.Add(this.label20);
+            this.sidemenu.Controls.Add(this.label19);
+            this.sidemenu.Controls.Add(this.label18);
+            this.sidemenu.Controls.Add(this.label17);
+            this.sidemenu.Controls.Add(this.cmbManufacturer);
+            this.sidemenu.Controls.Add(this.cmbJobName);
+            this.sidemenu.Controls.Add(this.cmbMillLocation);
+            this.sidemenu.Controls.Add(this.btnRefreshJobName);
+            this.sidemenu.Controls.Add(this.cmbWallThickness);
+            this.sidemenu.Controls.Add(this.cmbCoating);
+            this.sidemenu.Controls.Add(this.cmbGrade);
+            this.sidemenu.Controls.Add(this.txtHeat);
+            this.sidemenu.Controls.Add(this.cmbANSI);
+            this.sidemenu.Controls.Add(this.txtPurchaseOrder);
+            this.sidemenu.Controls.Add(this.cmbStandard);
+            this.sidemenu.Controls.Add(this.cmbProductDescription);
+            this.sidemenu.Controls.Add(this.cmbWeldSeamType);
+            this.sidemenu.Controls.Add(this.cmbOuterDimension);
+            this.sidemenu.Controls.Add(this.txtNotes);
+            this.sidemenu.Controls.Add(this.bunifuImageButton3);
+            this.panelTransition.SetDecoration(this.sidemenu, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.sidemenu, BunifuAnimatorNS.DecorationType.None);
+            this.sidemenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidemenu.Location = new System.Drawing.Point(0, 24);
+            this.sidemenu.Name = "sidemenu";
+            this.sidemenu.Size = new System.Drawing.Size(375, 798);
+            this.sidemenu.TabIndex = 544;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label29, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label29, BunifuAnimatorNS.DecorationType.None);
+            this.label29.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(58, 585);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 14);
+            this.label29.TabIndex = 538;
+            this.label29.Text = "Note:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label28, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label28, BunifuAnimatorNS.DecorationType.None);
+            this.label28.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(59, 544);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 14);
+            this.label28.TabIndex = 537;
+            this.label28.Text = "Standard:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label27, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label27, BunifuAnimatorNS.DecorationType.None);
+            this.label27.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(59, 506);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(112, 14);
+            this.label27.TabIndex = 536;
+            this.label27.Text = "Purchase Order:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label26, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label26, BunifuAnimatorNS.DecorationType.None);
+            this.label26.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(58, 469);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(77, 14);
+            this.label26.TabIndex = 535;
+            this.label26.Text = "ANSI/ASME:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label25, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label25, BunifuAnimatorNS.DecorationType.None);
+            this.label25.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(57, 431);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 14);
+            this.label25.TabIndex = 534;
+            this.label25.Text = "Heat:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label24, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label24, BunifuAnimatorNS.DecorationType.None);
+            this.label24.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(61, 390);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(49, 14);
+            this.label24.TabIndex = 533;
+            this.label24.Text = "Grade:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label23, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label23, BunifuAnimatorNS.DecorationType.None);
+            this.label23.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(62, 352);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 14);
+            this.label23.TabIndex = 532;
+            this.label23.Text = "Coating:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label22, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label22, BunifuAnimatorNS.DecorationType.None);
+            this.label22.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(63, 312);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(112, 14);
+            this.label22.TabIndex = 531;
+            this.label22.Text = "Wall Thickness:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label21, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label21, BunifuAnimatorNS.DecorationType.None);
+            this.label21.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(61, 273);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(119, 14);
+            this.label21.TabIndex = 530;
+            this.label21.Text = "Outer Dimension:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label20, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label20, BunifuAnimatorNS.DecorationType.None);
+            this.label20.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(58, 234);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(112, 14);
+            this.label20.TabIndex = 529;
+            this.label20.Text = "Weld Seam Type:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label19, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label19, BunifuAnimatorNS.DecorationType.None);
+            this.label19.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(58, 195);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(147, 14);
+            this.label19.TabIndex = 528;
+            this.label19.Text = "Product Description:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label18, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label18, BunifuAnimatorNS.DecorationType.None);
+            this.label18.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(63, 156);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 14);
+            this.label18.TabIndex = 527;
+            this.label18.Text = "Mill Location:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.logoTransition.SetDecoration(this.label17, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.label17, BunifuAnimatorNS.DecorationType.None);
+            this.label17.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(63, 119);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 14);
+            this.label17.TabIndex = 526;
+            this.label17.Text = "Manufacturer:";
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelTransition.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(12, 80);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(29, 32);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 0;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            // 
+            // logo
+            // 
+            this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.logoTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(0, 5);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(360, 50);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 539;
+            this.logo.TabStop = false;
+            // 
+            // logoTransition
+            // 
+            this.logoTransition.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+            this.logoTransition.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.logoTransition.DefaultAnimation = animation2;
+            // 
+            // panelTransition
+            // 
+            this.panelTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.panelTransition.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.panelTransition.DefaultAnimation = animation1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1584, 822);
+            this.Controls.Add(this.sidemenu);
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.btnUpdateTable);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bunifuImageButton4);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.bunifuImageButton1);
@@ -1559,10 +1767,11 @@
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.btnAddSelectionBun);
-            this.Controls.Add(this.lblDgJobTitle);
             this.Controls.Add(this.txtSearchJob);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.menuStrip1);
+            this.panelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.ForeColor = System.Drawing.Color.Silver;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1576,8 +1785,6 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1585,6 +1792,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.sidemenu.ResumeLayout(false);
+            this.sidemenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1619,7 +1830,6 @@
         private System.Windows.Forms.ToolStripMenuItem aNSIASMEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem;
         private System.Windows.Forms.TextBox txtSearchJob;
-        private System.Windows.Forms.Label lblDgJobTitle;
         private System.Windows.Forms.TextBox txtLastNotesInput;
         private System.Windows.Forms.ToolStripMenuItem importFromExcelToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTips;
@@ -1647,8 +1857,33 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblJobName;
+        private System.Windows.Forms.ComboBox cmbJobName;
+        private System.Windows.Forms.Button btnRefreshJobName;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSubmitBun;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUpdateTable;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Panel sidemenu;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbManufacturer;
         private System.Windows.Forms.ComboBox cmbMillLocation;
         private System.Windows.Forms.ComboBox cmbWallThickness;
@@ -1658,35 +1893,14 @@
         private System.Windows.Forms.ComboBox cmbANSI;
         private System.Windows.Forms.TextBox txtPurchaseOrder;
         private System.Windows.Forms.ComboBox cmbStandard;
-        private System.Windows.Forms.Label lblManufacturer;
-        private System.Windows.Forms.Label lblMillLocation;
-        private System.Windows.Forms.Label lblProductDescription;
-        private System.Windows.Forms.Label lblWeldSeamType;
-        private System.Windows.Forms.Label lblWallThickness;
-        private System.Windows.Forms.Label lblCoating;
-        private System.Windows.Forms.Label lblGrade;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblHeat;
-        private System.Windows.Forms.Label lblANSI;
-        private System.Windows.Forms.Label lblPurchasePrder;
-        private System.Windows.Forms.Label lblStandard;
-        private System.Windows.Forms.ComboBox cmbJobName;
-        private System.Windows.Forms.Button btnRefreshJobName;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.ComboBox cmbProductDescription;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSubmitBun;
         private System.Windows.Forms.ComboBox cmbWeldSeamType;
         private System.Windows.Forms.ComboBox cmbOuterDimension;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNotes;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private Bunifu.Framework.UI.BunifuFlatButton btnUpdateTable;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private System.Windows.Forms.PictureBox logo;
+        private BunifuAnimatorNS.BunifuTransition logoTransition;
+        private BunifuAnimatorNS.BunifuTransition panelTransition;
     }
 }
 

@@ -442,7 +442,7 @@ namespace MTR_APP
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "] WHERE ([Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtSearchJob.Text + "')";
 
                     cmd.Connection = con;
 
@@ -495,7 +495,7 @@ namespace MTR_APP
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtNotes.Text + "')";
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable] WHERE ([Job Name] LIKE '" + txtSearchJob.Text + "%' OR [Manufacturer] LIKE '" + txtSearchJob.Text + "%' OR [Mill Location] LIKE '" + txtSearchJob.Text + "%' OR [Product Description] LIKE '" + txtSearchJob.Text + "%'  OR [Weld Seam Type] LIKE '" + txtSearchJob.Text + "%' OR [Outer Dimension] LIKE '" + txtSearchJob.Text + "%' OR [Wall Thickness] LIKE '" + txtSearchJob.Text + "%' OR [Coating] LIKE '" + txtSearchJob.Text + "%' OR [Grade] LIKE '" + txtSearchJob.Text + "%' OR [Heat] LIKE '" + txtSearchJob.Text + "%' OR [ANSI/ASME] LIKE '" + txtSearchJob.Text + "%' OR [Purchase Order] LIKE '" + txtSearchJob.Text + "%' OR [Standard] LIKE '" + txtSearchJob.Text + "%' OR [Notes] LIKE'" + txtSearchJob.Text + "')";
 
                     cmd.Connection = con;
                     masterDA = new SqlDataAdapter(cmd.CommandText, con);
@@ -566,18 +566,18 @@ namespace MTR_APP
                     SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
 
                     pManufactuter.Value = cmbManufacturer.Text;
-                    pMillLocation.Value = cmbManufacturer.Text;
-                    pProductDescription.Value = cmbManufacturer.Text;
-                    pWeldSeamType.Value = cmbManufacturer.Text;
-                    pOuterDimension.Value = cmbManufacturer.Text;
-                    pWallThickness.Value = cmbManufacturer.Text;
-                    pCoating.Value = cmbManufacturer.Text;
-                    pGrade.Value = cmbManufacturer.Text;
-                    pHeat.Value = cmbManufacturer.Text;
-                    pAnsiAsme.Value = cmbManufacturer.Text;
-                    pPurchaseOrder.Value = cmbManufacturer.Text;
-                    pStandard.Value = cmbManufacturer.Text;
-                    pNotes.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
 
                     cmd.Parameters.Add(pManufactuter);
                     cmd.Parameters.Add(pMillLocation);
@@ -698,20 +698,19 @@ namespace MTR_APP
                     SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
                     SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
 
-                    pJobName.Value = cmbJobName.Text;
                     pManufactuter.Value = cmbManufacturer.Text;
-                    pMillLocation.Value = cmbManufacturer.Text;
-                    pProductDescription.Value = cmbManufacturer.Text;
-                    pWeldSeamType.Value = cmbManufacturer.Text;
-                    pOuterDimension.Value = cmbManufacturer.Text;
-                    pWallThickness.Value = cmbManufacturer.Text;
-                    pCoating.Value = cmbManufacturer.Text;
-                    pGrade.Value = cmbManufacturer.Text;
-                    pHeat.Value = cmbManufacturer.Text;
-                    pAnsiAsme.Value = cmbManufacturer.Text;
-                    pPurchaseOrder.Value = cmbManufacturer.Text;
-                    pStandard.Value = cmbManufacturer.Text;
-                    pNotes.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
 
                     cmd.Parameters.Add(pJobName);
                     cmd.Parameters.Add(pManufactuter);
@@ -1057,7 +1056,6 @@ namespace MTR_APP
                     dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-                    lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
             }
             catch (Exception ex)
@@ -1178,8 +1176,6 @@ namespace MTR_APP
                     // adjust their widths when the data changes.
                     dgMasterGridBun.AutoSizeColumnsMode =
                         DataGridViewAutoSizeColumnsMode.AllCells;
-
-                    lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
             }
             //Catch Exception
@@ -1586,18 +1582,18 @@ namespace MTR_APP
                     SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
 
                     pManufactuter.Value = cmbManufacturer.Text;
-                    pMillLocation.Value = cmbManufacturer.Text;
-                    pProductDescription.Value = cmbManufacturer.Text;
-                    pWeldSeamType.Value = cmbManufacturer.Text;
-                    pOuterDimension.Value = cmbManufacturer.Text;
-                    pWallThickness.Value = cmbManufacturer.Text;
-                    pCoating.Value = cmbManufacturer.Text;
-                    pGrade.Value = cmbManufacturer.Text;
-                    pHeat.Value = cmbManufacturer.Text;
-                    pAnsiAsme.Value = cmbManufacturer.Text;
-                    pPurchaseOrder.Value = cmbManufacturer.Text;
-                    pStandard.Value = cmbManufacturer.Text;
-                    pNotes.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
 
                     cmd.Parameters.Add(pManufactuter);
                     cmd.Parameters.Add(pMillLocation);
@@ -1720,18 +1716,18 @@ namespace MTR_APP
 
                     pJobName.Value = cmbJobName.Text;
                     pManufactuter.Value = cmbManufacturer.Text;
-                    pMillLocation.Value = cmbManufacturer.Text;
-                    pProductDescription.Value = cmbManufacturer.Text;
-                    pWeldSeamType.Value = cmbManufacturer.Text;
-                    pOuterDimension.Value = cmbManufacturer.Text;
-                    pWallThickness.Value = cmbManufacturer.Text;
-                    pCoating.Value = cmbManufacturer.Text;
-                    pGrade.Value = cmbManufacturer.Text;
-                    pHeat.Value = cmbManufacturer.Text;
-                    pAnsiAsme.Value = cmbManufacturer.Text;
-                    pPurchaseOrder.Value = cmbManufacturer.Text;
-                    pStandard.Value = cmbManufacturer.Text;
-                    pNotes.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
 
                     cmd.Parameters.Add(pJobName);
                     cmd.Parameters.Add(pManufactuter);
@@ -2103,7 +2099,6 @@ namespace MTR_APP
                     dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-                    lblDgJobTitle.Text = cmbJobName.Text.ToString();
                 }
             }
             catch (Exception ex)
@@ -2378,6 +2373,33 @@ namespace MTR_APP
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
             int rows = masterDA.Update(masterDT);
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            //if (sidemenu.Width == 50)
+            //{
+            //    //EXPAND
+            //    // Expand the panel
+            //    //Show the Logo
+
+            //    sidemenu.Visible = false;
+            //    sidemenu.Width = 375;
+            //    panelTransition.ShowSync(sidemenu);
+            //    logoTransition.ShowSync(logo);
+            //}
+            //else
+            //{
+            //    //COLLAPSE
+            //    //Using Bunifu Animator
+            //    // 1. Hide the logo.
+            //    // 2. Slide the Panel
+
+            //    logoTransition.Hide(logo);
+            //    sidemenu.Visible = false;
+            //    sidemenu.Width = 50;
+            //    panelTransition.ShowSync(sidemenu);
+            //}
         }
     }
 }
