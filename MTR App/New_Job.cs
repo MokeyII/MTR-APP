@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Linq;
 using System.Xml.Linq;
+using System.IO;
 
 namespace MTR_App
 {
@@ -59,8 +60,21 @@ namespace MTR_App
             var cfg = XDocument.Load("cfg.xml");
             var element = cfg.Descendants("Value").Single();
             int currentValue = (int)element;
-            element.SetValue(currentValue + 1*1000);
+            element.SetValue(currentValue + 1 * 1000);
             cfg.Save("cfg.xml");
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml("cfg.xml");
+
+
+            StringWriter sw = new StringWriter();
+
+            XmlTextWriter tx = new XmlTextWriter(sw);
+
+            doc.WriteTo(tx);
+            //sw.ToString();
+
+            txtChangeXML.Text = sw.ToString(); 
         }
     }
 }
