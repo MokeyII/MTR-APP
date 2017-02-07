@@ -536,30 +536,6 @@ namespace MTR_APP
 
         #endregion Form Load Event
 
-        #region Getters and Setters
-        public string IdentifyHeat
-        {
-            get { return txtHeat.Text; }
-            set { txtHeat.Text = value; }
-        }
-
-        public string IdentifyOuterDimension
-        {
-            get { return cmbOuterDimension.Text; }
-            set { cmbOuterDimension.Text = value; }
-        }
-        public string IdentifyWallThickness
-        {
-            get { return cmbWallThickness.Text; }
-            set { cmbWallThickness.Text = value; }
-        }
-        public string IdentifyManufacturer
-        {
-            get { return cmbManufacturer.Text; }
-            set { cmbManufacturer.Text = value; }
-        }
-        #endregion
-
         #region Header Bar Buttons
 
         private void btnCloseApp_Click_1(object sender, EventArgs e)

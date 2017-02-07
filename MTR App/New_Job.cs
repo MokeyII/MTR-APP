@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Xml;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace MTR_App
 {
@@ -49,6 +52,15 @@ namespace MTR_App
                 //Click Submit button
                 btnSubmitJob_Click(sender, e);
             }
+        }
+
+        private void btnChangeXML_Click(object sender, EventArgs e)
+        {
+            var cfg = XDocument.Load("cfg.xml");
+            var element = cfg.Descendants("Value").Single();
+            int currentValue = (int)element;
+            element.SetValue(currentValue + 1*1000);
+            cfg.Save("cfg.xml");
         }
     }
 }
