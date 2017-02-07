@@ -133,7 +133,6 @@
     <Compile Include="FirstRunDiag.Designer.cs">
       <DependentUpon>FirstRunDiag.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions.cs" />
     <Compile Include="ImportExcel.cs">
       <SubType>Form</SubType>
     </Compile>

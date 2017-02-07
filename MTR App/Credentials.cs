@@ -34,5 +34,7 @@ namespace MTR_App
         public string Password { get; set; }
 
         public string eMail { get; set; }
+
+        public string UniqueID { get; set; }
     }
 }

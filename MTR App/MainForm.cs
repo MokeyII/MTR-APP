@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 using System.Windows.Forms;
 
 namespace MTR_APP
@@ -534,6 +535,30 @@ namespace MTR_APP
         }
 
         #endregion Form Load Event
+
+        #region Getters and Setters
+        public string IdentifyHeat
+        {
+            get { return txtHeat.Text; }
+            set { txtHeat.Text = value; }
+        }
+
+        public string IdentifyOuterDimension
+        {
+            get { return cmbOuterDimension.Text; }
+            set { cmbOuterDimension.Text = value; }
+        }
+        public string IdentifyWallThickness
+        {
+            get { return cmbWallThickness.Text; }
+            set { cmbWallThickness.Text = value; }
+        }
+        public string IdentifyManufacturer
+        {
+            get { return cmbManufacturer.Text; }
+            set { cmbManufacturer.Text = value; }
+        }
+        #endregion
 
         #region Header Bar Buttons
 
@@ -1279,11 +1304,19 @@ namespace MTR_APP
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                 {
+                    Credentials UniqueID = new Credentials();
+
+                    string combineID = "" + txtHeat.Text + "" + cmbManufacturer.Text + "" + cmbOuterDimension.Text + "" + cmbWallThickness.Text + "";
+
+                    String hashedID = UniqueID.GenHash(combineID, UniqueID.salt);
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+                    cmd.CommandText = "INSERT INTO dbo.[" + cmbJobName.Text + "] ([Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes], [Unique Identifier]) VALUES(@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes,@UniqueIdentifier)";
 
                     cmd.Connection = con;
+
+                    UniqueID.UniqueID = hashedID;
 
                     SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
                     SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
@@ -1298,6 +1331,7 @@ namespace MTR_APP
                     SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
                     SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
                     SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+                    SqlParameter pUI = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
 
                     pManufactuter.Value = cmbManufacturer.Text;
                     pMillLocation.Value = cmbMillLocation.Text;
@@ -1312,6 +1346,7 @@ namespace MTR_APP
                     pPurchaseOrder.Value = txtPurchaseOrder.Text;
                     pStandard.Value = cmbStandard.Text;
                     pNotes.Value = txtNotes.Text;
+                    pUI.Value = hashedID;
 
                     cmd.Parameters.Add(pManufactuter);
                     cmd.Parameters.Add(pMillLocation);
@@ -1326,6 +1361,7 @@ namespace MTR_APP
                     cmd.Parameters.Add(pPurchaseOrder);
                     cmd.Parameters.Add(pStandard);
                     cmd.Parameters.Add(pNotes);
+                    cmd.Parameters.Add(pUI);
 
                     // Connection to DB
                     cmd.CommandText.Replace("\\s+", " ");
@@ -1411,11 +1447,19 @@ namespace MTR_APP
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                 {
+
+                    Credentials UniqueID = new Credentials();
+
+                    string combineID = "" + txtHeat.Text + "" + cmbManufacturer.Text + "" + cmbOuterDimension.Text + "" + cmbWallThickness.Text + "";
+
+                    String hashedID = UniqueID.GenHash(combineID, UniqueID.salt);
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes)";
+                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes], [Unique Identifier]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes,@UniqueIdentifier)";
 
                     cmd.Connection = con;
+
+                    UniqueID.UniqueID = hashedID;
 
                     SqlParameter pJobName = new SqlParameter("@JobName", System.Data.SqlDbType.VarChar, 50);
                     SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
@@ -1431,6 +1475,7 @@ namespace MTR_APP
                     SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
                     SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
                     SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+                    SqlParameter pUI = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
 
                     pJobName.Value = cmbJobName.Text;
                     pManufactuter.Value = cmbManufacturer.Text;
@@ -1446,6 +1491,7 @@ namespace MTR_APP
                     pPurchaseOrder.Value = txtPurchaseOrder.Text;
                     pStandard.Value = cmbStandard.Text;
                     pNotes.Value = txtNotes.Text;
+                    pUI.Value = hashedID;
 
                     cmd.Parameters.Add(pJobName);
                     cmd.Parameters.Add(pManufactuter);
@@ -1461,6 +1507,7 @@ namespace MTR_APP
                     cmd.Parameters.Add(pPurchaseOrder);
                     cmd.Parameters.Add(pStandard);
                     cmd.Parameters.Add(pNotes);
+                    cmd.Parameters.Add(pUI);
 
                     cmd.CommandText.Replace("\\s+", " ");
 
