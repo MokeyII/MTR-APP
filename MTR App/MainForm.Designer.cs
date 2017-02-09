@@ -1704,7 +1704,6 @@
             this.btnInsertJobSidePanel.TabIndex = 0;
             this.btnInsertJobSidePanel.TabStop = false;
             this.btnInsertJobSidePanel.Zoom = 10;
-            this.btnInsertJobSidePanel.Click += new System.EventHandler(this.btnInsertJobSidePanel_Click);
             // 
             // logoTransition
             // 

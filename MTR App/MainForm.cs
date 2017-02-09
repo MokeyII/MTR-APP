@@ -23,36 +23,113 @@ namespace MTR_APP
             InitializeComponent();
         }
 
-        #region Animated Side Panel
+        #region Update Master Table /w Command Builder
 
-        private void btnInsertJobSidePanel_Click(object sender, EventArgs e)
+        private void MasterCommandBuilder()
         {
-            //if (sidemenu.Width == 50)
-            //{
-            //    //EXPAND
-            //    // Expand the panel
-            //    //Show the Logo
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                    cmd.Connection = con;
 
-            //    sidemenu.Visible = false;
-            //    sidemenu.Width = 375;
-            //    panelTransition.ShowSync(sidemenu);
-            //    logoTransition.ShowSync(logo);
-            //}
-            //else
-            //{
-            //    //COLLAPSE
-            //    //Using Bunifu Animator
-            //    // 1. Hide the logo.
-            //    // 2. Slide the Panel
+                    //DataAdapter
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
-            //    logoTransition.Hide(logo);
-            //    sidemenu.Visible = false;
-            //    sidemenu.Width = 50;
-            //    panelTransition.ShowSync(sidemenu);
-            //}
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    masterDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    masterDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
+
+                    //Teach Command builder to be a boss!
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    masterDA.Fill(masterDT);
+
+                    //Fill DataTable with Database Schema
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgMasterGridBun.DataSource = masterDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "ERROR populating Master Table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        #endregion Animated Side Panel
+        private void JobCommandBuilder()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "ERROR populating job table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
 
         #region Combo Box Populate
 
@@ -454,53 +531,7 @@ namespace MTR_APP
             zGradeCombo();
             zAnsiAsmeCombo();
             zStandardCombo();
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    masterDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    masterDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
-
-                    //Teach Command builder to be a boss!
-                    masterDA.UpdateCommand = cb.GetUpdateCommand();
-                    masterDA.InsertCommand = cb.GetInsertCommand();
-                    masterDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    masterDA.Fill(masterDT);
-
-                    //Fill DataTable with Database Schema
-                    masterDA.FillSchema(masterDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = masterDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MasterCommandBuilder();
 
             //////////////////////////////////////////////////////////////////////////
             /////////////////////      Populate Job Name ComboBox    /////////////////
@@ -561,59 +592,7 @@ namespace MTR_APP
 
         private void cmbJobName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    // Resize the master DataGridView columns to fit the newly loaded data.
-                    dgMasterGridBun.AutoResizeColumns();
-
-                    // Configure the details DataGridView so that its columns automatically
-                    // adjust their widths when the data changes.
-                    dgMasterGridBun.AutoSizeColumnsMode =
-                        DataGridViewAutoSizeColumnsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            JobCommandBuilder();
         }
 
         #endregion Job Combo Box Changed
@@ -906,107 +885,8 @@ namespace MTR_APP
                 MessageBox.Show(this, ex.Message, "INSERT INTO MASTER SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "REFRESH JOB LIST SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    masterDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    masterDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
-
-                    //Teach Command builder to be a boss!
-                    masterDA.UpdateCommand = cb.GetUpdateCommand();
-                    masterDA.InsertCommand = cb.GetInsertCommand();
-                    masterDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    masterDA.Fill(masterDT);
-
-                    //Fill DataTable with Database Schema
-                    masterDA.FillSchema(masterDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = masterDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridBun.AutoResizeColumns();
-
-                    // Configure the details DataGridView so that its columns automatically
-                    // adjust their widths when the data changes.
-                    dgMasterGridBun.AutoSizeColumnsMode =
-                        DataGridViewAutoSizeColumnsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "REFRESH MASTER SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            JobCommandBuilder();
+            MasterCommandBuilder();
 
             cmbManufacturer.Text = String.Empty;
             cmbMillLocation.Text = String.Empty;
@@ -1372,6 +1252,89 @@ namespace MTR_APP
 
             #endregion Insert Into Job Table
 
+            #region Insert Into Master Table
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    Credentials UniqueID = new Credentials();
+
+                    string combineID = "" + txtHeat.Text + "" + cmbManufacturer.Text + "" + cmbOuterDimension.Text + "" + cmbWallThickness.Text + "";
+
+                    String hashedID = UniqueID.GenHash(combineID, UniqueID.salt);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes], [Unique Identifier]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes,@UniqueIdentifier)";
+
+                    cmd.Connection = con;
+
+                    UniqueID.UniqueID = hashedID;
+
+                    SqlParameter pJobName = new SqlParameter("@JobName", System.Data.SqlDbType.VarChar, 50);
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+                    SqlParameter pUI = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
+
+                    pJobName.Value = cmbJobName.Text;
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
+                    pUI.Value = hashedID;
+
+                    cmd.Parameters.Add(pJobName);
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+                    cmd.Parameters.Add(pUI);
+
+                    cmd.CommandText.Replace("\\s+", " ");
+
+                    //execute
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                }
+            }
+            catch (Exception ex)
+            {
+                //catch error
+                MessageBox.Show(this, ex.Message, "Error Inserting into Master Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            #endregion Insert Into Master Table
+
             #region Select From Job Table and Update Table with Unique Identifier
 
             try
@@ -1491,9 +1454,74 @@ namespace MTR_APP
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show(this, ex.Message, "ERROR While Updating Unique ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(this, ex.Message, "ERROR While Updating Unique ID In Job Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    try
+                    {
+                        using (SqlConnection con3 = new SqlConnection(Connection.MTRDataBaseConn))
+                        {
+                            con3.Open();
+                            SqlCommand cmd3 = new SqlCommand();
+                            cmd3.CommandText = "UPDATE dbo.[MasterTable] SET [Unique Identifier] = @NewID WHERE [Job Name] LIKE @JobName AND [Manufacturer] LIKE @Manufacturer AND [Mill Location] LIKE @MillLocation AND [Product Description] LIKE @ProductDescription AND [Weld Seam Type] LIKE @WeldSeamType AND [Outer Dimension] LIKE @OuterDimension AND [Wall Thickness] LIKE @WallThickness AND [Coating] LIKE @Coating AND [Grade] LIKE @Grade AND [Heat] LIKE @Heat AND [ANSI/ASME] LIKE @ANSIASME AND [Purchase Order] LIKE @PurchaseOrder AND [Standard] LIKE @Standard AND [Notes] LIKE @Notes";
+                            cmd3.Connection = con3;
 
+                            SqlParameter pNewID3 = new SqlParameter("@NewID", SqlDbType.VarChar, 50);
+                            SqlParameter pJobName3 = new SqlParameter("@JobName", SqlDbType.VarChar, 50);
+                            SqlParameter pManufactuter3 = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                            SqlParameter pMillLocation3 = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                            SqlParameter pProductDescription3 = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                            SqlParameter pWeldSeamType3 = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                            SqlParameter pOuterDimension3 = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                            SqlParameter pWallThickness3 = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                            SqlParameter pCoating3 = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                            SqlParameter pGrade3 = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                            SqlParameter pHeat3 = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                            SqlParameter pAnsiAsme3 = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                            SqlParameter pPurchaseOrder3 = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                            SqlParameter pStandard3 = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                            SqlParameter pNotes3 = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                            pNewID3.Value = cmbJobName.Text + result.ToString();
+                            pJobName3.Value = cmbJobName.Text;
+                            pManufactuter3.Value = cmbManufacturer.Text;
+                            pMillLocation3.Value = cmbMillLocation.Text;
+                            pProductDescription3.Value = cmbProductDescription.Text;
+                            pWeldSeamType3.Value = cmbWeldSeamType.Text;
+                            pOuterDimension3.Value = cmbOuterDimension.Text;
+                            pWallThickness3.Value = cmbWallThickness.Text;
+                            pCoating3.Value = cmbCoating.Text;
+                            pGrade3.Value = cmbGrade.Text;
+                            pHeat3.Value = txtHeat.Text;
+                            pAnsiAsme3.Value = cmbANSI.Text;
+                            pPurchaseOrder3.Value = txtPurchaseOrder.Text;
+                            pStandard3.Value = cmbStandard.Text;
+                            pNotes3.Value = txtNotes.Text;
+
+                            cmd3.Parameters.Add(pNewID3);
+                            cmd3.Parameters.Add(pJobName3);
+                            cmd3.Parameters.Add(pManufactuter3);
+                            cmd3.Parameters.Add(pMillLocation3);
+                            cmd3.Parameters.Add(pProductDescription3);
+                            cmd3.Parameters.Add(pWeldSeamType3);
+                            cmd3.Parameters.Add(pOuterDimension3);
+                            cmd3.Parameters.Add(pWallThickness3);
+                            cmd3.Parameters.Add(pCoating3);
+                            cmd3.Parameters.Add(pGrade3);
+                            cmd3.Parameters.Add(pHeat3);
+                            cmd3.Parameters.Add(pAnsiAsme3);
+                            cmd3.Parameters.Add(pPurchaseOrder3);
+                            cmd3.Parameters.Add(pStandard3);
+                            cmd3.Parameters.Add(pNotes3);
+
+                            cmd3.ExecuteNonQuery();
+                            con3.Close();
+
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(this, ex.Message, "ERROR While Updating Unique ID In MasterTable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -1503,197 +1531,9 @@ namespace MTR_APP
             }
 
             #endregion Select From Job Table and Update Table with Unique Identifier
-            
 
-            #region Populate Job Table With Command Builder
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "ERROR populating job table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            #endregion Populate Job Table With Command Builder
-
-            #region Insert Into Master Table
-
-            try
-            {
-                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
-                {
-                    Credentials UniqueID = new Credentials();
-
-                    string combineID = "" + txtHeat.Text + "" + cmbManufacturer.Text + "" + cmbOuterDimension.Text + "" + cmbWallThickness.Text + "";
-
-                    String hashedID = UniqueID.GenHash(combineID, UniqueID.salt);
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "INSERT INTO dbo.[MasterTable] ([Job Name], [Manufacturer], [Mill Location], [Product Description], [Weld Seam Type], [Outer Dimension], [Wall Thickness], [Coating], [Grade], [Heat], [ANSI/ASME], [Purchase Order], [Standard], [Notes], [Unique Identifier]) VALUES(@JobName,@Manufacturer,@MillLocation,@ProductDescription,@WeldSeamType,@OuterDimension,@WallThickness,@Coating,@Grade,@Heat,@ANSIASME,@PurchaseOrder,@Standard,@Notes,@UniqueIdentifier)";
-
-                    cmd.Connection = con;
-
-                    UniqueID.UniqueID = hashedID;
-
-                    SqlParameter pJobName = new SqlParameter("@JobName", System.Data.SqlDbType.VarChar, 50);
-                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
-                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
-                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
-                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
-                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
-                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
-                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
-                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
-                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
-                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
-                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
-                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
-                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
-                    SqlParameter pUI = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
-
-                    pJobName.Value = cmbJobName.Text;
-                    pManufactuter.Value = cmbManufacturer.Text;
-                    pMillLocation.Value = cmbMillLocation.Text;
-                    pProductDescription.Value = cmbProductDescription.Text;
-                    pWeldSeamType.Value = cmbWeldSeamType.Text;
-                    pOuterDimension.Value = cmbOuterDimension.Text;
-                    pWallThickness.Value = cmbWallThickness.Text;
-                    pCoating.Value = cmbCoating.Text;
-                    pGrade.Value = cmbGrade.Text;
-                    pHeat.Value = txtHeat.Text;
-                    pAnsiAsme.Value = cmbANSI.Text;
-                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
-                    pStandard.Value = cmbStandard.Text;
-                    pNotes.Value = txtNotes.Text;
-                    pUI.Value = hashedID;
-
-                    cmd.Parameters.Add(pJobName);
-                    cmd.Parameters.Add(pManufactuter);
-                    cmd.Parameters.Add(pMillLocation);
-                    cmd.Parameters.Add(pProductDescription);
-                    cmd.Parameters.Add(pWeldSeamType);
-                    cmd.Parameters.Add(pOuterDimension);
-                    cmd.Parameters.Add(pWallThickness);
-                    cmd.Parameters.Add(pCoating);
-                    cmd.Parameters.Add(pGrade);
-                    cmd.Parameters.Add(pHeat);
-                    cmd.Parameters.Add(pAnsiAsme);
-                    cmd.Parameters.Add(pPurchaseOrder);
-                    cmd.Parameters.Add(pStandard);
-                    cmd.Parameters.Add(pNotes);
-                    cmd.Parameters.Add(pUI);
-
-                    cmd.CommandText.Replace("\\s+", " ");
-
-                    //execute
-                    cmd.ExecuteNonQuery();
-
-                    //close connection
-                }
-            }
-            catch (Exception ex)
-            {
-                //catch error
-                MessageBox.Show(this, ex.Message, "Error Inserting into Master Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            #endregion Insert Into Master Table
-
-            #region Populate Master Table with command builder
-
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    masterDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    masterDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
-
-                    //Teach Command builder to be a boss!
-                    masterDA.UpdateCommand = cb.GetUpdateCommand();
-                    masterDA.InsertCommand = cb.GetInsertCommand();
-                    masterDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    masterDA.Fill(masterDT);
-
-                    //Fill DataTable with Database Schema
-                    masterDA.FillSchema(masterDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = masterDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "ERROR populating Master Table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            #endregion Populate Master Table with command builder
-
-            #region Clear Entry Boxes
+            JobCommandBuilder();
+            MasterCommandBuilder();
 
             cmbManufacturer.Text = String.Empty;
             cmbMillLocation.Text = String.Empty;
@@ -1710,8 +1550,6 @@ namespace MTR_APP
             cmbStandard.Text = String.Empty;
             txtNotes.Clear();
             cmbManufacturer.Focus();
-
-            #endregion Clear Entry Boxes
         }
 
         #endregion Submit Fields to Databases
