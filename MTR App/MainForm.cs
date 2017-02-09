@@ -23,114 +23,6 @@ namespace MTR_APP
             InitializeComponent();
         }
 
-        #region Update Master Table /w Command Builder
-
-        private void MasterCommandBuilder()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    masterDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    masterDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
-
-                    //Teach Command builder to be a boss!
-                    masterDA.UpdateCommand = cb.GetUpdateCommand();
-                    masterDA.InsertCommand = cb.GetInsertCommand();
-                    masterDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    masterDA.Fill(masterDT);
-
-                    //Fill DataTable with Database Schema
-                    masterDA.FillSchema(masterDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgMasterGridBun.DataSource = masterDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "ERROR populating Master Table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void JobCommandBuilder()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
-                    cmd.Connection = con;
-
-                    //DataAdapter
-                    myDA = new SqlDataAdapter(cmd.CommandText, con);
-
-                    //MySqlCommand
-                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
-
-                    //DataAdapter to Command
-                    myDA.SelectCommand = myCMD;
-
-                    //Define Datatable
-                    myDT = new DataTable();
-
-                    //Command Builder (IS GOD!)
-                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
-
-                    //Teach Command builder to be a boss!
-                    myDA.UpdateCommand = cb.GetUpdateCommand();
-                    myDA.InsertCommand = cb.GetInsertCommand();
-                    myDA.DeleteCommand = cb.GetDeleteCommand();
-
-                    //Fill the DataTable with DataAdapter information
-                    myDA.Fill(myDT);
-
-                    //Fill DataTable with Database Schema
-                    myDA.FillSchema(myDT, SchemaType.Source);
-
-                    //Bind The Data Table to the DataGrid
-                    dgJobGridBun.DataSource = myDT;
-
-                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
-                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
-            }
-            //Catch Exception
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "ERROR populating job table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        #endregion
-
         #region Combo Box Populate
 
         //Populate Ansi / ASME Combo Box
@@ -454,6 +346,114 @@ namespace MTR_APP
 
         #endregion Combo Box Populate
 
+        #region Command Builders
+
+        private void MasterCommandBuilder()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    masterDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    masterDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    masterDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
+
+                    //Teach Command builder to be a boss!
+                    masterDA.UpdateCommand = cb.GetUpdateCommand();
+                    masterDA.InsertCommand = cb.GetInsertCommand();
+                    masterDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    masterDA.Fill(masterDT);
+
+                    //Fill DataTable with Database Schema
+                    masterDA.FillSchema(masterDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgMasterGridBun.DataSource = masterDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    //dgMasterGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgMasterGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "ERROR populating Master Table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void JobCommandBuilder()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SELECT * FROM dbo.[" + cmbJobName.Text + "]";
+                    cmd.Connection = con;
+
+                    //DataAdapter
+                    myDA = new SqlDataAdapter(cmd.CommandText, con);
+
+                    //MySqlCommand
+                    SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
+
+                    //DataAdapter to Command
+                    myDA.SelectCommand = myCMD;
+
+                    //Define Datatable
+                    myDT = new DataTable();
+
+                    //Command Builder (IS GOD!)
+                    SqlCommandBuilder cb = new SqlCommandBuilder(myDA);
+
+                    //Teach Command builder to be a boss!
+                    myDA.UpdateCommand = cb.GetUpdateCommand();
+                    myDA.InsertCommand = cb.GetInsertCommand();
+                    myDA.DeleteCommand = cb.GetDeleteCommand();
+
+                    //Fill the DataTable with DataAdapter information
+                    myDA.Fill(myDT);
+
+                    //Fill DataTable with Database Schema
+                    myDA.FillSchema(myDT, SchemaType.Source);
+
+                    //Bind The Data Table to the DataGrid
+                    dgJobGridBun.DataSource = myDT;
+
+                    //AutoSize Datagrid Rows and Colums to fit the Datagrid
+                    dgJobGridBun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgJobGridBun.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+            //Catch Exception
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "ERROR populating job table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion Command Builders
+
         #region Export to Excel
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
@@ -533,11 +533,6 @@ namespace MTR_APP
             zStandardCombo();
             MasterCommandBuilder();
 
-            //////////////////////////////////////////////////////////////////////////
-            /////////////////////      Populate Job Name ComboBox    /////////////////
-            //////////////////////////////////////////////////////////////////////////
-
-            //Select Table
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
@@ -1154,8 +1149,7 @@ namespace MTR_APP
         #region Submit Fields to Databases
 
         private void btnSubmitInfo_Click(object sender, EventArgs e)
-        {  
-
+        {
             #region Insert Into Job Table
 
             try
@@ -1449,7 +1443,6 @@ namespace MTR_APP
 
                             cmd2.ExecuteNonQuery();
                             con2.Close();
-
                         }
                     }
                     catch (SqlException ex)
@@ -1515,7 +1508,6 @@ namespace MTR_APP
 
                             cmd3.ExecuteNonQuery();
                             con3.Close();
-
                         }
                     }
                     catch (SqlException ex)
