@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using System.Windows.Forms;
 
 namespace MTR_APP
@@ -1275,7 +1274,10 @@ namespace MTR_APP
         #region Submit Fields to Databases
 
         private void btnSubmitInfo_Click(object sender, EventArgs e)
-        {
+        {  
+
+            #region Insert Into Job Table
+
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
@@ -1360,16 +1362,150 @@ namespace MTR_APP
 
                     //execute
                     cmd.ExecuteNonQuery();
-
-                    //close connection
-                    con.Close();
                 }
             }
             catch (Exception ex)
             {
                 //catch error
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, ex.Message, "ERROR inserting into Job Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            #endregion Insert Into Job Table
+
+            #region Select From Job Table and Update Table with Unique Identifier
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+
+                    cmd.CommandText = "SELECT [Item #] FROM dbo.[" + cmbJobName.Text + "] WHERE [Manufacturer] LIKE @Manufacturer AND [Mill Location] LIKE @MillLocation AND [Product Description] LIKE @ProductDescription AND [Weld Seam Type] LIKE @WeldSeamType AND [Outer Dimension] LIKE @OuterDimension AND [Wall Thickness] LIKE @WallThickness AND [Coating] LIKE @Coating AND [Grade] LIKE @Grade AND [Heat] LIKE @Heat AND [ANSI/ASME] LIKE @ANSIASME AND [Purchase Order] LIKE @PurchaseOrder AND [Standard] LIKE @Standard AND [Notes] LIKE @Notes";
+
+                    cmd.Connection = con;
+                    SqlParameter pManufactuter = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                    SqlParameter pMillLocation = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                    SqlParameter pProductDescription = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                    SqlParameter pWeldSeamType = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                    SqlParameter pOuterDimension = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                    SqlParameter pWallThickness = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                    SqlParameter pCoating = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                    SqlParameter pGrade = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                    SqlParameter pHeat = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                    SqlParameter pAnsiAsme = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                    SqlParameter pPurchaseOrder = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                    SqlParameter pStandard = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                    SqlParameter pNotes = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                    pManufactuter.Value = cmbManufacturer.Text;
+                    pMillLocation.Value = cmbMillLocation.Text;
+                    pProductDescription.Value = cmbProductDescription.Text;
+                    pWeldSeamType.Value = cmbWeldSeamType.Text;
+                    pOuterDimension.Value = cmbOuterDimension.Text;
+                    pWallThickness.Value = cmbWallThickness.Text;
+                    pCoating.Value = cmbCoating.Text;
+                    pGrade.Value = cmbGrade.Text;
+                    pHeat.Value = txtHeat.Text;
+                    pAnsiAsme.Value = cmbANSI.Text;
+                    pPurchaseOrder.Value = txtPurchaseOrder.Text;
+                    pStandard.Value = cmbStandard.Text;
+                    pNotes.Value = txtNotes.Text;
+
+                    cmd.Parameters.Add(pManufactuter);
+                    cmd.Parameters.Add(pMillLocation);
+                    cmd.Parameters.Add(pProductDescription);
+                    cmd.Parameters.Add(pWeldSeamType);
+                    cmd.Parameters.Add(pOuterDimension);
+                    cmd.Parameters.Add(pWallThickness);
+                    cmd.Parameters.Add(pCoating);
+                    cmd.Parameters.Add(pGrade);
+                    cmd.Parameters.Add(pHeat);
+                    cmd.Parameters.Add(pAnsiAsme);
+                    cmd.Parameters.Add(pPurchaseOrder);
+                    cmd.Parameters.Add(pStandard);
+                    cmd.Parameters.Add(pNotes);
+
+                    int result = ((int)cmd.ExecuteScalar());
+
+                    con.Close();
+
+                    try
+                    {
+                        using (SqlConnection con2 = new SqlConnection(Connection.MTRDataBaseConn))
+                        {
+                            con2.Open();
+                            SqlCommand cmd2 = new SqlCommand();
+                            cmd2.CommandText = "UPDATE [" + cmbJobName.Text + "] SET [Unique Identifier] = @NewID WHERE [Manufacturer] LIKE @Manufacturer AND [Mill Location] LIKE @MillLocation AND [Product Description] LIKE @ProductDescription AND [Weld Seam Type] LIKE @WeldSeamType AND [Outer Dimension] LIKE @OuterDimension AND [Wall Thickness] LIKE @WallThickness AND [Coating] LIKE @Coating AND [Grade] LIKE @Grade AND [Heat] LIKE @Heat AND [ANSI/ASME] LIKE @ANSIASME AND [Purchase Order] LIKE @PurchaseOrder AND [Standard] LIKE @Standard AND [Notes] LIKE @Notes";
+                            cmd2.Connection = con2;
+
+                            SqlParameter pNewID = new SqlParameter("@NewID", SqlDbType.VarChar, 50);
+                            SqlParameter pManufactuter2 = new SqlParameter("@Manufacturer", SqlDbType.VarChar, 50);
+                            SqlParameter pMillLocation2 = new SqlParameter("@MillLocation", SqlDbType.VarChar, 50);
+                            SqlParameter pProductDescription2 = new SqlParameter("@ProductDescription", SqlDbType.VarChar, 50);
+                            SqlParameter pWeldSeamType2 = new SqlParameter("@WeldSeamType", SqlDbType.VarChar, 50);
+                            SqlParameter pOuterDimension2 = new SqlParameter("@OuterDimension", SqlDbType.VarChar, 50);
+                            SqlParameter pWallThickness2 = new SqlParameter("@WallThickness", SqlDbType.VarChar, 50);
+                            SqlParameter pCoating2 = new SqlParameter("@Coating", SqlDbType.VarChar, 50);
+                            SqlParameter pGrade2 = new SqlParameter("@Grade", SqlDbType.VarChar, 50);
+                            SqlParameter pHeat2 = new SqlParameter("@Heat", SqlDbType.VarChar, 50);
+                            SqlParameter pAnsiAsme2 = new SqlParameter("@ANSIASME", SqlDbType.VarChar, 50);
+                            SqlParameter pPurchaseOrder2 = new SqlParameter("@PurchaseOrder", SqlDbType.VarChar, 50);
+                            SqlParameter pStandard2 = new SqlParameter("@Standard", SqlDbType.VarChar, 50);
+                            SqlParameter pNotes2 = new SqlParameter("@Notes", SqlDbType.VarChar, 50);
+
+                            pNewID.Value = cmbJobName.Text + result.ToString();
+                            pManufactuter2.Value = cmbManufacturer.Text;
+                            pMillLocation2.Value = cmbMillLocation.Text;
+                            pProductDescription2.Value = cmbProductDescription.Text;
+                            pWeldSeamType2.Value = cmbWeldSeamType.Text;
+                            pOuterDimension2.Value = cmbOuterDimension.Text;
+                            pWallThickness2.Value = cmbWallThickness.Text;
+                            pCoating2.Value = cmbCoating.Text;
+                            pGrade2.Value = cmbGrade.Text;
+                            pHeat2.Value = txtHeat.Text;
+                            pAnsiAsme2.Value = cmbANSI.Text;
+                            pPurchaseOrder2.Value = txtPurchaseOrder.Text;
+                            pStandard2.Value = cmbStandard.Text;
+                            pNotes2.Value = txtNotes.Text;
+
+                            cmd2.Parameters.Add(pNewID);
+                            cmd2.Parameters.Add(pManufactuter2);
+                            cmd2.Parameters.Add(pMillLocation2);
+                            cmd2.Parameters.Add(pProductDescription2);
+                            cmd2.Parameters.Add(pWeldSeamType2);
+                            cmd2.Parameters.Add(pOuterDimension2);
+                            cmd2.Parameters.Add(pWallThickness2);
+                            cmd2.Parameters.Add(pCoating2);
+                            cmd2.Parameters.Add(pGrade2);
+                            cmd2.Parameters.Add(pHeat2);
+                            cmd2.Parameters.Add(pAnsiAsme2);
+                            cmd2.Parameters.Add(pPurchaseOrder2);
+                            cmd2.Parameters.Add(pStandard2);
+                            cmd2.Parameters.Add(pNotes2);
+
+                            cmd2.ExecuteNonQuery();
+                            con2.Close();
+
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(this, ex.Message, "ERROR While Updating Unique ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //catch error
+                MessageBox.Show(this, ex.Message, "ERROR Returning Values From Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            #endregion Select From Job Table and Update Table with Unique Identifier
+            
+
+            #region Populate Job Table With Command Builder
             try
             {
                 SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
@@ -1416,14 +1552,17 @@ namespace MTR_APP
             //Catch Exception
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, "ERROR populating job table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            #endregion Populate Job Table With Command Builder
+
+            #region Insert Into Master Table
 
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
                 {
-
                     Credentials UniqueID = new Credentials();
 
                     string combineID = "" + txtHeat.Text + "" + cmbManufacturer.Text + "" + cmbOuterDimension.Text + "" + cmbWallThickness.Text + "";
@@ -1493,11 +1632,15 @@ namespace MTR_APP
                     //close connection
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 //catch error
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, ex.Message, "Error Inserting into Master Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            #endregion Insert Into Master Table
+
+            #region Populate Master Table with command builder
 
             try
             {
@@ -1545,8 +1688,12 @@ namespace MTR_APP
             //Catch Exception
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, "ERROR populating Master Table with command builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            #endregion Populate Master Table with command builder
+
+            #region Clear Entry Boxes
 
             cmbManufacturer.Text = String.Empty;
             cmbMillLocation.Text = String.Empty;
@@ -1563,6 +1710,8 @@ namespace MTR_APP
             cmbStandard.Text = String.Empty;
             txtNotes.Clear();
             cmbManufacturer.Focus();
+
+            #endregion Clear Entry Boxes
         }
 
         #endregion Submit Fields to Databases
