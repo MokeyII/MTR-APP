@@ -1,7 +1,6 @@
 # MTR-APP
-[![Help Wanted Issues](https://badge.waffle.io/MokeyII/MTR-APP.svg?label=up-for-grabs&title=Help Wanted Issues)](https://waffle.io/MokeyII/MTR-APP)
+[![Waffle.io](https://badge.waffle.io/MokeyII/MTR-APP.svg?label=up-for-grabs&title=Help Wanted Issues)](https://waffle.io/MokeyII/MTR-APP)
 
-[![Stories in Progress](https://badge.waffle.io/MokeyII/MTR-APP.svg?label=waffle%3Ain%20progress&title=In%20Progress)](https://waffle.io/MokeyII/MTR-APP)
 
 Application to live update and edit databases.
 
