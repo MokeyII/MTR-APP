@@ -23,7 +23,7 @@ namespace MTR_App
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "CREATE TABLE[dbo].[" + txtCreateJobName.Text + "]([Item #] INT NOT NULL PRIMARY KEY IDENTITY,[Manufacturer] VARCHAR(55) NULL,[Mill Location] VARCHAR(55) NULL,[Product Description] VARCHAR(55) NULL,[Weld Seam Type] VARCHAR(55) NULL,[Outer Dimension] VARCHAR(55) NULL,[Wall Thickness] VARCHAR(55) NULL,[Coating] VARCHAR(55) NULL,[Grade] VARCHAR(55) NULL,[Heat] VARCHAR(55) NULL,[i] VARCHAR(55) NULL,[ANSI/ASME] VARCHAR(55) NULL,[Purchase Order] VARCHAR(55) NULL,[Standard] VARCHAR(55) NULL,[Notes] VARCHAR(55) NULL);";
+                    cmd.CommandText = "CREATE TABLE[dbo].[" + txtCreateJobName.Text + "]([Item #] INT NOT NULL PRIMARY KEY IDENTITY,[Manufacturer] VARCHAR(55) NULL,[Mill Location] VARCHAR(55) NULL,[Product Description] VARCHAR(55) NULL,[Weld Seam Type] VARCHAR(55) NULL,[Outer Dimension] VARCHAR(55) NULL,[Wall Thickness] VARCHAR(55) NULL,[Coating] VARCHAR(55) NULL,[Grade] VARCHAR(55) NULL,[Heat] VARCHAR(55) NULL,[i] VARCHAR(55) NULL,[ANSI/ASME] VARCHAR(55) NULL,[Purchase Order] VARCHAR(55) NULL,[Standard] VARCHAR(55) NULL,[Notes] VARCHAR(55) NULL, [Unique Identifier] VARCHAR(55) NOT NULL);";
                     cmd.Connection = con;
 
                     cmd.ExecuteNonQuery();
@@ -53,28 +53,6 @@ namespace MTR_App
                 //Click Submit button
                 btnSubmitJob_Click(sender, e);
             }
-        }
-
-        private void btnChangeXML_Click(object sender, EventArgs e)
-        {
-            var cfg = XDocument.Load("cfg.xml");
-            var element = cfg.Descendants("Value").Single();
-            int currentValue = (int)element;
-            element.SetValue(currentValue + 1 * 1000);
-            cfg.Save("cfg.xml");
-
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml("cfg.xml");
-
-
-            StringWriter sw = new StringWriter();
-
-            XmlTextWriter tx = new XmlTextWriter(sw);
-
-            doc.WriteTo(tx);
-            //sw.ToString();
-
-            txtChangeXML.Text = sw.ToString(); 
         }
     }
 }

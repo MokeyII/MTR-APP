@@ -122,6 +122,7 @@
             this.btnCloseApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.sidemenu = new System.Windows.Forms.Panel();
+            this.txtReturnFromSelect = new System.Windows.Forms.TextBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -139,7 +140,10 @@
             this.btnInsertJobSidePanel = new Bunifu.Framework.UI.BunifuImageButton();
             this.logoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.txtReturnFromSelect = new System.Windows.Forms.TextBox();
+            this.dgMasterContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgJobContextTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMasterGridBun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobGridBun)).BeginInit();
@@ -152,6 +156,8 @@
             this.sidemenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsertJobSidePanel)).BeginInit();
+            this.dgMasterContextMenu.SuspendLayout();
+            this.dgJobContextTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -785,6 +791,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgMasterGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgMasterGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMasterGridBun.ContextMenuStrip = this.dgMasterContextMenu;
             this.logoTransition.SetDecoration(this.dgMasterGridBun, BunifuAnimatorNS.DecorationType.None);
             this.panelTransition.SetDecoration(this.dgMasterGridBun, BunifuAnimatorNS.DecorationType.None);
             this.dgMasterGridBun.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -833,6 +840,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgJobGridBun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgJobGridBun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgJobGridBun.ContextMenuStrip = this.dgJobContextTable;
             this.dgJobGridBun.Cursor = System.Windows.Forms.Cursors.Default;
             this.logoTransition.SetDecoration(this.dgJobGridBun, BunifuAnimatorNS.DecorationType.None);
             this.panelTransition.SetDecoration(this.dgJobGridBun, BunifuAnimatorNS.DecorationType.None);
@@ -1521,6 +1529,15 @@
             this.sidemenu.Size = new System.Drawing.Size(375, 798);
             this.sidemenu.TabIndex = 544;
             // 
+            // txtReturnFromSelect
+            // 
+            this.logoTransition.SetDecoration(this.txtReturnFromSelect, BunifuAnimatorNS.DecorationType.None);
+            this.panelTransition.SetDecoration(this.txtReturnFromSelect, BunifuAnimatorNS.DecorationType.None);
+            this.txtReturnFromSelect.Location = new System.Drawing.Point(70, 715);
+            this.txtReturnFromSelect.Name = "txtReturnFromSelect";
+            this.txtReturnFromSelect.Size = new System.Drawing.Size(259, 20);
+            this.txtReturnFromSelect.TabIndex = 540;
+            // 
             // logo
             // 
             this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -1747,14 +1764,37 @@
             animation1.TransparencyCoeff = 0F;
             this.panelTransition.DefaultAnimation = animation1;
             // 
-            // txtReturnFromSelect
+            // dgMasterContextMenu
             // 
-            this.logoTransition.SetDecoration(this.txtReturnFromSelect, BunifuAnimatorNS.DecorationType.None);
-            this.panelTransition.SetDecoration(this.txtReturnFromSelect, BunifuAnimatorNS.DecorationType.None);
-            this.txtReturnFromSelect.Location = new System.Drawing.Point(70, 715);
-            this.txtReturnFromSelect.Name = "txtReturnFromSelect";
-            this.txtReturnFromSelect.Size = new System.Drawing.Size(259, 20);
-            this.txtReturnFromSelect.TabIndex = 540;
+            this.panelTransition.SetDecoration(this.dgMasterContextMenu, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.dgMasterContextMenu, BunifuAnimatorNS.DecorationType.None);
+            this.dgMasterContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.dgMasterContextMenu.Name = "dgMasterContextMenu";
+            this.dgMasterContextMenu.Size = new System.Drawing.Size(108, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "&Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // dgJobContextTable
+            // 
+            this.panelTransition.SetDecoration(this.dgJobContextTable, BunifuAnimatorNS.DecorationType.None);
+            this.logoTransition.SetDecoration(this.dgJobContextTable, BunifuAnimatorNS.DecorationType.None);
+            this.dgJobContextTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.dgJobContextTable.Name = "dgMasterContextMenu";
+            this.dgJobContextTable.Size = new System.Drawing.Size(108, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.toolStripMenuItem1.Text = "&Delete";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -1805,6 +1845,8 @@
             this.sidemenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsertJobSidePanel)).EndInit();
+            this.dgMasterContextMenu.ResumeLayout(false);
+            this.dgJobContextTable.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1911,6 +1953,10 @@
         public System.Windows.Forms.TextBox txtHeat;
         public System.Windows.Forms.TextBox txtPurchaseOrder;
         private System.Windows.Forms.TextBox txtReturnFromSelect;
+        private System.Windows.Forms.ContextMenuStrip dgMasterContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip dgJobContextTable;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

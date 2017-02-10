@@ -454,6 +454,106 @@ namespace MTR_APP
 
         #endregion Command Builders
 
+        #region Delete from tables/databases
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this row from the Master Table?\n Deleting this row will also delete the same entry from the corresponding job table.", "Some Title", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (dgMasterGridBun.SelectedRows.Count > 0)
+                {
+                    int selectedIndex = dgMasterGridBun.SelectedRows[0].Index;
+
+                    // gets the RowID from the first column in the grid
+                    string JobName = dgMasterGridBun.SelectedRows[0].Cells[1].Value + string.Empty;
+                    string UID = dgMasterGridBun.SelectedRows[0].Cells[16].Value + string.Empty;
+
+                    var vJobname = JobName;
+                    var vUID = UID;
+
+                    using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "DELETE FROM dbo.[" + JobName + "] WHERE [Unique Identifier] = @UniqueIdentifier";
+                        cmd.Connection = con;
+
+                        SqlParameter pJobName = new SqlParameter("@JobName", SqlDbType.VarChar, 50);
+                        SqlParameter pUID = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
+
+                        pJobName.Value = vJobname;
+                        pUID.Value = vUID;
+
+                        cmd.Parameters.Add(pJobName);
+                        cmd.Parameters.Add(pUID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    if (this.dgMasterGridBun.SelectedRows.Count > 0)
+                    {
+                        dgMasterGridBun.Rows.RemoveAt(this.dgMasterGridBun.SelectedRows[0].Index);
+                    }
+
+                    int rows = masterDA.Update(masterDT);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //Do Nothing
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this row from this job?\n Deleting this row will also remove it from the Master Table.", "Some Title", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (dgMasterGridBun.SelectedRows.Count > 0)
+                {
+                    int selectedIndex = dgMasterGridBun.SelectedRows[0].Index;
+
+                    // gets the RowID from the first column in the grid
+                    string JobName = dgMasterGridBun.SelectedRows[0].Cells[1].Value + string.Empty;
+                    string UID = dgMasterGridBun.SelectedRows[0].Cells[16].Value + string.Empty;
+
+                    var vJobname = JobName;
+                    var vUID = UID;
+
+                    cmbJobName.Text = JobName;
+
+                    using (SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "DELETE FROM dbo.[MasterTable] WHERE [Unique Identifier] = @UniqueIdentifier";
+                        cmd.Connection = con;
+
+                        SqlParameter pUID = new SqlParameter("@UniqueIdentifier", SqlDbType.VarChar, 50);
+
+                        pUID.Value = vUID;
+
+                        cmd.Parameters.Add(pUID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    if (this.dgJobGridBun.SelectedRows.Count > 0)
+                    {
+                        dgJobGridBun.Rows.RemoveAt(this.dgJobGridBun.SelectedRows[0].Index);
+                    }
+
+                    int rows = myDA.Update(myDT);
+                    MasterCommandBuilder();
+                }
+            }
+            else
+            {
+                //Do Nothing
+            }
+        }
+
+        #endregion Delete from tables/databases
+
         #region Export to Excel
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
