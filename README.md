@@ -2,4 +2,4 @@
 
 Application to live update and edit databases.
 
-![Screenshot](http://grabilla.com/0720a-f03c1039-b42a-413e-8a06-3d2779b16745.png)
+![Screenshot](http://grabilla.com/0720a-20e6f33e-e6c3-406d-8ef5-d3efbe97dbc7.png)
