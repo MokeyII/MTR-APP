@@ -8,11 +8,19 @@ namespace MTR_APP
 {
     public partial class MainForm : Form
     {
+        //! Important - formatted as bold.
+        //? Question - colored red.
+        //x Removed - formatted as strikeout.
+        //TODO: Task - colored light green.
+        //!? WT*!? - colored purple
+
         #region Storing Variables
 
+        //! Job Table Command Builder Variables
         private SqlDataAdapter myDA;
         private DataTable myDT;
 
+        //! Master Table Command Builder Variables
         private SqlDataAdapter masterDA;
         private DataTable masterDT;
 
@@ -25,7 +33,22 @@ namespace MTR_APP
 
         #region Combo Box Populate
 
-        //Populate Ansi / ASME Combo Box
+        //? ORDER OF OPERATIONS FOR ALL ::Combo Box Populate::
+        //? Try {
+        //? Open Connection
+        //? SQL Using Statement with connection
+        //? Open Connection
+        //? Sql Command Text
+        //? cmd > Connection
+        //? Execute Reader
+        //? While Loop, While Reader Reads, Populate Combobox.
+        //? Close Connection
+        //? }
+        //? Catch SQL Error {
+        //? Show SQL Error in Message box
+        //? }
+
+        //!  Populate Ansi / ASME Combo Box
         private void zAnsiAsmeCombo()
         {
             try
@@ -37,25 +60,20 @@ namespace MTR_APP
                     cmd.CommandText = "SELECT * FROM [dbo].[AnsiAsme] ORDER by [ANSI/ASME] ASC";
                     cmd.Connection = con;
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Add ANSI / ASME ComboItems to combo box.
                         cmbANSI.Items.Add(reader["ANSI/ASME"].ToString());
                     }
-
-                    //Close Connection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, "POPULATE ANSI/ASME COMBO BOX ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //!  Populate Coating Combo Box
         private void zCoatingCombo()
         {
             try
@@ -66,28 +84,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[Coating] ORDER by [Coating] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbCoating.Items.Add(reader["Coating"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, "POPULATE COATING COMBO BOX ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //!  Populate Grade Combo Box
         private void zGradeCombo()
         {
             try
@@ -98,28 +109,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[Grade] ORDER by [Grade] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbGrade.Items.Add(reader["Grade"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //!  Populate Manufactuter Combo Box
         private void zManufacturerCombo()
         {
             try
@@ -130,28 +134,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[Manufacturer] ORDER by [Manufacturer] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbManufacturer.Items.Add(reader["Manufacturer"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Mill Location Combo Box
         private void zMillLocationCombo()
         {
             try
@@ -162,28 +159,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[MillLocation] ORDER by [Mill Location] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbMillLocation.Items.Add(reader["Mill Location"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Outer Dimension Combo Box
         private void zOuterDimensionCombo()
         {
             try
@@ -194,28 +184,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[OuterDimension] ORDER by [SortOrder] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbOuterDimension.Items.Add(reader["Outer Dimension"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Product Description Combo box
         private void zProductDescriptionCombo()
         {
             try
@@ -226,28 +209,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[ProductDescription] ORDER by [Product Description] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbProductDescription.Items.Add(reader["Product Description"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Standard Combo Box
         private void zStandardCombo()
         {
             try
@@ -258,28 +234,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[Standard] ORDER by [Standard] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbStandard.Items.Add(reader["Standard"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Wall Thickness Combo Box
         private void zWallThicknessCombo()
         {
             try
@@ -290,28 +259,21 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[WallThickness] ORDER by [Wall Thickness] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbWallThickness.Items.Add(reader["Wall Thickness"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //! Populate Weld Steam Type Combo Box
         private void zWeldSeamTypeCombo()
         {
             try
@@ -322,56 +284,52 @@ namespace MTR_APP
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "SELECT * FROM [dbo].[WeldSeamType] ORDER by [Weld Seam type] ASC";
                     cmd.Connection = con;
-
-                    //Datareader Execute with connection and slection
                     SqlDataReader reader = cmd.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //Read from Department Dropdown box
                         cmbWeldSeamType.Items.Add(reader["Weld Seam Type"].ToString());
                     }
-
-                    //Close COnnection
                     con.Close();
                 }
             }
-
-            //Catch Exception
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(this, ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         #endregion Combo Box Populate
 
         #region Command Builders
 
+        //! Master Table Command Builder
         private void MasterCommandBuilder()
         {
             try
-            {
+            {   //! Using SQL Connection
                 SqlConnection con = new SqlConnection(Connection.MTRDataBaseConn);
                 {
+                    //! Open Connection
                     con.Open();
+                    //! SQL Command = cmd
                     SqlCommand cmd = new SqlCommand();
+                    //! cmd Command Text = SQL Query
                     cmd.CommandText = "SELECT * FROM dbo.[MasterTable]";
+                    //! cmd Connect
                     cmd.Connection = con;
 
-                    //DataAdapter
+                    //! DataAdapter
                     masterDA = new SqlDataAdapter(cmd.CommandText, con);
 
-                    //MySqlCommand
+                    //! MySqlCommand
                     SqlCommand myCMD = new SqlCommand(cmd.CommandText, con);
 
-                    //DataAdapter to Command
+                    //! DataAdapter to Command
                     masterDA.SelectCommand = myCMD;
 
-                    //Define Datatable
+                    //! Define Datatable
                     masterDT = new DataTable();
 
-                    //Command Builder (IS GOD!)
+                    //! Command Builder (IS GOD!)
                     SqlCommandBuilder cb = new SqlCommandBuilder(masterDA);
 
                     //Teach Command builder to be a boss!
@@ -379,13 +337,13 @@ namespace MTR_APP
                     masterDA.InsertCommand = cb.GetInsertCommand();
                     masterDA.DeleteCommand = cb.GetDeleteCommand();
 
-                    //Fill the DataTable with DataAdapter information
+                    //! Fill the DataTable with DataAdapter information
                     masterDA.Fill(masterDT);
 
-                    //Fill DataTable with Database Schema
+                    //! Fill DataTable with Database Schema
                     masterDA.FillSchema(masterDT, SchemaType.Source);
 
-                    //Bind The Data Table to the DataGrid
+                    //! Bind The Data Table to the DataGrid
                     dgMasterGridBun.DataSource = masterDT;
 
                     //AutoSize Datagrid Rows and Colums to fit the Datagrid
